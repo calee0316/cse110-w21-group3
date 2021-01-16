@@ -18,15 +18,13 @@ Roles can switch in between
 
 Created google doc/excel for description about yourself/preferred roles
 
-Played skribbl.io as a Group bonding event [image](https://raw.githubusercontent.com/calee0316/CSE110Project/main/Untitled.png)
-
 ## Takeaways
 
 
 
 ## Agenda
 - Self introductions
-- Choose a leader (leader will probably have another role, but should keep people accountable
+- Choose a leader (leader will probably have another role, but should keep people accountable)
 - discuss general roles (front end, back end), shouldn't need to choose specific roles yet
 - discuss the agreement document and general rules for our group
 
