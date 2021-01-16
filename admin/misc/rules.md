@@ -31,4 +31,8 @@ If any conflict, unsureness, or issues arrise, members should either comfortably
 ## Invidual and Group Work
 If a specific job is assigned to an individual or microteam, they are fully expected to complete the task on time. If they are having trouble doing so, they should contact the entire group or the manager/leader significantly before the deadline. 
 
-# Signature: 
+
+
+
+
+### Signature: 
