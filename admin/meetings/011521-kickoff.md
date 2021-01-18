@@ -40,9 +40,11 @@ From Lecture:
 ### Decisions Made During the Meeting 
 
 Roles can switch throughout the process as we see fit
+
 Reason: So we can put a fresh mind into a different role for more perspectives 
 
 Created google doc/excel for description about yourself/preferred roles as well as information about our coding background
+
 Reason: To get to know each other as well as gain an understanding of each others coding expereince and role preferences 
 
 ### Not Discussed on the Agenda 
