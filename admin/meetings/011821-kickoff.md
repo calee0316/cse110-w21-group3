@@ -1,7 +1,7 @@
 # Internet Bowser
 ## Type of Meeting: KickOff
 ## Attendence: 
-Everyone was here except for Arthur Wang
+Everyone was here except for Arthur Wang (Reason: Had buisness to attend to so couldn't make it)
 
 ## When and Where The Meeting Was Held
 Held over Zoom started at 9:05 pm (KST)
