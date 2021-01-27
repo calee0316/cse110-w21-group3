@@ -1,58 +1,48 @@
 
-## Role:
+## Role: Toadette Kawaii
 
-## Name:
+## Name: Toadette
 
 ## Image: 
-<insert image here>
+
+![]('https://diceblock.fandom.com/wiki/Toadette?file=Toadette_-_Mario_Party_10.png')
 
 **Image Credit:**
+- From: https://diceblock.fandom.com/wiki/Toadette?file=Toadette_-_Mario_Party_10.png
 
 ## Quote:
 
-> Candy donut chupa chups chocolate danish sweet. Candy canes biscuit jelly beans. Jelly beans cotton candy chocolate cake marzipan apple pie. Toffee caramels tart wafer jujubes bonbon candy.
+> "You need me! I won't take no for an answer!"
 
 ##Background:
-**Age:** 30<br> 
-**Location:** New York<br> 
-**Marital Status:** Engaged<br> 
+**Age:** 21(In Toad Years)<br> 
+**Location:** Peach Castle<br> 
+**Marital Status:** Engaged(?)<br> 
 **Kids:** No<br> 
-**Occupation:** Account Manager<br> 
-**Education:** B.S.
+**Occupation:** Student<br> 
+**Education:** Working on B.S. from Peach University 
 
 ## Characteristics
-* Reliable
+* Thinker
 * Caring
 * Committed
-* Action Oriented
-* Focused 
-* Eager
+* Likes pink
+* Cutesy 
+* Doesn't give up
+
 
 ## Goals/Needs
 
-* Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll
-* Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
+* Peachette is trying to graduate from Peach University with straight As 
+* Has a hard time focusing thanks to Toad
+* Finds herself on ToadBook and Toadgram instead of working
+* Important to keep a good cutesy, public image
 
 
 ### TECH KNOWLEDGE
-██████████████████████████████░░░░░░░░░░░░░░░░░░░░░<br> 
-n00b                                                                                                                                               expert
+██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br> 
+newbie                                                                                                                                               expert
 
-### KNOWS STAFF SKILLS
-                                      
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br> 
-who are you?                                                                                                                                 besties!
-
-### TIME AVAILABILITY 
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br> 
-needed it yesterday                                                                                                                    I can wait
-
-
-##About
-
-Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll chocolate halvah chocolate cake. Danish lollipop chocolate croissant. Candy oat cake gummies chocolate cake. Donut tart pudding toffee muffin halvah. Lollipop muffin fruitcake ice cream brownie pastry. Bear claw sugar plum bear claw topping pudding toffee caramels gummi bears marzipan. Pie fruitcake fruitcake. Danish lollipop jelly chupa chups fruitcake biscuit sweet macaroon sweet roll. Cheesecake gummies sugar plum tootsie roll chupa chups sesame snaps. Lemon drops jelly-o tiramisu cupcake cookie soufflé sweet jelly-o chupa chups. Jujubes caramels chocolate.
-
-Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
 
 
 
