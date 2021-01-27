@@ -3,9 +3,10 @@
 ## Meeting Type: Brainstorm 
 
 ## Attendence
+All 9 group members were here
 
 ## Location and Time:
-Held over zoom at , use Miro to brainstorm together
+Held over zoom at 12:05 p.m. (KST), use Miro to brainstorm together
 
 ## Agenda
 
