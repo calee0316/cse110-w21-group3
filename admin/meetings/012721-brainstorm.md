@@ -39,10 +39,15 @@ None
   - Personas
   - About pomdoro timer
 - To start on but not neccessairly need to complete
-  
 
 ### Deicison Made During the Meeting 
-
+ - Added a transition for a long rest state to make the website more user friendly
+ - Set the default timer to 25 min work, 5 min break, 15 min long break after a 4 pomdo cycle based on the research pomodoro technique
+ - Considered some addition to the timer as features because team deicided it is not within the strucutre of basic pomodoro technique 
+ - Stop timer resets the pomodoro counter because of the case that a user might take a long break between work session 
+ 
 ### New Topic for Next Meeting
+  - Project Pitch
 
 ### Time Ended
+2:15 (KST) 
