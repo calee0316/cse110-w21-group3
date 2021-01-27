@@ -36,10 +36,9 @@ None
   - Back end functions
   - Website design for 4 states
   - Timeline
-  - Personas
   - About pomdoro timer
 - To start on but not neccessairly need to complete
-
+  - User personas, one done, few more to go
 ### Deicison Made During the Meeting 
  - Added a transition for a long rest state to make the website more user friendly
  - Set the default timer to 25 min work, 5 min break, 15 min long break after a 4 pomdo cycle based on the research pomodoro technique
