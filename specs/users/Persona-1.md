@@ -5,7 +5,7 @@
 
 ## Image: 
 
-![]('https://diceblock.fandom.com/wiki/Toadette?file=Toadette_-_Mario_Party_10.png')
+![Image of Toadette](https://static.wikia.nocookie.net/mario/images/9/97/NSMBUD_Toadette.png/revision/latest/scale-to-width-down/1000?cb=20190730163858 | width=100)
 
 **Image Credit:**
 - From: https://diceblock.fandom.com/wiki/Toadette?file=Toadette_-_Mario_Party_10.png
