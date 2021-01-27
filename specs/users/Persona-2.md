@@ -1,7 +1,7 @@
 
-## Role:
+## Role: 
 
-## Name:
+## Name: 
 
 ## Image: 
 <insert image here>
@@ -13,17 +13,15 @@
 > Candy donut chupa chups chocolate danish sweet. Candy canes biscuit jelly beans. Jelly beans cotton candy chocolate cake marzipan apple pie. Toffee caramels tart wafer jujubes bonbon candy.
 
 ##Background:
-**Age:** 30<br> 
+**Age:** 28<br> 
 **Location:** New York<br> 
 **Marital Status:** Engaged<br> 
 **Kids:** No<br> 
-**Occupation:** Account Manager<br> 
+**Occupation:** Businessman<br> 
 **Education:** B.S.
 
 ## Characteristics
 * Reliable
-* Caring
-* Committed
 * Action Oriented
 * Focused 
 * Eager
