@@ -27,6 +27,19 @@ None
   - Project Roadmap
 
 ### What was Actually Discussed
+- Design for our pomdoro timer including:
+  - User expectation
+  - Research on pomdoro timer's functions
+  - Additional features
+  - Mario theme design
+  - Front end functions
+  - Back end functions
+  - Website design for 4 states
+  - Timeline
+  - Personas
+  - About pomdoro timer
+- To start on but not neccessairly need to complete
+  
 
 ### Deicison Made During the Meeting 
 
