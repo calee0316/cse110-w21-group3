@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 body {
     background-color: orange;
 }
@@ -10,19 +14,13 @@ body {
 }
 
 .grid-item {
-
     background-color: rgba(255,255,255,0.8);
     border: 1px solid rgba(0,0,0,0.8);
     padding: 20px;
     font-size: 30px;
-    text-align: center;
 }
 
 .aside {
-
-    position: absolute;
-    top: 10px;
-    right: 20px;
     font-size: 20px; 
 }
 
@@ -93,20 +91,21 @@ body {
 }
 
 .pomoComplete{
+    /*
     background-color: lightcyan;
     border-style: solid;
     border-color: black;
     border-width: 4px 4px 4px 4px;
     border-radius: 0.5em 0.5em;
     margin: 10px 5px 10px 5px;
-    
+    */
     font-size: 20px; 
     width: 100px;
     height: 120px;
 }
 
 #message {
-    text-align: center;
+    
 }
 
 
@@ -123,18 +122,21 @@ body {
     background-color: #4CAF50;
     color: white;
 }
+
+
+
 .task {
-    text-align: center;
+    /*
     border-style: dotted;
     border-color: #cccccc;
     background-color:rgb(255, 115, 0);
     border-width: 4px 4px 4px 4px;
     padding: 20px 10px;
     border-radius: 5%;
-    position: absolute;
+    */
 }
 .button{
-    text-align: center;
+    
     padding: 20px 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
