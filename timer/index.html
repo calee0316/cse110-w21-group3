@@ -37,26 +37,26 @@
         -->
 
         <div class="grid-container pomoWebsite"> 
+
             <div class="grid-item timer">
-                <div>
-                    <img src="./img/mario.png" class="mario">
-                    <p id="time"> 25 </p>
-                </div>
-
-                <div class="button">
-                    <button onclick="startTime()" class="button1">Start</button>
-                    <button onclick="stop()" class="button2">Stop</button>
-                </div>
-
-                <div class="pomoComplete">
-                    <p id="message">0 pomos completed</p>
-                </div>
+                <img src="./img/mario.png" id="mario">
+                <p id="time"> 25 </p>
             </div>
-        </div>
-        <div class="task">
-            <div class="taskButton">
-                <button id="addTask">Add events</button>
-            </div> 
+
+            <div class="grid-item button">
+                <button onclick="startTime()" id="button1">Start</button>
+                <button onclick="stop()" id="button2">Stop</button>
+            </div>
+
+            <div class="grid-item pomoComplete">
+                <p id="message">0 pomos completed</p>
+            </div>
+
+            <div class="grid-item task">
+                <div class="taskButton">
+                    <button id="addTask">Add events</button>
+                </div> 
+            </div>
         </div>
         
         <a class="aside" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
