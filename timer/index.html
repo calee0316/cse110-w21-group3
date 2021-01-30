@@ -4,21 +4,50 @@
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Internet Bowser's Pomodoro Timer</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>   
-    <body>
-        <div class="timerDisplay">
-            <div class="mushroom">
+    <body> 
+        
+        <!--
+        part 0: About us
+            About us (link to our wiki)
+
+        part 1: Timer display
+            Mushroom picture
+            Ticking down timer
+                When we press start, timer starts ticking down from 25:00, 
+                and when it reaches 00:00, it switches to a new phase (rest phase, etc.)
+        
+        part 2: Completed pomo tasks
+            # of successful pomo done
+
+        part 3: Todo list
+            bullet point-ish list you can add, cross out, and clear
+        -->
+
+        <!--
+            Meet up notes
+
+            Goal for next meet up:
+                Figure out how we want to implement "TODO list"
+                Figure out what is "Before you start"
+                Modify the positions
+                    How to have the timer "stick" to the white part of the mushroom
+
+        -->
+
+        <div class="grid-container pomoWebsite"> 
+            <div class="grid-item timer">
                 <div>
-                    <img src="./img/mario.png" class="mario">
-                    <p id="timer"> 25 </p>
-
-                    <div class="button">
-                        <button onclick="startTime()" class="button1">Start</button>
-                        <button onclick="stop()" class="button2">Stop</button>
-                    </div>
-
+                    <img src="mario.png" class="mario">
+                    <p id="time"> 25 </p>
                 </div>
+
+                <div class="button">
+                    <button onclick="startTime()" class="button1">Start</button>
+                    <button onclick="stop()" class="button2">Stop</button>
+                </div>
+
                 <div class="pomoComplete">
                     <p id="message">0 pomos completed</p>
                 </div>
@@ -27,7 +56,7 @@
         <div class="task">
             <div class="taskButton">
                 <button id="addTask">Add events</button>
-            </div>
+            </div> 
         </div>
         
         <a class="aside" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
