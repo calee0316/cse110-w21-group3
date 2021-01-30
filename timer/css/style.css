@@ -1,7 +1,25 @@
 body {
     background-color: orange;
 }
+
+.grid-container {
+    display:grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
 .aside {
+
     position: absolute;
     top: 10px;
     right: 20px;
@@ -21,7 +39,7 @@ body {
     color: #0044FF;
 }
 
-.mario {
+#mario {
     display: block;
     text-align:center;
     margin-top: auto;
@@ -44,7 +62,7 @@ body {
     grid
 }
 
-.button1{
+#button1{
     background-color: white;
     color: black;
     font-size: 30px;
@@ -54,7 +72,7 @@ body {
     cursor: pointer;
 }
 
-.button2{
+#button2{
     background-color: white;
     color: black;
     font-size: 30px;
@@ -64,12 +82,12 @@ body {
     cursor: pointer;
 }
 
-.button1:hover{
+#button1:hover{
     background-color: #4CAF50;
     color: white;
 }
 
-.button2:hover{
+#button2:hover{
     background-color: #4CAF50;
     color: white;
 }
@@ -81,9 +99,7 @@ body {
     border-width: 4px 4px 4px 4px;
     border-radius: 0.5em 0.5em;
     margin: 10px 5px 10px 5px;
-    position: absolute;
-    top: 300px;
-    right: 20px;
+    
     font-size: 20px; 
     width: 100px;
     height: 120px;
