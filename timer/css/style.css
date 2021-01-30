@@ -1,0 +1,228 @@
+body {
+    background-color: orange;
+}
+.aside {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px; 
+}
+
+.aside:link{
+    color: #000000
+}
+.aside:visited{
+    color: #0044ff;
+}
+.aside:hover{
+    color: #FF00FF
+}
+.aside:active {
+    color: #0044FF;
+}
+
+.mario {
+    display: block;
+    text-align:center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#timer {
+    font-style: bold;
+    font-size: 20px;
+    font-weight: bold;
+    display: grid;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timerDisplay {
+    display: grid;
+    grid
+}
+
+.button1{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    margin: 2px 4px;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button2{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    margin: 2px 4px;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button1:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pomoComplete{
+    background-color: lightcyan;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px 4px 4px 4px;
+    border-radius: 0.5em 0.5em;
+    margin: 10px 5px 10px 5px;
+    position: absolute;
+    top: 300px;
+    right: 20px;
+    font-size: 20px; 
+    width: 100px;
+    height: 120px;
+}
+
+#message {
+    text-align: center;
+}
+
+
+#addTask {
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    margin: 2px 4px;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+#addTask:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+.task {
+    text-align: center;
+    border-style: dotted;
+    border-color: #cccccc;
+    background-color:rgb(255, 115, 0);
+    border-width: 4px 4px 4px 4px;
+    top: -100px;
+    padding: 20px 10px;
+    border-radius: 5%;
+    position: absolute;
+}
+.button{
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
