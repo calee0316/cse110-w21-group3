@@ -32,16 +32,26 @@
                 Figure out how we want to implement "TODO list"
                 Figure out what is "Before you start"
                 Modify the positions
-                    How to have the timer "stick" to the white part of the mushroom
+                    How to have the timer "stick" on top of the white part of the mushroom
 
         -->
 
         <div class="grid-container pomoWebsite"> 
 
+            <div class="grid-item task">
+                <div class="taskButton">
+                    <button id="addTask">Add events</button>
+                </div> 
+            </div>
+
+            
+
             <div class="grid-item timer">
                 <img src="./img/mario.png" id="mario">
                 <p id="time"> 25 </p>
             </div>
+
+            <a class="grid-item aside" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
 
             <div class="grid-item button">
                 <button onclick="startTime()" id="button1">Start</button>
@@ -52,14 +62,10 @@
                 <p id="message">0 pomos completed</p>
             </div>
 
-            <div class="grid-item task">
-                <div class="taskButton">
-                    <button id="addTask">Add events</button>
-                </div> 
-            </div>
+            
         </div>
         
-        <a class="aside" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
+        
     </body>
 
 </html>
