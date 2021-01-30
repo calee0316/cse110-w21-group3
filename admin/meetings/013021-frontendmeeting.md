@@ -24,7 +24,10 @@ None
 ### New Topic for Next Meeting
 - We may use grid to position the images and boxes
 - Need response from other group members
-- Timer function
+- Figure out how we want to implement the "TODO list"
+- Figure out what is "Before you start"
+- Modity the positions
+
 
 
 ### Time Ended
