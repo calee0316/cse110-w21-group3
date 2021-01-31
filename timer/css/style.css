@@ -18,28 +18,28 @@ body {
     height: 100%;
     grid-gap: 0px;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 10% 60% 30%;
+    grid-template-rows: 20% 80%;
     padding: 0px;
+    text-align: center;
 }
 
 .grid-container > div{
     background-color: orange;
-    padding: 20px;
-    font-size: 30px;
+    padding:0;
 }
 
-.state{
-	font-size:25px;
-}
-
-
-.link {
-    font-size: 20px; 
+.state>h2{
+	display: block;
+	font-size: 14px;
+    font-size: 4vh;
+	text-align: center;
 }
 
 .info{
 	padding-top: 0px;
 	text-align: top;
+	font-size: 10px;
+	font-size:3vh;
 }
 
 .link{
@@ -55,18 +55,25 @@ body {
     color: #0044FF;
 }
 
-#mario {
-    text-align:center;
-    width: 50%;
+.timer>h2{
+	padding-top: 0px;
+	border-top:0px;
+	margin-top:0px;
+	font-size: 20px;
+	font-size: 8vh;
 }
 
-#time{
-	color: black;
-	position: absolute;
-  	top: 25%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
+.timer{
+	position: relative;
+  	overflow: hidden;
 }
+
+#mario {
+	width: 15vw;
+	width: 40%;
+	height: auto;
+}
+
 
 #start{
     background-color: green;
@@ -76,6 +83,12 @@ body {
     border: 2px solid #4CAF50;
     transition-duration: 0.3s;
     cursor: pointer;
+}
+
+#message{
+	font-size: 12px;
+	font-size: 5vh;
+	font-size: 3vw;
 }
 
 #stop{
@@ -99,7 +112,7 @@ body {
 }
 
 .button{
-    padding: 20px 10px;
+    padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
