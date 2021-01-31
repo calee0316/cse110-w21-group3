@@ -1,72 +1,49 @@
-# [short title of solved problem and solution]
+# Decision Made: Position On the Team
 
-* Status: [proposed | rejected | accepted | deprecated | … | superseded by [ADR-0005](0005-example.md)] <!-- optional -->
-* Deciders: [list everyone involved in the decision] <!-- optional -->
-* Date: [YYYY-MM-DD when the decision was last updated] <!-- optional -->
-
-Technical Story: [description | ticket/issue URL] <!-- optional -->
+* Status: accepted
+* Deciders: Everyone on the development team
+* Date: 2021-01-15
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+What are the roles needed for the devleopmenet of our own pomodoro timer. 
 
-## Decision Drivers <!-- optional -->
+## Decision Drivers 
 
-* [driver 1, e.g., a force, facing concern, …]
-* [driver 2, e.g., a force, facing concern, …]
-* … <!-- numbers of drivers can vary -->
+* Need a leader role to overlook the team to make sure people are on task
+* Need people in front-end and back-end
+* Need people to desgin the website
+* Number of people per section should be varied to suit the work flow
 
 ## Considered Options
 
-* [option 1]
-* [option 2]
-* [option 3]
-* … <!-- numbers of options can vary -->
+1. 3 Frontend, 3 Backend, 1 QA, 1 Project Manager, 2 Designer, 1 Product Manager
+2. 4 Frontend, 3 Backend, 1 QA, 1 Project Manager, 2 Designer
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
+Chosen option: Went with the first option because we balanced the front-end and back-end team and some people take on multiple roles to balance the amount of workload for each person on the developmenet team.
 
-### Positive Consequences <!-- optional -->
+### Positive Consequences 
 
-* [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-* …
+* Allows room to switch roles as we see fit 
+* Everyone on the team has balance and equal workload with respect to the project
 
-### Negative Consequences <!-- optional -->
+### Negative Consequences 
 
-* [e.g., compromising quality attribute, follow-up decisions required, …]
-* …
+* Some team members have to take on two roles at the same time 
 
-## Pros and Cons of the Options <!-- optional -->
+## Pros and Cons of the Options 
 
-### [option 1]
+### 3 Frontend, 3 Backend, 1 QA, 1 Project Manager, 2 Designer, 1 Product Manager 
 
-[example | description | pointer to more information | …] <!-- optional -->
+* Good, the composition considers the crucial role to create the project
+* Good, because good balance of front-end and back-end team memebrs 
+* Bad, because some team memebrs might have to take on secondary roles to balance the workload 
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
+### 4 Frontend, 3 Backend, 1 QA, 1 Project Manager, 2 Designer
 
-### [option 2]
+* Bad, because too many people on the front-end will probably cause idea conflict when developing webpage
+* Good, the composition considers the crucial role to create the project
 
-[example | description | pointer to more information | …] <!-- optional -->
 
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-### [option 3]
-
-[example | description | pointer to more information | …] <!-- optional -->
-
-* Good, because [argument a]
-* Good, because [argument b]
-* Bad, because [argument c]
-* … <!-- numbers of pros and cons can vary -->
-
-## Links <!-- optional -->
-
-* [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-* … <!-- numbers of links can vary -->
