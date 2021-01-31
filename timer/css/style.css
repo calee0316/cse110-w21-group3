@@ -1,67 +1,75 @@
 * {
     text-align: center;
 }
+ html, body {
+ 	width: 100%;
+ 	height: 100%;
+ 	margin: 0;
+ 	padding: 0;
+}
 
 body {
     background-color: orange;
 }
 
 .grid-container {
-    display:grid;
-    grid-gap: 50px;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0px;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% 60% 30%;
+    padding: 0px;
 }
 
-.grid-item {
-    background-color: rgba(255,255,255,0.8);
-    border: 1px solid rgba(0,0,0,0.8);
+.grid-container > div{
+    background-color: orange;
     padding: 20px;
     font-size: 30px;
 }
 
-.aside {
+.state{
+	font-size:25px;
+}
+
+
+.link {
     font-size: 20px; 
 }
 
-.aside:link{
-    color: #000000
+.info{
+	padding-top: 0px;
+	text-align: top;
 }
-.aside:visited{
+
+.link{
+    color: #000000;
+}
+.link:visited{
     color: #0044ff;
 }
-.aside:hover{
+.link:hover{
     color: #FF00FF
 }
-.aside:active {
+.link:active {
     color: #0044FF;
 }
 
 #mario {
-    display: block;
     text-align:center;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
     width: 50%;
 }
 
-#timer {
-    font-style: bold;
-    font-size: 20px;
-    font-weight: bold;
-    display: grid;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#time{
+	color: black;
+	position: absolute;
+  	top: 25%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
 }
 
-.timerDisplay {
-    display: grid;
-    grid
-}
-
-#button1{
-    background-color: white;
+#start{
+    background-color: green;
     color: black;
     font-size: 30px;
     margin: 2px 4px;
@@ -70,8 +78,8 @@ body {
     cursor: pointer;
 }
 
-#button2{
-    background-color: white;
+#stop{
+    background-color: red;
     color: black;
     font-size: 30px;
     margin: 2px 4px;
@@ -80,63 +88,17 @@ body {
     cursor: pointer;
 }
 
-#button1:hover{
-    background-color: #4CAF50;
+#start:hover{
+    background-color: green;
     color: white;
 }
 
-#button2:hover{
-    background-color: #4CAF50;
+#stop:hover{
+    background-color: red;
     color: white;
 }
 
-.pomoComplete{
-    /*
-    background-color: lightcyan;
-    border-style: solid;
-    border-color: black;
-    border-width: 4px 4px 4px 4px;
-    border-radius: 0.5em 0.5em;
-    margin: 10px 5px 10px 5px;
-    */
-    font-size: 20px; 
-    width: 100px;
-    height: 120px;
-}
-
-#message {
-    
-}
-
-
-#addTask {
-    background-color: white;
-    color: black;
-    font-size: 30px;
-    margin: 2px 4px;
-    border: 2px solid #4CAF50;
-    transition-duration: 0.3s;
-    cursor: pointer;
-}
-#addTask:hover{
-    background-color: #4CAF50;
-    color: white;
-}
-
-
-
-.task {
-    /*
-    border-style: dotted;
-    border-color: #cccccc;
-    background-color:rgb(255, 115, 0);
-    border-width: 4px 4px 4px 4px;
-    padding: 20px 10px;
-    border-radius: 5%;
-    */
-}
 .button{
-    
     padding: 20px 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

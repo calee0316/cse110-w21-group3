@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Internet Bowser's Pomodoro Timer</title>
         <link rel="stylesheet" href="./css/style.css">
-    </head>   
-    <body> 
-        
+    </head>
+    <body>
+
         <!--
         part 0: About us
             About us (link to our wiki)
@@ -15,9 +15,9 @@
         part 1: Timer display
             Mushroom picture
             Ticking down timer
-                When we press start, timer starts ticking down from 25:00, 
+                When we press start, timer starts ticking down from 25:00,
                 and when it reaches 00:00, it switches to a new phase (rest phase, etc.)
-        
+
         part 2: Completed pomo tasks
             # of successful pomo done
 
@@ -36,36 +36,44 @@
 
         -->
 
-        <div class="grid-container pomoWebsite"> 
+        <div class="grid-container pomoWebsite">
+            <div class="filler"></div>
 
-            <div class="grid-item task">
-                <div class="taskButton">
-                    <button id="addTask">Add events</button>
-                </div> 
+            <div class="">
+              <h2 class = "state">Click Start To Begin</h2>
             </div>
 
-            
+            <div class="info">
+              <a class="link" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
+            </div>
 
-            <div class="grid-item timer">
+            <div class="filler"></div>
+
+
+            <div class="timer">
                 <img src="./img/mario.png" id="mario">
-                <p id="time"> 25 </p>
+                <h2 id="time"> 25:00 </h2>
+            </div>
+            <div class="complete">
+              <h3 id="message">0 pomos completed</h3>
             </div>
 
-            <a class="grid-item aside" href="https://github.com/calee0316/cse110-w21-group3/wiki">About us</a>
+            <div class="">
 
-            <div class="grid-item button">
-                <button onclick="startTime()" id="button1">Start</button>
-                <button onclick="stop()" id="button2">Stop</button>
+            </div>
+            <div class="button">
+                <button class = "button1" id="start">Start</button>
+                <button class = "button1" id="stop">Stop</button>
             </div>
 
             <div class="grid-item pomoComplete">
-                <p id="message">0 pomos completed</p>
+
             </div>
 
-            
+
         </div>
-        
-        
+
+
     </body>
 
 </html>
