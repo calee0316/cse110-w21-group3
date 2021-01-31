@@ -18,3 +18,18 @@ Vincent Tu
 1. Started writing ADRs documentation
 2. Start creating more persona and use github projects to create task
 3. Cant create github pages for our website
+
+Arthur Wang
+1. working on the html file with front-end people
+2. modify positions of different elements in the html file
+3. n/a
+
+Ruichen Li
+1. Working on the html and css files for this project
+2. Hear some comments from the others so we can improve the front end
+3. cant stick the time to the mushroom image
+
+Richard Hwang
+1. Worked on html and css with front-end people
+2. modify positions of different elements in the html file
+3. relative image size and position of timer
