@@ -32,7 +32,7 @@ N/A
 ### New Topic for Next Meeting
 - Front-end todo list (list deletes and resets once tab is closed)
 - Plausibility of a backend todo list (account login, database so that list does not go away even after closing window)
-- 
+
 
 
 
