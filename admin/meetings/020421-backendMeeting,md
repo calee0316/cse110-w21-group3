@@ -19,7 +19,7 @@ N/A
 
 
 ### Actual Progress
-- Variables setup for different states and minutes
+- Variables setup for different states and times
 - Functions of timer
   - Click to start and stop
   - Update time every sec 
