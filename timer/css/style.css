@@ -67,7 +67,7 @@ body {
   	overflow: hidden;
 }
 
-#mario {
+#pic {
 	width: 15vw;
 	width: 40%;
 	width: 40vh;
@@ -86,7 +86,7 @@ body {
     cursor: pointer;
 }
 
-#message{
+#count{
 	font-size: 12px;
 	font-size: 5vh;
 	font-size: 3vw;
