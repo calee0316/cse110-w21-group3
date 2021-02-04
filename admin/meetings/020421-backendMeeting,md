@@ -19,19 +19,19 @@ N/A
 
 
 ### Actual Progress
-- Created a prototype index.html and css file for the project
-  - Contains a grid of elements
-    - About us page
-    - Timer
-    - Timer buttons
-    - number of successful pomo done
-    - TODO List
+- Variables setup for different states and minutes
+- Functions of timer
+  - Click to start and stop
+  - Update time every sec 
+  - Update DOM 
+  - Set each number as double digits
+  - 
+  - 
  
 ### New Topic for Next Meeting
-- Figure out how we want to implement the "TODO list"
-- Figure out what is "Before you start"
-- Modity the positions based on the consensus
-  - How to have the timer "stick" on top of the white part of the mushroom
+- 
+- 
+- 
 
 
 
