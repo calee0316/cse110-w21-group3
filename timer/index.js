@@ -3,12 +3,12 @@ window.onload = () => {
 }
 
 
-let workMinutes = 0;
-let workSeconds = 5;
-let restMinutes = 0;
-let restSeconds = 3;
-let lRestMinutes = 0;
-let lRestSeconds = 7;
+let workMinutes = 25;
+let workSeconds = 0;
+let restMinutes = 5;
+let restSeconds = 0;
+let lRestMinutes = 15;
+let lRestSeconds = 0;
 let states = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest'];
 
 let pomo = {
