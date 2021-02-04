@@ -1,0 +1,39 @@
+# Back End
+
+## Meeting Type: Code
+
+## Attendence
+Back end developers:
+- Calvin Lee
+- Yijie Ruan
+- Shunkai Yu
+
+## Location and Time:
+Held over zoom at 8 PM (KST) 7 PM (CST)
+
+### Recap of Last Meeting 
+N/A
+
+### Topic to be Discussed/Worked on
+- Functions of pomodoro timer in javascript as backend
+
+
+### Actual Progress
+- Created a prototype index.html and css file for the project
+  - Contains a grid of elements
+    - About us page
+    - Timer
+    - Timer buttons
+    - number of successful pomo done
+    - TODO List
+ 
+### New Topic for Next Meeting
+- Figure out how we want to implement the "TODO list"
+- Figure out what is "Before you start"
+- Modity the positions based on the consensus
+  - How to have the timer "stick" on top of the white part of the mushroom
+
+
+
+### Time Ended
+11:10 PM (KST) 10:10 PM (CST)
