@@ -1,4 +1,4 @@
-window.onload = ()=>{
+window.onload = () => {
   pomo.init();
 }
 
@@ -54,7 +54,7 @@ function update() {
       if (pomo.seconds == 0) {
         if (pomo.minutes == 0) {
           //when both seconds and minutes are 0, switch states
-          if (pomo.state = states[1]) {
+          if (pomo.state == states[1]) {
             //currently work ended
             pomo.count++;
             if (pomo.count % 4 == 0) {
@@ -67,17 +67,19 @@ function update() {
               pomo.seconds = restSeconds;
               pomo.state = states[2];
             }
-          } else {
+          } else if(pomo.state == states[2] || pomo.state == states[3]){
             //currently rest ended
             pomo.minutes = workMinutes;
             pomo.seconds = workSeconds;
             pomo.state = states[1];
           }
+        } else {
+          pomo.seconds = 59;
+          pomo.minutes--;
         }
-        pomo.seconds = 59;
-        pomo.minutes--;
+      }else{
+        pomo.seconds--;
       }
-      pomo.seconds--;
     }
     updateDOM();
   }, 1000)
@@ -89,16 +91,16 @@ function updateDOM() {
   pomo.numPomoDom.innerHTML = pomo.count + " pomos completed";
   if (pomo.state == states[0] || pomo.state == states[1]) {
     pomo.picDom.src = './img/1.png';
-  } else if (pomo.state = states[2]) {
+  } else if (pomo.state == states[2]) {
     pomo.picDom.src = './img/2.png';
-  } else if (pomo.state = states[3]) {
+  } else if (pomo.state == states[3]) {
     pomo.picDom.src = './img/3.png';
   }
 }
 
-function doubleDigit(num){
-  if(num<10){
-    return "0"+parseInt(num, 10);
+function doubleDigit(num) {
+  if (num < 10) {
+    return "0" + parseInt(num, 10);
   }
   return num;
 }
