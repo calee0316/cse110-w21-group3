@@ -42,6 +42,7 @@ let pomo = {
         pomo.seconds = workSeconds;
         pomo.started = false;
         pomo.state = states[0];
+        pomo.count = 0;
       }
     })
   }
