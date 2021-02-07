@@ -22,23 +22,16 @@ jobs:
 
       - name: Install linters
         run: npm install eslint --save-dev
+        
+      - name: install stylelint
+        run: npm install --save-dev stylelint stylelint-config-standard
       
       - name: ESLint
         run: npx eslint --init
       
       - name: Run ESLint
         run: npx eslint ./timer
+      - name: run stylelint
+        run: npx stylelint "**/*.css"
 
-      # - name: Install modules
-      #   run: yarn
-      #- name: Run linters
-      #  uses: wearerequired/lint-action@v1
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Enable linters
-      #    eslint: true
-      #    prettier: true
-      # - name: Run ESLint
-      #   run: eslint . --ext .js,.jsx,.ts,.tsx
-      #- name: Run ESLint
-        #run: npx eslint timer
+
