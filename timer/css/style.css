@@ -4,14 +4,14 @@
 
 html,
 body {
-  width:  100%;
- 	height:  100%;
- 	margin:  0;
- 	padding:  0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color:  orange;
+  background-color: orange;
 }
 
 .grid-container {
@@ -27,7 +27,7 @@ body {
 
 .grid-container > div {
   background-color: orange;
-  padding:0;
+  padding: 0;
 }
 
 .state > h2 {
@@ -38,13 +38,13 @@ body {
 }
 
 .info {
-	padding-top: 0;
-	text-align: top;
+  padding-top: 0;
+  text-align: top;
 }
 
 .link {
   color: #000;
-	font-size: 2.5vw;
+  font-size: 2.5vw;
 }
 
 .link:visited {
@@ -52,7 +52,7 @@ body {
 }
 
 .link:hover {
-  color: #f0f
+  color: #f0f;
 }
 
 .link:active {
@@ -60,23 +60,23 @@ body {
 }
 
 .timer > h2 {
-  padding-top: 0px;
-  border-top:0px;
-  margin-top:0px;
+  padding-top: 0;
+  border-top: 0;
+  margin-top: 0;
   font-size: 20px;
   font-size: 10vh;
 }
 
 .timer {
-	position: relative;
+  position: relative;
   overflow: hidden;
 }
 
 #pic {
-	width: 15vw;
-	width: 40%;
-	width: 40vh;
-	height: auto;
+  width: 15vw;
+  width: 40%;
+  width: 40vh;
+  height: auto;
 }
 
 #start {
@@ -84,15 +84,15 @@ body {
   color: black;
   font-size: 30px;
   margin: 2px 4px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
   transition-duration: 0.3s;
   cursor: pointer;
 }
 
 #count {
-	font-size: 12px;
-	font-size: 5vh;
-	font-size: 3vw;
+  font-size: 12px;
+  font-size: 5vh;
+  font-size: 3vw;
 }
 
 #stop {
@@ -100,7 +100,7 @@ body {
   color: black;
   font-size: 30px;
   margin: 2px 4px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
   transition-duration: 0.3s;
   cursor: pointer;
 }
