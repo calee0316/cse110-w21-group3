@@ -27,7 +27,7 @@ jobs:
         run: npx eslint --init
       
       - name: Run ESLint
-        run: npx eslint ./timer
+        run: npx eslint ./timer/index.js
 
       # - name: Install modules
       #   run: yarn
