@@ -12,8 +12,11 @@ jobs:
         uses: actions/checkout@v2
 
       # Install your linters here
+      - name: Install Node.js
+        run: npm install Node.js
+        
       - name: Install Node.js dependencies
-        run: npm install
+        run: npm install eslint
 
       - name: Run linters
         uses: wearerequired/lint-action@v1
