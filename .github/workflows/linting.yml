@@ -8,8 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
+      #- name: Check out Git repository
+      #  uses: actions/checkout@v2
+
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: yarn
+      - run: yarn lint
 
       # Install your linters here
       # - name: Set up Node.js
@@ -19,14 +26,14 @@ jobs:
       # - name: Install linters
       #   run: npm install eslint --save-dev
 
-      - name: Install modules
-        run: yarn
+      #- name: Install modules
+      #  run: yarn
 
-      - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+      #- name: Run ESLint
+      #  run: eslint . --ext .js,.jsx,.ts,.tsx
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          eslint: true
+      #- name: Run linters
+      #  uses: wearerequired/lint-action@v1
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    eslint: true
