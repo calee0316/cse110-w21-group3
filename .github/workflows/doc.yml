@@ -13,6 +13,6 @@ jobs:
         with:
           source_dir: ./timer
           recurse: true
-          output_dir: ./src
+          output_dir: ./source
         
     
