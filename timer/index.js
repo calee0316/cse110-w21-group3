@@ -22,7 +22,6 @@ let pomo = {
   state: states[0],
   count: 0,
   init: function() {
-    let self = this;
     this.timeDom = document.getElementById('time');
     this.stateDom = document.getElementById('state');
     this.numPomoDom = document.getElementById('count');
