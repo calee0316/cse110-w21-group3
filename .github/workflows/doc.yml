@@ -10,11 +10,7 @@ jobs:
     steps:      
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: JSDoc Action
-        uses: andstor/jsdoc-action@v1.2.0
-        with:
-          source_dir: ./timer
-          recurse: true
-          output_dir: ./source
+      - name: run JSDoc
+        run: jsdoc ./timer/index.js
         
     
