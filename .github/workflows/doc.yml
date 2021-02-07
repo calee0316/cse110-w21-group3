@@ -1,4 +1,5 @@
-name: main
+name: doc
+
 on:
   push:
     branches:
@@ -7,12 +8,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
+        
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: ./timer
+          source_dir: ./timer/index.js
           recurse: true
           output_dir: ./source
         
