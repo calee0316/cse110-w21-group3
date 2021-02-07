@@ -24,7 +24,7 @@ jobs:
        # run: npm install eslint --save-dev
       
       - name: run ESLint
-        run: eslint --init
+        run: npm eslint --init
 
       # - name: Install modules
       #   run: yarn
