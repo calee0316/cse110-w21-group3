@@ -11,11 +11,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Build
-        uses: andstor/jsdoc-action@v1
+      - name: JSDoc Action
+        uses: andstor/jsdoc-action@v1.2.0
         with:
-          source_dir: ./timer/index.js
+          source_dir: ./timer
           recurse: true
-          output_dir: ./source
+          output_dir: ./src
         
     
