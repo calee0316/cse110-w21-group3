@@ -23,8 +23,8 @@ jobs:
       - name: Install linters
         run: npm install eslint --save-dev
       
-      - name: ESLint
-        run: npx eslint --init
+      #- name: ESLint
+        #run: npx eslint --init
 
       # - name: Install modules
       #   run: yarn
