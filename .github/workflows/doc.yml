@@ -18,6 +18,8 @@ jobs:
         run: npm install -g jsdoc
       - name: run JSDoc
         run: jsdoc ./timer/index.js -d ./source
+      - name: add files
+        run: git add .
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
