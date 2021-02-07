@@ -20,8 +20,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install
 
-      #- name: Install linters
-       # run: npm install eslint --save-dev
+      - name: Install linters
+        run: npm install eslint --save-dev
       
       - name: run ESLint
         run: npx eslint --init
