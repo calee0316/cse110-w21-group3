@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/calee0316/cse110-w21-group3#readme",
   "dependencies": {
-    "eslint": "^7.19.0",
     "prettier": "^2.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0"
   }
 }
