@@ -1,56 +1,12 @@
+### Name: Sean
+### Age: 30
+### Occupation: Software Engineer
+### Scenario of using our app:
+#### Goals: Work in a structured and organized manner
+#### 	Challenges/ Pain points: Social media, video games, tiktok, etc
+####	Needs: An app that could help me to manage my time. 
+####	Device: Laptop or phone
 
-## Role: 
-
-## Name: 
-
-## Image: 
-<insert image here>
-
-**Image Credit:**
-
-## Quote:
-
-> Candy donut chupa chups chocolate danish sweet. Candy canes biscuit jelly beans. Jelly beans cotton candy chocolate cake marzipan apple pie. Toffee caramels tart wafer jujubes bonbon candy.
-
-##Background:
-**Age:** 28<br> 
-**Location:** New York<br> 
-**Marital Status:** Engaged<br> 
-**Kids:** No<br> 
-**Occupation:** Businessman<br> 
-**Education:** B.S.
-
-## Characteristics
-* Reliable
-* Action Oriented
-* Focused 
-* Eager
-
-## Goals/Needs
-
-* Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll
-* Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
-
-
-### TECH KNOWLEDGE
-██████████████████████████████░░░░░░░░░░░░░░░░░░░░░<br> 
-n00b                                                                                                                                               expert
-
-### KNOWS STAFF SKILLS
-                                      
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br> 
-who are you?                                                                                                                                 besties!
-
-### TIME AVAILABILITY 
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br> 
-needed it yesterday                                                                                                                    I can wait
-
-
-##About
-
-Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll chocolate halvah chocolate cake. Danish lollipop chocolate croissant. Candy oat cake gummies chocolate cake. Donut tart pudding toffee muffin halvah. Lollipop muffin fruitcake ice cream brownie pastry. Bear claw sugar plum bear claw topping pudding toffee caramels gummi bears marzipan. Pie fruitcake fruitcake. Danish lollipop jelly chupa chups fruitcake biscuit sweet macaroon sweet roll. Cheesecake gummies sugar plum tootsie roll chupa chups sesame snaps. Lemon drops jelly-o tiramisu cupcake cookie soufflé sweet jelly-o chupa chups. Jujubes caramels chocolate.
-
-Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
 
 
 
