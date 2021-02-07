@@ -1,70 +1,75 @@
 * {
-    text-align: center;
+  text-align: center;
 }
- html, body {
- 	width: 100%;
+
+html,
+body {
+  width: 100%;
  	height: 100%;
  	margin: 0;
  	padding: 0;
 }
 
 body {
-    background-color: orange;
+  background-color: orange;
 }
 
 .grid-container {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-gap: 0px;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 20% 80%;
-    padding: 0px;
-    text-align: center;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-gap: 0px;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 20% 80%;
+  padding: 0px;
+  text-align: center;
 }
 
-.grid-container > div{
-    background-color: orange;
-    padding:0;
+.grid-container > div {
+  background-color: orange;
+  padding:0;
 }
 
-.state>h2{
-	display: block;
-	font-size: 14px;
-    font-size: 6vh;
-	text-align: center;
+.state > h2 {
+  display: block;
+  font-size: 14px;
+  font-size: 6vh;
+  text-align: center;
 }
 
-.info{
-	padding-top: 0px;
+.info {
+	padding-top: 0;
 	text-align: top;
 }
 
-.link{
-    color: #000000;
+.link {
+  color: #000;
 	font-size: 2.5vw;
 }
-.link:visited{
-    color: #0044ff;
+
+.link:visited {
+  color: #04f;
 }
-.link:hover{
-    color: #FF00FF
+
+.link:hover {
+  color: #f0f
 }
+
 .link:active {
-    color: #0044FF;
+  color: #04f;
 }
 
-.timer>h2{
-	padding-top: 0px;
-	border-top:0px;
-	margin-top:0px;
-	font-size: 20px;
-	font-size: 10vh;
+.timer > h2 {
+  padding-top: 0px;
+  border-top:0px;
+  margin-top:0px;
+  font-size: 20px;
+  font-size: 10vh;
 }
 
-.timer{
+.timer {
 	position: relative;
-  	overflow: hidden;
+  overflow: hidden;
 }
 
 #pic {
@@ -72,47 +77,45 @@ body {
 	width: 40%;
 	width: 40vh;
 	height: auto;
-
 }
 
-
-#start{
-    background-color: green;
-    color: black;
-    font-size: 30px;
-    margin: 2px 4px;
-    border: 2px solid #4CAF50;
-    transition-duration: 0.3s;
-    cursor: pointer;
+#start {
+  background-color: green;
+  color: black;
+  font-size: 30px;
+  margin: 2px 4px;
+  border: 2px solid #4CAF50;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
-#count{
+#count {
 	font-size: 12px;
 	font-size: 5vh;
 	font-size: 3vw;
 }
 
-#stop{
-    background-color: red;
-    color: black;
-    font-size: 30px;
-    margin: 2px 4px;
-    border: 2px solid #4CAF50;
-    transition-duration: 0.3s;
-    cursor: pointer;
+#stop {
+  background-color: red;
+  color: black;
+  font-size: 30px;
+  margin: 2px 4px;
+  border: 2px solid #4CAF50;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
-#start:hover{
-    background-color: green;
-    color: white;
+#start:hover {
+  background-color: green;
+  color: white;
 }
 
-#stop:hover{
-    background-color: red;
-    color: white;
+#stop:hover {
+  background-color: red;
+  color: white;
 }
 
-.button{
-    padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.button {
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
