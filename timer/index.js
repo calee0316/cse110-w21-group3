@@ -20,7 +20,7 @@ const pomo = {
   seconds: workSeconds,
   state: states[0],
   count: 0,
-  init: function() {
+  init: function () {
     this.timeDom = document.getElementById('time')
     this.stateDom = document.getElementById('state')
     this.numPomoDom = document.getElementById('count')
@@ -51,17 +51,17 @@ const pomo = {
  * Calls every second to update states and etc
  *
  */
-function update() {
+function update () {
   setInterval(() => {
     if (pomo.started) {
       if (pomo.seconds === 0) {
         if (pomo.minutes === 0) {
-          //when both seconds and minutes are 0, switch states
+          // when both seconds and minutes are 0, switch states
           if (pomo.state === states[1]) {
-            //currently work ended
-            pomo.count++;
+            // currently work ended
+            pomo.count++
             if (pomo.count % 4 === 0) {
-              //go to long rest
+              // go to long rest
               pomo.minutes = lRestMinutes
               pomo.seconds = lRestSeconds
               pomo.state = states[3]
@@ -70,7 +70,7 @@ function update() {
               pomo.seconds = restSeconds
               pomo.state = states[2]
             }
-          } else if (pomo.state === states[2] || pomo.state === states[3]){
+          } else if (pomo.state === states[2] || pomo.state === states[3]) {
             // currently rest ended
             pomo.minutes = workMinutes
             pomo.seconds = workSeconds
@@ -88,8 +88,8 @@ function update() {
   }, 1000)
 }
 
-function updateDOM() {
-  pomo.timeDom.innerHTML = doubleDigit (pomo.minutes) + ':' + doubleDigit (pomo.seconds)
+function updateDOM () {
+  pomo.timeDom.innerHTML = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.innerHTML = pomo.state
   pomo.numPomoDom.innerHTML = pomo.count + ' pomos completed'
   if (pomo.state === states[0] || pomo.state === states[1]) {
@@ -105,9 +105,9 @@ function updateDOM() {
  * @param {number} num the number to convert to double digits
  * @returns {string} num converted to double digits
  */
-function doubleDigit(num) {
+function doubleDigit (num) {
   if (num < 10) {
     return '0' + parseInt(num, 10)
   }
-  return num;
+  return num
 }
