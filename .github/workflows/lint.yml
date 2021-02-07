@@ -21,8 +21,8 @@ jobs:
         run: npm install
 
       - name: Install linters
-        run: npm install eslint --save-dev
-        
+        run: npm install --save-dev eslint-config-standard
+    
       - name: install stylelint
         run: npm install --save-dev stylelint stylelint-config-standard
       
@@ -30,7 +30,8 @@ jobs:
         run: npx eslint --init
       
       - name: Run ESLint
-        run: npx eslint ./timer
+        run: npx eslint "**/*.js"
+        
       - name: run stylelint
         run: npx stylelint "**/*.css"
 
