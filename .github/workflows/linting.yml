@@ -18,6 +18,9 @@ jobs:
           node-version: 12
 
       - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Install linters
         run: npm install eslint --save-dev
 
       - name: Run linters
