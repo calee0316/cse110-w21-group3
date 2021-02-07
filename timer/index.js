@@ -49,6 +49,10 @@ let pomo = {
 }
 
 //call this every second to update states and etc
+/**
+ * Calls every second to update states and etc
+ *
+ */
 function update() {
   setInterval(() => {
     if (pomo.started) {
@@ -99,6 +103,10 @@ function updateDOM() {
   }
 }
 
+/**
+ * @param {number} num the number to convert to double digits
+ * @returns {string} num converted to double digits
+ */
 function doubleDigit(num) {
   if (num < 10) {
     return "0" + parseInt(num, 10);
