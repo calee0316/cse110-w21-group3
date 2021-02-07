@@ -23,7 +23,7 @@ jobs:
       - name: Install linters
         run: npm install eslint --save-dev
       
-      - name: run ESLint
+      - name: ESLint
         run: npx eslint --init
 
       # - name: Install modules
@@ -31,9 +31,5 @@ jobs:
 
       # - name: Run ESLint
       #   run: eslint . --ext .js,.jsx,.ts,.tsx
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          eslint: true
+      - name: Run ESLint
+        run: npx eslint timer
