@@ -7,10 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
+    steps:      
       - name: JSDoc Action
         uses: andstor/jsdoc-action@v1.2.0
         with:
