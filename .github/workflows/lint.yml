@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Install linters
-        run: npm install --save-dev eslint-config-standard
+        run: npm install --save-dev eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
     
       - name: install stylelint
         run: npm install --save-dev stylelint stylelint-config-standard
