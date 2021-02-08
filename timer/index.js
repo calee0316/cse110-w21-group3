@@ -89,7 +89,7 @@ function update () {
 }
 
 /**
- * updates the DOM based on changes that the 
+ * updates the DOM based on changes that the
  * update() function made to the pomo object
  */
 function updateDOM () {
