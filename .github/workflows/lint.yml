@@ -30,6 +30,6 @@ jobs:
         run: npx eslint "timer/*.js"
         
       - name: run stylelint
-        run: npx stylelint "timer/*.css"
+        run: npx stylelint "timer/css/*.css"
 
 
