@@ -107,20 +107,21 @@ function updateDOM () {
  */
 function doubleDigit (num) {
   if (num < 10) {
-    return '0' + parseInt(num, 10)
+    return '0' + num
   }
-  return num
+  return num.toString()
 }
 
 
-if(typeof module!=='undefined'){
-  exports.update = update;
-  exports.pomo = pomo;
-  exports.workMinutes = workMinutes;
-  exports.workSeconds = workSeconds;
-  exports.restMinutes = restMinutes;
-  exports.restSeconds = restSeconds;
-  exports.lRestMinutes = lRestMinutes;
-  exports.lRestSeconds = lRestSeconds;
-  exports.states = states;
+if(typeof module!=='undefined') {
+  exports.update = update
+  exports.pomo = pomo
+  exports.workMinutes = workMinutes
+  exports.workSeconds = workSeconds
+  exports.restMinutes = restMinutes
+  exports.restSeconds = restSeconds
+  exports.lRestMinutes = lRestMinutes
+  exports.lRestSeconds = lRestSeconds
+  exports.states = states
+  exports.doubleDigit = doubleDigit
 }
