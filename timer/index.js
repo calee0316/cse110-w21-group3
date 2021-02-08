@@ -48,8 +48,8 @@ const pomo = {
 
 // call this every second to update states and etc
 /**
- * Calls every second to update states and etc
- *
+ * Calls every second to update states and attributes
+ * of the pomo object
  */
 function update () {
   setInterval(() => {
