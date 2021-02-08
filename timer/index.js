@@ -88,6 +88,10 @@ function update () {
   }, 1000)
 }
 
+/**
+* updates the DOM every second based on what
+* the update() function changed in the pomo object
+*/
 function updateDOM () {
   pomo.timeDom.innerHTML = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.innerHTML = pomo.state
