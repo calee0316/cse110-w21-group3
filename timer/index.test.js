@@ -8,7 +8,7 @@ test('see if state changes from work to rest, correct time set after 25 min', ()
   ' <h2 id="time">25:00</h2>'+
   ' <button class = "button1" id="start">Start</button>'+
   ' <button class = "button1" id="stop">Stop</button>'+
-  ' <h3 id="message">0 pomos completed</h3>'+
+  ' <h3 id="count">0 pomos completed</h3>'+
   '<img src="./img/1.png" id="pic">'+
   '</div>';
 
