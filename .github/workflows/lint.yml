@@ -30,9 +30,9 @@ jobs:
         run: npx eslint --init
       
       - name: Run ESLint
-        run: npx eslint "**/*.js"
+        run: npx eslint "timer/*.js"
         
       - name: run stylelint
-        run: npx stylelint "**/*.css"
+        run: npx stylelint "timer/*.css"
 
 
