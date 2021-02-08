@@ -111,3 +111,16 @@ function doubleDigit (num) {
   }
   return num
 }
+
+
+if(typeof module!=='undefined'){
+  exports.update = update;
+  exports.pomo = pomo;
+  exports.workMinutes = workMinutes;
+  exports.workSeconds = workSeconds;
+  exports.restMinutes = restMinutes;
+  exports.restSeconds = restSeconds;
+  exports.lRestMinutes = lRestMinutes;
+  exports.lRestSeconds = lRestSeconds;
+  exports.states = states;
+}
