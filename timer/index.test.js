@@ -1,6 +1,6 @@
 const { update, pomo, states, doubleDigit } = require('./index')
 
-test('test for update function, see if state changes from work to rest, correct time set after 25 min', ()=> {
+test('test for update function, see if state changes from work to rest, correct time set after 25 min', () => {
   document.body.innerHTML =
   '<div>' +
   ' <h2 id = "state">Click Start To Begin</h2>' +
@@ -26,7 +26,6 @@ test('test for update function, see if state changes from work to rest, correct 
 test('convert single digit to double digit', () => {
   expect(doubleDigit(1)).toBe('01')
 })
-
 
 test('convert double digit to double digit', () => {
   expect(doubleDigit(12)).toBe('12')
