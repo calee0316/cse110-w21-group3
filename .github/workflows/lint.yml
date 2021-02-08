@@ -17,10 +17,7 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install Node.js dependencies
-        run: npm install
-
-      - name: Install linters
+      - name: Install ESLint
         run: npm install --save-dev eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
     
       - name: install stylelint
