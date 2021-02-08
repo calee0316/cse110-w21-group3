@@ -112,8 +112,7 @@ function doubleDigit (num) {
   return num.toString()
 }
 
-
-if(typeof module!=='undefined') {
+if (typeof module !== 'undefined') {
   exports.update = update
   exports.pomo = pomo
   exports.workMinutes = workMinutes
