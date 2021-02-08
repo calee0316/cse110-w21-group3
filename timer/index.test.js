@@ -1,7 +1,7 @@
 const {update, pomo, workMinutes,workSeconds,restMinutes,restSeconds,lRestMinutes,lRestSeconds,states, doubleDigit}= require('./index')
 
 
-test('see if state changes from work to rest, correct time set after 25 min', ()=>{
+test('test for update function, see if state changes from work to rest, correct time set after 25 min', ()=>{
   document.body.innerHTML =
   '<div>'+
   ' <h2 id = "state">Click Start To Begin</h2>'+
