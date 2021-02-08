@@ -2,15 +2,13 @@
 
 ## Process to make code changes:
 ### Manually do the following:
-- change what you want with the code locally.
-- create a new branch on GitHub called dev
-- push your changes to the dev branch
-- create a pull request from dev to main
-### The yml files will automatically run tests
-- wait for the tests to finish, make sure there are no errors
+- Create a branch feat/<feat-name>  (for feature) or fix/<fix-name> (for fix).
+- Do the development locally (on this new branch) as you would.
+- Keep committing and pushing to this branch.
+- Once feature is complete or bug fix is done, create a PR to main branch.
+### The github action (test.yml) will automatically run tests (wait for test to pass) lint.yml will check styling and doc.yml will generate documentation
 ### Manually:
 - Click merge in the pull request
-- if the merge is successful, delete the dev branch that you had created.
-- the delete is to ensure we do not have older copies lying around as a merge conflict risk.
+- You might want to have a code review (the reviewer does the merge finally)
 
 #### Repeat this process to make any edits moving forward
