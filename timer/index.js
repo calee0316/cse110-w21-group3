@@ -91,6 +91,7 @@ function update () {
 /**
  * updates the DOM based on changes that the
  * update() function made to the pomo object
+ * changes will be reflected on the browser page
  */
 function updateDOM () {
   pomo.timeDom.innerHTML = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
