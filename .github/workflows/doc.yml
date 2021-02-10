@@ -19,7 +19,7 @@ jobs:
       - name: Install JSDocs
         run: npm install -g jsdoc
       - name: run JSDoc
-        run: jsdoc ./timer/index.js -d ./source
+        run: jsdoc ./timer/index.js -d ./docs
       - name: add files
         run: git add .
       - name: Commit files
