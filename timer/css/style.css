@@ -79,7 +79,7 @@ body {
   height: auto;
 }
 
-#start {
+#button {
   background-color: green;
   color: black;
   font-size: 30px;
@@ -95,25 +95,13 @@ body {
   font-size: 3vw;
 }
 
-#stop {
-  background-color: red;
-  color: black;
-  font-size: 30px;
-  margin: 2px 4px;
-  border: 2px solid #4caf50;
-  transition-duration: 0.3s;
-  cursor: pointer;
-}
+=
 
-#start:hover {
+#button:hover {
   background-color: green;
   color: white;
 }
 
-#stop:hover {
-  background-color: red;
-  color: white;
-}
 
 .button {
   padding: 0;
