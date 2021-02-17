@@ -62,6 +62,7 @@ document.getElementById("language-picker-select").onchange = function () {
   } else if (document.getElementById("language-picker-select").value === 'english') {
     statesArray = states.def
     buttonsArray = buttons.def
+    document.getElementById('about').textContent = 'About us'
     document.getElementById('lang_label').textContent = 'Language: '
     pomoCompleted = ' pomos completed'
   }

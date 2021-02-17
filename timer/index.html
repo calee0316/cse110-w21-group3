@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Internet Bowser's Pomodoro Timer</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
+<html lang="en">
 
-      <div class="language-picker js-language-picker">
-        <form action="" class="language-picker__form">
-          <label id = 'lang_label' for="language-picker-select">Language: </label>
-      
-          <select name="language-picker-select" id="language-picker-select">
-            <option lang="en" value="english" selected>English</option>
-            <option lang="ch" value="chinese">中文</option>
-            <option lang="kr" value="korean">한국어</option>
-            <option lang="jp" value="japanese">日本語</option>
-            <!-- other language options -->
-          </select>
-        </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internet Bowser's Pomodoro Timer</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="language-picker js-language-picker">
+    <form action="" class="language-picker__form">
+      <label id='lang_label' for="language-picker-select">Language: </label>
+
+      <select name="language-picker-select" id="language-picker-select">
+        <option lang="en" value="english" selected>English</option>
+        <option lang="ch" value="chinese">中文</option>
+        <option lang="kr" value="korean">한국어</option>
+        <option lang="jp" value="japanese">日本語</option>
+        <!-- other language options -->
+      </select>
+    </form>
+  </div>
+
+  <div class="grid-container pomoWebsite">
+    <!-- row 1 -->
+    <div class="filler"></div>
+
+    <div class="state">
+      <h2 id="state">Click Start To Begin</h2>
+    </div>
+
+    <div class="info">
+      <a class="link" href="https://github.com/calee0316/cse110-w21-group3/wiki" id='about'>About us</a>
+    </div>
+
+
+    <!-- row 2 -->
+    <div class="filler"></div>
+
+
+    <div class="timer">
+      <img src="./img/1.png" id="pic">
+      <h2 id="time">25:00</h2>
+      <div class="button">
+        <button class="button1" id="button">Start</button>
       </div>
 
-        <div class="grid-container pomoWebsite">
-        	<!-- row 1 -->
-            <div class="filler"></div>
+    </div>
 
-            <div class="state">
-              <h2 id = "state">Click Start To Begin</h2>
-            </div>
+    <div class="complete">
+      <h3 id="count">0 pomos completed</h3>
+    </div>
 
-            <div class="info">
-              <a class="link" href="https://github.com/calee0316/cse110-w21-group3/wiki" id = 'about'>About us</a>
-            </div>
-
-
-            <!-- row 2 -->
-            <div class="filler"></div>
-
-
-            <div class="timer">
-                <img src="./img/1.png" id="pic">
-                <h2 id="time">25:00</h2>
-                <div class="button">
-                	<button class = "button1" id="button">Start</button>
-            	</div>
-
-            </div>
-
-            <div class="complete">
-              <h3 id="count">0 pomos completed</h3>
-            </div>
-
-        </div>
-    </body>
-    <script src="index.js"></script>
+  </div>
+</body>
+<script src="index.js"></script>
 
 </html>
