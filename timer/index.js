@@ -123,7 +123,7 @@ function update() {
         setProgress(perc)
       }
     }
-    if (!pomo.test) updateDOM()
+    updateDOM()
   }, 1000)
 }
 
