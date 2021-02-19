@@ -1,21 +1,11 @@
-let {
-  update,
-  updateDOM,
-  pomo,
-  statesArray,
-  workMinutes,
-  workSeconds,
-  doubleDigit
-} = require('./index')
+let {pomo, update, updateDOM, setProgress, initDOM,workMinutes, workSeconds, doubleDigit, statesArray} = require('./index')
 
-// updateDOM = jest.fn()
-jest.mock('./index', () => ({ updateDOM: jest.fn()}))
-// pomo.setProgress = jest.fn()
 window.HTMLMediaElement.prototype.play = () => {
   /* do nothing */
 };
 
 beforeEach(() => {
+  pomo.test = true;
   pomo.started = true
   pomo.state = statesArray[1]
   pomo.minutes = workMinutes
