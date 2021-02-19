@@ -69,7 +69,7 @@ function update() {
   setInterval(() => {
     let minutes = workMinutes
     let seconds = workSeconds
-    switch(pomo.state){
+    switch (pomo.state) {
       case statesArray[2]:
         minutes = restMinutes
         seconds = restSeconds
@@ -110,27 +110,29 @@ function update() {
             audio = powerDown
             audio.play()
           }
-          if(!pomo.test) setProgress(0)
+          setProgress(0)
         } else {
           pomo.seconds = 59
           pomo.minutes--
-          let perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds))*100)
-          if(!pomo.test) setProgress(perc)
+          let perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds)) * 100)
+          setProgress(perc)
         }
       } else {
         pomo.seconds--
-        let perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds))*100)
-        if(!pomo.test) setProgress(perc)
+        let perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds)) * 100)
+        setProgress(perc)
       }
     }
-    if(!pomo.test) updateDOM()
+    if (!pomo.test) updateDOM()
   }, 1000)
 }
 
 
 function setProgress(percent) {
-  const offset = pomo.circumference - (percent / 100) * pomo.circumference;
-  pomo.circle.style.strokeDashoffset = offset;
+  if (!pomo.test) {
+    const offset = pomo.circumference - (percent / 100) * pomo.circumference;
+    pomo.circle.style.strokeDashoffset = offset;
+  }
 }
 
 /**
@@ -139,16 +141,17 @@ function setProgress(percent) {
  * changes will be reflected on the browser page
  */
 function updateDOM() {
-  console.log('here')
-  pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
-  pomo.stateDom.textContent = pomo.state
-  pomo.numPomoDom.textContent = pomo.count
-  if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-    pomo.picDom.href.baseVal = './img/1.png'
-  } else if (pomo.state === statesArray[2]) {
-    pomo.picDom.href.baseVal = './img/2.png'
-  } else if (pomo.state === statesArray[3]) {
-    pomo.picDom.href.baseVal = './img/3.png'
+  if (!pomo.test) {
+    pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
+    pomo.stateDom.textContent = pomo.state
+    pomo.numPomoDom.textContent = pomo.count
+    if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
+      pomo.picDom.href.baseVal = './img/1.png'
+    } else if (pomo.state === statesArray[2]) {
+      pomo.picDom.href.baseVal = './img/2.png'
+    } else if (pomo.state === statesArray[3]) {
+      pomo.picDom.href.baseVal = './img/3.png'
+    }
   }
 }
 
