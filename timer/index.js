@@ -1,15 +1,3 @@
-const circle = document.querySelector('.progress-ring__circle')
-const radius = circle.r.baseVal.value;
-const circumference = radius * 2 * Math.PI;
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = `${circumference}`;
-
-function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
-}
-
 window.onload = () => {
   pomo.init()
 }
@@ -51,41 +39,6 @@ const gameOver = new Audio('./audio/gameover.wav')
 const oneUp = new Audio('./audio/1up.wav')
 const oof = new Audio('./audio/oof.wav')
 let audio = coin
-document.getElementById("language-picker-select").onchange = function() {
-  if (document.getElementById("language-picker-select").value === 'chinese') {
-    statesArray = states.CH
-    buttonsArray = buttons.CH
-    document.getElementById('about').textContent = '关于我们'
-    document.getElementById('lang_label').textContent = '语言：'
-    pomoCompleted = ' 帕玛多拉 完成'
-  } else if (document.getElementById("language-picker-select").value === 'korean') {
-    statesArray = states.KR
-    buttonsArray = buttons.KR
-    document.getElementById('about').textContent = '팀 소개'
-    document.getElementById('lang_label').textContent = '언어: '
-    pomoCompleted = ' 완료된 포모'
-  } else if (document.getElementById("language-picker-select").value === 'japanese') {
-    statesArray = states.JP
-    buttonsArray = buttons.JP
-    document.getElementById('about').textContent = 'わたしたち'
-    document.getElementById('lang_label').textContent = '言語: '
-    pomoCompleted = ' ポモス 完成'
-  } else if (document.getElementById("language-picker-select").value === 'english') {
-    statesArray = states.def
-    buttonsArray = buttons.def
-    document.getElementById('about').textContent = 'About us'
-    document.getElementById('lang_label').textContent = 'Language: '
-    pomoCompleted = ' pomos completed'
-  }
-  document.getElementById('button').textContent = buttonsArray[0]
-  document.getElementById('message').textContent = pomoCompleted
-  pomo.state = statesArray[0]
-  pomo.started = false
-  pomo.minutes = workMinutes
-  pomo.seconds = workSeconds
-  pomo.count = 0;
-  updateDOM()
-}
 
 const pomo = {
   started: false,
@@ -97,11 +50,21 @@ const pomo = {
   seconds: workSeconds,
   state: statesArray[0],
   count: 0,
+  circle: null,
+  radius: null,
+  circumference: null,
   init: function() {
     this.timeDom = document.getElementById('time')
     this.stateDom = document.getElementById('state')
     this.numPomoDom = document.getElementById('count')
     this.picDom = document.getElementById('pic')
+    this.circle = document.querySelector('.progress-ring__circle')
+    this.radius = this.circle.r.baseVal.value;
+    this.circumference = this.radius * 2 * Math.PI;
+
+    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
+    this.circle.style.strokeDashoffset = `${this.circumference}`;
+
     update()
     document.getElementById('button').addEventListener('click', () => {
       if (!pomo.started) {
@@ -123,10 +86,53 @@ const pomo = {
         document.getElementById('button').style.backgroundColor = '#f6b432'
         audio = gameOver
         audio.play()
-        setProgress(0)
-
+        pomo.setProgress(0)
       }
     })
+
+    document.getElementById("language-picker-select").onchange = function() {
+      if (document.getElementById("language-picker-select").value === 'chinese') {
+        statesArray = states.CH
+        buttonsArray = buttons.CH
+        document.getElementById('about').textContent = '关于我们'
+        document.getElementById('lang_label').textContent = '语言：'
+        pomoCompleted = ' 帕玛多拉 完成'
+      } else if (document.getElementById("language-picker-select").value === 'korean') {
+        statesArray = states.KR
+        buttonsArray = buttons.KR
+        document.getElementById('about').textContent = '팀 소개'
+        document.getElementById('lang_label').textContent = '언어: '
+        pomoCompleted = ' 완료된 포모'
+      } else if (document.getElementById("language-picker-select").value === 'japanese') {
+        statesArray = states.JP
+        buttonsArray = buttons.JP
+        document.getElementById('about').textContent = 'わたしたち'
+        document.getElementById('lang_label').textContent = '言語: '
+        pomoCompleted = ' ポモス 完成'
+      } else if (document.getElementById("language-picker-select").value === 'english') {
+        statesArray = states.def
+        buttonsArray = buttons.def
+        document.getElementById('about').textContent = 'About us'
+        document.getElementById('lang_label').textContent = 'Language: '
+        pomoCompleted = ' pomos completed'
+      }
+      document.getElementById('button').textContent = buttonsArray[0]
+      document.getElementById('message').textContent = pomoCompleted
+      pomo.state = statesArray[0]
+      pomo.started = false
+      pomo.minutes = workMinutes
+      pomo.seconds = workSeconds
+      pomo.count = 0;
+      updateDOM()
+      pomo.setProgress(0)
+      if(document.getElementById('button').style.backgroundColor == 'red'){
+        document.getElementById('button').style.backgroundColor = '#f6b432'
+      }
+    }
+  },
+  setProgress: function(percent) {
+    const offset = pomo.circumference - (percent / 100) * pomo.circumference;
+    pomo.circle.style.strokeDashoffset = offset;
   }
 }
 
@@ -151,14 +157,14 @@ function update() {
               pomo.state = statesArray[3]
               audio = stageClear
               audio.play()
-              setProgress(0)
+              pomo.setProgress(0)
             } else {
               pomo.minutes = restMinutes
               pomo.seconds = restSeconds
               pomo.state = statesArray[2]
               audio = oneUp
               audio.play()
-              setProgress(0)
+              pomo.setProgress(0)
             }
           } else if (pomo.state === statesArray[2] || pomo.state === statesArray[3]) {
             // currently rest ended
@@ -167,18 +173,18 @@ function update() {
             pomo.state = statesArray[1]
             audio = powerDown
             audio.play()
-            setProgress(0)
+            pomo.setProgress(0)
           }
         } else {
           pomo.seconds = 59
           pomo.minutes--
           let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
-          setProgress(perc)
+          pomo.setProgress(perc)
         }
       } else {
         pomo.seconds--
         let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
-        setProgress(perc)
+        pomo.setProgress(perc)
       }
     }
     updateDOM()
@@ -216,6 +222,7 @@ function doubleDigit(num) {
 
 if (typeof module !== 'undefined') {
   exports.update = update
+  exports.updateDOM = updateDOM
   exports.pomo = pomo
   exports.workMinutes = workMinutes
   exports.workSeconds = workSeconds
@@ -223,6 +230,6 @@ if (typeof module !== 'undefined') {
   exports.restSeconds = restSeconds
   exports.lRestMinutes = lRestMinutes
   exports.lRestSeconds = lRestSeconds
-  exports.states = states
+  exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
 }

@@ -1,46 +1,30 @@
-const {
+let {
   update,
+  updateDOM,
   pomo,
   statesArray,
   workMinutes,
   workSeconds,
-  doubleDigit,
-  audio
+  doubleDigit
 } = require('./index')
 
+// updateDOM = jest.fn()
+jest.mock('./index', () => ({ updateDOM: jest.fn()}))
+// pomo.setProgress = jest.fn()
 window.HTMLMediaElement.prototype.play = () => {
   /* do nothing */
 };
-document.body.innerHTML =
-  '<div>' +
-  '<select name="language-picker-select" id="language-picker-select">' +
-  '</select>' +
-  '<div class="state">' +
-  '<h2 id="state">Click Start To Begin</h2>' +
-  '</div>' +
-  '<div class="complete">' +
-  '<h3 id="count">0 pomos completed</h3>' +
-  '</div>' +
-  '<div class="timer">' +
-  '<img src="./img/1.png" id="pic">' +
-  '<h2 id="time">25:00</h2>' +
-  '<div class="button">' +
-  '<button class="button1" id="button">Start</button>' +
-  '</div>' +
-  '</div>' +
-  '</div>'
-pomo.init()
 
-jest.useFakeTimers()
-update()
-
-beforeEach(()=>{
+beforeEach(() => {
   pomo.started = true
   pomo.state = statesArray[1]
   pomo.minutes = workMinutes
   pomo.seconds = workSeconds
   pomo.count = 0
 })
+
+jest.useFakeTimers()
+update()
 
 test('test for update function, see if state changes from work to rest, correct time set after 25 min', () => {
   //25 minutes
