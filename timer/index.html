@@ -6,56 +6,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Internet Bowser's Pomodoro Timer</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+  <img src="img/bg.jpg" alt="" id="bg">
 
-  <div class="language-picker js-language-picker">
-    <form action="" class="language-picker__form">
-      <label id='lang_label' for="language-picker-select">Language: </label>
-
-      <select name="language-picker-select" id="language-picker-select">
-        <option lang="en" value="english" selected>English</option>
-        <option lang="ch" value="chinese">中文</option>
-        <option lang="kr" value="korean">한국어</option>
-        <option lang="jp" value="japanese">日本語</option>
-        <!-- other language options -->
-      </select>
-    </form>
+  <div class='flex-box'>
+    <img src="./img/bullet.png" class="bullet" alt="">
+    <h1 id='state'>Click Start to Begin</h1>
+    <img src="./img/bullet.png" class="bullet" alt="">
+    <div class='filler'></div>
+    <div class='complete'>
+      <h2 id='message'>SUCCESSFUL POMOS </h2>
+      <img class = 'star'src="./img/star.png" alt="">
+      <h2 id='x'>x</h2>
+      <h2 id='count'>0</h2>
+    </div>
   </div>
 
-  <div class="grid-container pomoWebsite">
+  <div class="grid-container">
+
     <!-- row 1 -->
-    <div class="filler"></div>
+    <!-- column 1 -->
+    <div class="grid-item">
 
-    <div class="state">
-      <h2 id="state">Click Start To Begin</h2>
+    </div>
+    <!-- column 2 -->
+    <div class="grid-item">
+      <figure class="timer">
+        <svg class="progress-ring">
+          <circle class="backCircle" stroke-width="35" fill="transparent" r="17vw" cx="20vw" cy="20vw" />
+          <circle class="progress-ring__circle" stroke="black" stroke-width="20" fill="transparent" r="17vw" cx="20vw" cy="20vw" />
+          <image href="./img/1.png" id="pic" y="15%" x="31%"></image>
+          <text x='50%' , y='70%' dominant-baseline='middle' text-anchor='middle' id='time'>25:00</text>
+        </svg>
+      </figure>
     </div>
 
-    <div class="info">
-      <a class="link" href="https://github.com/calee0316/cse110-w21-group3/wiki" id='about'>About us</a>
+    <!-- column 3 -->
+    <div class="grid-item">
     </div>
-
 
     <!-- row 2 -->
-    <div class="filler"></div>
+    <!-- column 1 -->
+    <div class="grid-item">
+      <div class="language-picker js-language-picker">
+        <form action="" class="language-picker__form">
+          <label id='lang_label' for="language-picker-select">Language: </label>
 
-
-    <div class="timer">
-      <img src="./img/1.png" id="pic">
-      <h2 id="time">25:00</h2>
+          <select name="language-picker-select" id="language-picker-select">
+            <option lang="en" value="english" selected>English</option>
+            <option lang="ch" value="chinese">中文</option>
+            <option lang="kr" value="korean">한국어</option>
+            <option lang="jp" value="japanese">日本語</option>
+          </select>
+        </form>
+      </div>
+      <img class='pipe' src="./img/pipe.png" alt="">
+    </div>
+    <!-- column 2 -->
+    <div class="grid-item">
       <div class="button">
         <button class="button1" id="button">Start</button>
       </div>
-
     </div>
 
-    <div class="complete">
-      <h3 id="count">0 pomos completed</h3>
+    <!-- column 3 -->
+    <div class="grid-item">
+      <a id='about' href="https://github.com/calee0316/cse110-w21-group3/wiki">About Us</a>
+      <img class='pipe' id='pipe2' src="./img/pipe.png" alt="">
     </div>
+
+
 
   </div>
+
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
+
 
 </html>

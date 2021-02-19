@@ -1,17 +1,29 @@
+const circle = document.querySelector('.progress-ring__circle')
+const radius = circle.r.baseVal.value;
+const circumference = radius * 2 * Math.PI;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = `${circumference}`;
+
+function setProgress(percent) {
+  const offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
 window.onload = () => {
   pomo.init()
 }
 
-const workMinutes = 0
-const workSeconds = 5
-const restMinutes = 0
-const restSeconds = 5
-const lRestMinutes = 0
-const lRestSeconds = 5
+const workMinutes = 25
+const workSeconds = 0
+const restMinutes = 5
+const restSeconds = 0
+const lRestMinutes = 15
+const lRestSeconds = 0
 const statesDefault = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest']
 const buttonsDefault = ['Start', 'Stop']
 const statesChinese = ['点击开始', '进行中', '短休', '长休']
-const statesKorean = ['시작을 누르세요', '일', '휴식', '긴 휴식']
+const statesKorean = ['시작을 누르세요', '작업', '휴식', '긴 휴식']
 const statesJapanese = ['クリックして開始', '作業中', '短い休憩', '長い休憩']
 const buttonsChinese = ['开始', '结束']
 const buttonsKorean = ['시작', '정지']
@@ -30,7 +42,6 @@ const buttons = {
   KR: buttonsKorean,
   JP: buttonsJapanese
 }
-let pomoCompleted = ' pomos completed'
 let statesArray = states.def
 let buttonsArray = buttons.def
 const powerDown = new Audio('./audio/powerdown.wav')
@@ -40,7 +51,7 @@ const gameOver = new Audio('./audio/gameover.wav')
 const oneUp = new Audio('./audio/1up.wav')
 const oof = new Audio('./audio/oof.wav')
 let audio = coin
-document.getElementById("language-picker-select").onchange = function () {
+document.getElementById("language-picker-select").onchange = function() {
   if (document.getElementById("language-picker-select").value === 'chinese') {
     statesArray = states.CH
     buttonsArray = buttons.CH
@@ -67,6 +78,7 @@ document.getElementById("language-picker-select").onchange = function () {
     pomoCompleted = ' pomos completed'
   }
   document.getElementById('button').textContent = buttonsArray[0]
+  document.getElementById('message').textContent = pomoCompleted
   pomo.state = statesArray[0]
   pomo.started = false
   pomo.minutes = workMinutes
@@ -85,7 +97,7 @@ const pomo = {
   seconds: workSeconds,
   state: statesArray[0],
   count: 0,
-  init: function () {
+  init: function() {
     this.timeDom = document.getElementById('time')
     this.stateDom = document.getElementById('state')
     this.numPomoDom = document.getElementById('count')
@@ -98,6 +110,7 @@ const pomo = {
         pomo.seconds = workSeconds
         pomo.started = true
         document.getElementById('button').textContent = buttonsArray[1]
+        document.getElementById('button').style.backgroundColor = 'red'
         audio = oof
         audio.play()
       } else {
@@ -107,8 +120,11 @@ const pomo = {
         pomo.state = statesArray[0]
         pomo.count = 0
         document.getElementById('button').textContent = buttonsArray[0]
+        document.getElementById('button').style.backgroundColor = '#f6b432'
         audio = gameOver
         audio.play()
+        setProgress(0)
+
       }
     })
   }
@@ -135,12 +151,14 @@ function update() {
               pomo.state = statesArray[3]
               audio = stageClear
               audio.play()
+              setProgress(0)
             } else {
               pomo.minutes = restMinutes
               pomo.seconds = restSeconds
               pomo.state = statesArray[2]
               audio = oneUp
               audio.play()
+              setProgress(0)
             }
           } else if (pomo.state === statesArray[2] || pomo.state === statesArray[3]) {
             // currently rest ended
@@ -149,13 +167,18 @@ function update() {
             pomo.state = statesArray[1]
             audio = powerDown
             audio.play()
+            setProgress(0)
           }
         } else {
           pomo.seconds = 59
           pomo.minutes--
+          let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
+          setProgress(perc)
         }
       } else {
         pomo.seconds--
+        let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
+        setProgress(perc)
       }
     }
     updateDOM()
@@ -170,13 +193,13 @@ function update() {
 function updateDOM() {
   pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.textContent = pomo.state
-  pomo.numPomoDom.textContent = pomo.count + pomoCompleted
+  pomo.numPomoDom.textContent = pomo.count
   if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-    pomo.picDom.src = './img/1.png'
+    pomo.picDom.href.baseVal = './img/1.png'
   } else if (pomo.state === statesArray[2]) {
-    pomo.picDom.src = './img/2.png'
+    pomo.picDom.href.baseVal = './img/2.png'
   } else if (pomo.state === statesArray[3]) {
-    pomo.picDom.src = './img/3.png'
+    pomo.picDom.href.baseVal = './img/3.png'
   }
 }
 
