@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/calee0316/cse110-w21-group3#readme",
   "dependencies": {
-    "jest": "^26.6.3",
     "prettier": "^2.2.1"
   },
   "devDependencies": {
-    "eslint": "^7.19.0"
+    "eslint": "^7.19.0",
+    "jest": "^26.6.3"
   }
 }
