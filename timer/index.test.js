@@ -65,6 +65,13 @@ test('test for update function, see if state changes from long rest to work, cor
   expect(pomo.state).toBe(statesArray[1])
 })
 
+// //updateDOM() time
+// test('check if the updateDom() runs correct amount of time',()=>{
+//   const thing = jest.fn()
+//   jest.advanceTimersByTime(3000)
+//   expect(thing).toHaveBeenCalledTimes(3)
+// })
+
 test('convert single digit to double digit', () => {
   expect(doubleDigit(1)).toBe('01')
 })
