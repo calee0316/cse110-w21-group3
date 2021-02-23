@@ -152,7 +152,6 @@ function update(updateDOM) {
 
 //DOM related stuff
 
-
 window.onload = () => {
   pomo.init(initDOM, updateDOM)
 }
@@ -246,9 +245,6 @@ function initDOM() {
     updateDOM(setProgress)
   }
 }
-
-
-
 
 /**
  * @param {number} num the number to convert to double digits

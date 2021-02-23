@@ -1,5 +1,6 @@
 const fs = require("fs");
-window.document.body.innerHTML = fs.readFileSync('./timer/index.html')
+const html = fs.readFileSync('./timer/index.html')
+window.document.body.innerHTML = html
 let {
   pomo,
   update,
