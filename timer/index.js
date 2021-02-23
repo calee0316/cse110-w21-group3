@@ -5,7 +5,7 @@ const restSeconds = 0
 const lRestMinutes = 15
 const lRestSeconds = 0
 const statesDefault = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest']
-const buttonsDefault = ['Start', 'Stop']
+const buttonsDefault = ['START', 'STOP']
 const statesChinese = ['点击开始', '进行中', '短休', '长休']
 const statesKorean = ['시작을 누르세요', '작업', '휴식', '긴 휴식']
 const statesJapanese = ['クリックして開始', '作業中', '短い休憩', '長い休憩']
@@ -145,15 +145,20 @@ function updateDOM(setProgress) {
     pomo.stateDom.textContent = pomo.state
     pomo.numPomoDom.textContent = pomo.count
     if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-      pomo.picDom.href.baseVal = './img/1.png'
+      pomo.picDom.href = './img/1.png'
     } else if (pomo.state === statesArray[2]) {
-      pomo.picDom.href.baseVal = './img/2.png'
+      pomo.picDom.href = './img/2.png'
     } else if (pomo.state === statesArray[3]) {
-      pomo.picDom.href.baseVal = './img/3.png'
+      pomo.picDom.href = './img/3.png'
     }
 }
 
 function setProgress(percent) {
+  pomo.circle = document.querySelector('.progress-ring__circle')
+  pomo.radius = pomo.circle.r.baseVal.value;
+  pomo.circumference = pomo.radius * 2 * Math.PI;
+  pomo.circle.style.strokeDasharray = `${pomo.circumference} ${pomo.circumference}`;
+  pomo.circle.style.strokeDashoffset = `${pomo.circumference}`;
   const offset = pomo.circumference - (percent / 100) * pomo.circumference;
   pomo.circle.style.strokeDashoffset = offset;
 }
@@ -163,11 +168,6 @@ function initDOM() {
   pomo.stateDom = document.getElementById('state')
   pomo.numPomoDom = document.getElementById('count')
   pomo.picDom = document.getElementById('pic')
-  pomo.circle = document.querySelector('.progress-ring__circle')
-  pomo.radius = pomo.circle.r.baseVal.value;
-  pomo.circumference = pomo.radius * 2 * Math.PI;
-  pomo.circle.style.strokeDasharray = `${pomo.circumference} ${pomo.circumference}`;
-  pomo.circle.style.strokeDashoffset = `${pomo.circumference}`;
 
   document.getElementById('button').addEventListener('click', () => {
     if (!pomo.started) {
@@ -212,7 +212,7 @@ function initDOM() {
     } else if (document.getElementById("language-picker-select").value === 'english') {
       statesArray = states.def
       buttonsArray = buttons.def
-      document.getElementById('about').textContent = 'About us'
+      document.getElementById('about').textContent = 'ABOUT US'
       document.getElementById('lang_label').textContent = 'Language: '
       pomoCompleted = 'SUCCESSFUL POMOS'
     }
@@ -240,6 +240,9 @@ function doubleDigit(num) {
 if (typeof module !== 'undefined') {
   exports.update = update
   exports.pomo = pomo
+  exports.initDOM = initDOM
+  exports.setProgress = setProgress
+  exports.updateDOM = updateDOM
   exports.workMinutes = workMinutes
   exports.workSeconds = workSeconds
   exports.restMinutes = restMinutes
