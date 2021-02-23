@@ -123,7 +123,7 @@ function update(updateDOM) {
       pomo.count = 0
       pomo.state = statesArray[0]
     }
-    updateDOM()
+    updateDOM(setProgress)
   }, 1000)
 }
 
@@ -139,7 +139,7 @@ window.onload = () => {
  * update() function made to the pomo object
  * changes will be reflected on the browser page
  */
-function updateDOM() {
+function updateDOM(setProgress) {
     setProgress(pomo.perc)
     pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
     pomo.stateDom.textContent = pomo.state
@@ -180,11 +180,7 @@ function initDOM() {
       audio = oof
       audio.play()
     } else {
-      // pomo.minutes = workMinutes
-      // pomo.seconds = workSeconds
       pomo.started = false
-      // pomo.state = statesArray[0]
-      // pomo.count = 0
       document.getElementById('button').textContent = buttonsArray[0]
       document.getElementById('button').style.backgroundColor = '#f6b432'
       audio = gameOver
@@ -193,43 +189,37 @@ function initDOM() {
   })
 
   document.getElementById("language-picker-select").onchange = function() {
+    const index = statesArray.indexOf(pomo.state)
+    const btnIndex = buttonsArray.indexOf(document.getElementById('button').textContent)
     if (document.getElementById("language-picker-select").value === 'chinese') {
       statesArray = states.CH
       buttonsArray = buttons.CH
       document.getElementById('about').textContent = '关于我们'
-      document.getElementById('lang_label').textContent = '语言：'
-      pomoCompleted = ' 帕玛多拉 完成'
+      document.getElementById('lang_label').textContent = '语言： '
+      pomoCompleted = '帕玛多拉 完成'
     } else if (document.getElementById("language-picker-select").value === 'korean') {
       statesArray = states.KR
       buttonsArray = buttons.KR
       document.getElementById('about').textContent = '팀 소개'
       document.getElementById('lang_label').textContent = '언어: '
-      pomoCompleted = ' 완료된 포모'
+      pomoCompleted = '완료된 포모'
     } else if (document.getElementById("language-picker-select").value === 'japanese') {
       statesArray = states.JP
       buttonsArray = buttons.JP
       document.getElementById('about').textContent = 'わたしたち'
       document.getElementById('lang_label').textContent = '言語: '
-      pomoCompleted = ' ポモス 完成'
+      pomoCompleted = 'ポモス 完成'
     } else if (document.getElementById("language-picker-select").value === 'english') {
       statesArray = states.def
       buttonsArray = buttons.def
       document.getElementById('about').textContent = 'About us'
       document.getElementById('lang_label').textContent = 'Language: '
-      pomoCompleted = ' pomos completed'
+      pomoCompleted = 'SUCCESSFUL POMOS'
     }
-    document.getElementById('button').textContent = buttonsArray[0]
+    document.getElementById('button').textContent = buttonsArray[btnIndex]
     document.getElementById('message').textContent = pomoCompleted
-    pomo.state = statesArray[0]
-    pomo.started = false
-    pomo.minutes = workMinutes
-    pomo.seconds = workSeconds
-    pomo.count = 0;
-    pomo.perc = 0
-    updateDOM()
-    if (document.getElementById('button').style.backgroundColor == 'red') {
-      document.getElementById('button').style.backgroundColor = '#f6b432'
-    }
+    pomo.state = statesArray[index]
+    updateDOM(setProgress)
   }
 }
 
