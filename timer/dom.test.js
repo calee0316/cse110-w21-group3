@@ -1,6 +1,5 @@
 const fs = require("fs");
 window.document.body.innerHTML = fs.readFileSync('./timer/index.html')
-
 let {
   pomo,
   update,
@@ -13,15 +12,13 @@ let {
   doubleDigit,
   statesArray,
   initDOM,
-  updateDOM
+  updateDOM,
+  setProgress
 } = require('./index')
-
-const setProgress = jest.fn()
 
 window.HTMLMediaElement.prototype.play = () => {
   /* do nothing */
 };
-
 
 let time = window.document.getElementById('time')
 let count = window.document.getElementById('count')
@@ -30,7 +27,6 @@ let about = window.document.getElementById('about')
 let message = window.document.getElementById('message')
 let state = window.document.getElementById('state')
 let lang = window.document.getElementById('lang_label')
-
 
 beforeEach(() => {
   pomo.started = true
@@ -53,7 +49,8 @@ test('updateDOM', () => {
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/2.png')
+  expect(pic.src).toBe('http://localhost/img/2.png')
+
 })
 
 test('updateDOM2', () => {
@@ -68,7 +65,7 @@ test('updateDOM2', () => {
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/1.png')
+  expect(pic.src).toBe('http://localhost/img/1.png')
 })
 
 test('updateDOM3', () => {
@@ -83,5 +80,5 @@ test('updateDOM3', () => {
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/3.png')
+  expect(pic.src).toBe('http://localhost/img/3.png')
 })
