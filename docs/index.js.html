@@ -26,23 +26,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const circle = document.querySelector('.progress-ring__circle')
-const radius = circle.r.baseVal.value;
-const circumference = radius * 2 * Math.PI;
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = `${circumference}`;
-
-function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
-}
-
-window.onload = () => {
-  pomo.init()
-}
-
-const workMinutes = 25
+            <pre class="prettyprint source linenums"><code>const workMinutes = 25
 const workSeconds = 0
 const restMinutes = 5
 const restSeconds = 0
@@ -79,41 +63,6 @@ const gameOver = new Audio('./audio/gameover.wav')
 const oneUp = new Audio('./audio/1up.wav')
 const oof = new Audio('./audio/oof.wav')
 let audio = coin
-document.getElementById("language-picker-select").onchange = function() {
-  if (document.getElementById("language-picker-select").value === 'chinese') {
-    statesArray = states.CH
-    buttonsArray = buttons.CH
-    document.getElementById('about').textContent = '关于我们'
-    document.getElementById('lang_label').textContent = '语言：'
-    pomoCompleted = ' 帕玛多拉 完成'
-  } else if (document.getElementById("language-picker-select").value === 'korean') {
-    statesArray = states.KR
-    buttonsArray = buttons.KR
-    document.getElementById('about').textContent = '팀 소개'
-    document.getElementById('lang_label').textContent = '언어: '
-    pomoCompleted = ' 완료된 포모'
-  } else if (document.getElementById("language-picker-select").value === 'japanese') {
-    statesArray = states.JP
-    buttonsArray = buttons.JP
-    document.getElementById('about').textContent = 'わたしたち'
-    document.getElementById('lang_label').textContent = '言語: '
-    pomoCompleted = ' ポモス 完成'
-  } else if (document.getElementById("language-picker-select").value === 'english') {
-    statesArray = states.def
-    buttonsArray = buttons.def
-    document.getElementById('about').textContent = 'About us'
-    document.getElementById('lang_label').textContent = 'Language: '
-    pomoCompleted = ' pomos completed'
-  }
-  document.getElementById('button').textContent = buttonsArray[0]
-  document.getElementById('message').textContent = pomoCompleted
-  pomo.state = statesArray[0]
-  pomo.started = false
-  pomo.minutes = workMinutes
-  pomo.seconds = workSeconds
-  pomo.count = 0;
-  updateDOM()
-}
 
 const pomo = {
   started: false,
@@ -125,36 +74,13 @@ const pomo = {
   seconds: workSeconds,
   state: statesArray[0],
   count: 0,
-  init: function() {
-    this.timeDom = document.getElementById('time')
-    this.stateDom = document.getElementById('state')
-    this.numPomoDom = document.getElementById('count')
-    this.picDom = document.getElementById('pic')
-    update()
-    document.getElementById('button').addEventListener('click', () => {
-      if (!pomo.started) {
-        pomo.state = statesArray[1]
-        pomo.minutes = workMinutes
-        pomo.seconds = workSeconds
-        pomo.started = true
-        document.getElementById('button').textContent = buttonsArray[1]
-        document.getElementById('button').style.backgroundColor = 'red'
-        audio = oof
-        audio.play()
-      } else {
-        pomo.minutes = workMinutes
-        pomo.seconds = workSeconds
-        pomo.started = false
-        pomo.state = statesArray[0]
-        pomo.count = 0
-        document.getElementById('button').textContent = buttonsArray[0]
-        document.getElementById('button').style.backgroundColor = '#f6b432'
-        audio = gameOver
-        audio.play()
-        setProgress(0)
-
-      }
-    })
+  circle: null,
+  radius: null,
+  circumference: null,
+  perc: 0,
+  init: function(initDOM, updateDOM) {
+    initDOM()
+    update(updateDOM)
   }
 }
 
@@ -163,8 +89,22 @@ const pomo = {
  * Calls every second to update states and attributes
  * of the pomo object, which eventually updates the DOM
  */
-function update() {
+function update(updateDOM) {
   setInterval(() => {
+    let minutes = workMinutes
+    let seconds = workSeconds
+    switch (pomo.state) {
+      case statesArray[2]:
+        minutes = restMinutes
+        seconds = restSeconds
+        break;
+      case statesArray[3]:
+        minutes = lRestMinutes
+        seconds = lRestSeconds
+        break;
+      default:
+        break;
+    }
     if (pomo.started) {
       if (pomo.seconds === 0) {
         if (pomo.minutes === 0) {
@@ -179,38 +119,47 @@ function update() {
               pomo.state = statesArray[3]
               audio = stageClear
               audio.play()
-              setProgress(0)
             } else {
               pomo.minutes = restMinutes
               pomo.seconds = restSeconds
               pomo.state = statesArray[2]
               audio = oneUp
               audio.play()
-              setProgress(0)
             }
-          } else if (pomo.state === statesArray[2] || pomo.state === statesArray[3]) {
+          } else {
             // currently rest ended
             pomo.minutes = workMinutes
             pomo.seconds = workSeconds
             pomo.state = statesArray[1]
             audio = powerDown
             audio.play()
-            setProgress(0)
           }
+          pomo.perc = 0
         } else {
           pomo.seconds = 59
           pomo.minutes--
-          let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
-          setProgress(perc)
+          pomo.perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds)) * 100)
         }
       } else {
         pomo.seconds--
-        let perc = ((((workMinutes * 60 + workSeconds) - (pomo.minutes * 60 + pomo.seconds)) / (workMinutes * 60 + workSeconds))*100)
-        setProgress(perc)
+        pomo.perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds)) * 100)
       }
+    } else {
+      pomo.perc = 0
+      pomo.minutes = workMinutes
+      pomo.seconds = workSeconds
+      pomo.count = 0
+      pomo.state = statesArray[0]
     }
-    updateDOM()
+    updateDOM(setProgress)
   }, 1000)
+}
+
+//DOM related stuff
+
+
+window.onload = () => {
+  pomo.init(initDOM, updateDOM)
 }
 
 /**
@@ -218,18 +167,92 @@ function update() {
  * update() function made to the pomo object
  * changes will be reflected on the browser page
  */
-function updateDOM() {
-  pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
-  pomo.stateDom.textContent = pomo.state
-  pomo.numPomoDom.textContent = pomo.count
-  if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-    pomo.picDom.href.baseVal = './img/1.png'
-  } else if (pomo.state === statesArray[2]) {
-    pomo.picDom.href.baseVal = './img/2.png'
-  } else if (pomo.state === statesArray[3]) {
-    pomo.picDom.href.baseVal = './img/3.png'
+function updateDOM(setProgress) {
+    setProgress(pomo.perc)
+    pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
+    pomo.stateDom.textContent = pomo.state
+    pomo.numPomoDom.textContent = pomo.count
+    if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
+      pomo.picDom.href.baseVal = './img/1.png'
+    } else if (pomo.state === statesArray[2]) {
+      pomo.picDom.href.baseVal = './img/2.png'
+    } else if (pomo.state === statesArray[3]) {
+      pomo.picDom.href.baseVal = './img/3.png'
+    }
+}
+
+function setProgress(percent) {
+  const offset = pomo.circumference - (percent / 100) * pomo.circumference;
+  pomo.circle.style.strokeDashoffset = offset;
+}
+
+function initDOM() {
+  pomo.timeDom = document.getElementById('time')
+  pomo.stateDom = document.getElementById('state')
+  pomo.numPomoDom = document.getElementById('count')
+  pomo.picDom = document.getElementById('pic')
+  pomo.circle = document.querySelector('.progress-ring__circle')
+  pomo.radius = pomo.circle.r.baseVal.value;
+  pomo.circumference = pomo.radius * 2 * Math.PI;
+  pomo.circle.style.strokeDasharray = `${pomo.circumference} ${pomo.circumference}`;
+  pomo.circle.style.strokeDashoffset = `${pomo.circumference}`;
+
+  document.getElementById('button').addEventListener('click', () => {
+    if (!pomo.started) {
+      pomo.state = statesArray[1]
+      pomo.minutes = workMinutes
+      pomo.seconds = workSeconds
+      pomo.started = true
+      document.getElementById('button').textContent = buttonsArray[1]
+      document.getElementById('button').style.backgroundColor = 'red'
+      audio = oof
+      audio.play()
+    } else {
+      pomo.started = false
+      document.getElementById('button').textContent = buttonsArray[0]
+      document.getElementById('button').style.backgroundColor = '#f6b432'
+      audio = gameOver
+      audio.play()
+    }
+  })
+
+  document.getElementById("language-picker-select").onchange = function() {
+    const index = statesArray.indexOf(pomo.state)
+    const btnIndex = buttonsArray.indexOf(document.getElementById('button').textContent)
+    if (document.getElementById("language-picker-select").value === 'chinese') {
+      statesArray = states.CH
+      buttonsArray = buttons.CH
+      document.getElementById('about').textContent = '关于我们'
+      document.getElementById('lang_label').textContent = '语言： '
+      pomoCompleted = '帕玛多拉 完成'
+    } else if (document.getElementById("language-picker-select").value === 'korean') {
+      statesArray = states.KR
+      buttonsArray = buttons.KR
+      document.getElementById('about').textContent = '팀 소개'
+      document.getElementById('lang_label').textContent = '언어: '
+      pomoCompleted = '완료된 포모'
+    } else if (document.getElementById("language-picker-select").value === 'japanese') {
+      statesArray = states.JP
+      buttonsArray = buttons.JP
+      document.getElementById('about').textContent = 'わたしたち'
+      document.getElementById('lang_label').textContent = '言語: '
+      pomoCompleted = 'ポモス 完成'
+    } else if (document.getElementById("language-picker-select").value === 'english') {
+      statesArray = states.def
+      buttonsArray = buttons.def
+      document.getElementById('about').textContent = 'About us'
+      document.getElementById('lang_label').textContent = 'Language: '
+      pomoCompleted = 'SUCCESSFUL POMOS'
+    }
+    document.getElementById('button').textContent = buttonsArray[btnIndex]
+    document.getElementById('message').textContent = pomoCompleted
+    pomo.state = statesArray[index]
+    updateDOM(setProgress)
   }
 }
+
+
+
 
 /**
  * @param {number} num the number to convert to double digits
@@ -251,7 +274,7 @@ if (typeof module !== 'undefined') {
   exports.restSeconds = restSeconds
   exports.lRestMinutes = lRestMinutes
   exports.lRestSeconds = lRestSeconds
-  exports.states = states
+  exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
 }
 </code></pre>
@@ -270,7 +293,7 @@ if (typeof module !== 'undefined') {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Feb 19 2021 04:16:26 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Feb 23 2021 05:12:56 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
