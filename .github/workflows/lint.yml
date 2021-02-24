@@ -12,22 +12,25 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
-      - name: change directory to timer
-        run: cd timer
       # Install your linters here
       - name: Install ESLint
+        working-directory: ./timer
         run: npm install --save-dev eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
     
       - name: install stylelint
+        working-directory: ./timer
         run: npm install --save-dev stylelint stylelint-config-standard
       
       - name: ESLint
+        working-directory: ./timer
         run: npx eslint --init
       
       - name: Run ESLint
-        run: npx eslint "timer/*.js"
+        working-directory: ./timer
+        run: npx eslint "./*.js"
         
       - name: run stylelint
-        run: npx stylelint "timer/css/*.css"
+        working-directory: ./timer
+        run: npx stylelint "./css/*.css"
 
 
