@@ -10,9 +10,8 @@ jobs:
     steps:      
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: change directory to timer
-        run: cd timer
       - name: Install jest
+        working-directory: ./timer
         run: npm install --save-dev jest
       - name: Run jest
         run: npm test
