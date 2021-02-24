@@ -1,6 +1,6 @@
 const fs = require("fs");
-window.document.body.innerHTML = fs.readFileSync('./timer/index.html')
-
+const html = fs.readFileSync('./index.html')
+window.document.body.innerHTML = html
 let {
   pomo,
   update,
@@ -13,15 +13,13 @@ let {
   doubleDigit,
   statesArray,
   initDOM,
-  updateDOM
+  updateDOM,
+  setProgress
 } = require('./index')
-
-const setProgress = jest.fn()
 
 window.HTMLMediaElement.prototype.play = () => {
   /* do nothing */
 };
-
 
 let time = window.document.getElementById('time')
 let count = window.document.getElementById('count')
@@ -30,7 +28,8 @@ let about = window.document.getElementById('about')
 let message = window.document.getElementById('message')
 let state = window.document.getElementById('state')
 let lang = window.document.getElementById('lang_label')
-
+let bar = window.document.getElementById('currProg')
+let button = window.document.getElementById('button')
 
 beforeEach(() => {
   pomo.started = true
@@ -42,46 +41,76 @@ beforeEach(() => {
 })
 
 test('updateDOM', () => {
-  pomo.minutes = 13
-  pomo.seconds = 29
+  pomo.minutes = 3
+  pomo.seconds = 0
   pomo.count = 1
   pomo.state = statesArray[2]
+  pomo.perc = 40
   updateDOM(setProgress)
-  expect(time.textContent).toBe('13:29')
+  expect(time.textContent).toBe('03:00')
   expect(count.textContent).toBe('1')
   expect(state.textContent).toBe(statesArray[2])
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/2.png')
+  expect(pic.src).toBe('http://localhost/img/2.png')
+  expect(pomo.perc).toBe(40)
+  expect(bar.style.width).toBe('40%')
+
 })
 
 test('updateDOM2', () => {
-  pomo.minutes = 13
-  pomo.seconds = 29
+  pomo.minutes = 22
+  pomo.seconds = 0
   pomo.count = 0
   pomo.state = statesArray[1]
+  pomo.perc = 12.0
   updateDOM(setProgress)
-  expect(time.textContent).toBe('13:29')
+  expect(time.textContent).toBe('22:00')
   expect(count.textContent).toBe('0')
   expect(state.textContent).toBe(statesArray[1])
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/1.png')
+  expect(pic.src).toBe('http://localhost/img/1.png')
+  expect(pomo.perc).toBe(12)
+  expect(bar.style.width).toBe('12%')
 })
 
 test('updateDOM3', () => {
-  pomo.minutes = 13
-  pomo.seconds = 29
+  pomo.minutes = 5
+  pomo.seconds = 0
   pomo.count = 4
   pomo.state = statesArray[3]
+  pomo.perc = 28.6
   updateDOM(setProgress)
-  expect(time.textContent).toBe('13:29')
+  expect(time.textContent).toBe('05:00')
   expect(count.textContent).toBe('4')
   expect(state.textContent).toBe(statesArray[3])
   expect(about.textContent).toBe('ABOUT US')
   expect(message.textContent).toBe('SUCCESSFUL POMOS')
   expect(lang.textContent).toBe('Language: ')
-  expect(pic.href).toBe('./img/3.png')
+  expect(pic.src).toBe('http://localhost/img/3.png')
+  expect(pomo.perc).toBe(28.6)
+  expect(bar.style.width).toBe('28.6%')
+})
+
+test('updateDOM5', () => {
+  pomo.minutes = 25
+  pomo.seconds = 0
+  pomo.count = 0
+  pomo.state = statesArray[0]
+  pomo.perc = 0
+  pomo.started = false
+  updateDOM(setProgress)
+  expect(time.textContent).toBe('25:00')
+  expect(count.textContent).toBe('0')
+  expect(state.textContent).toBe(statesArray[0])
+  expect(about.textContent).toBe('ABOUT US')
+  expect(message.textContent).toBe('SUCCESSFUL POMOS')
+  expect(lang.textContent).toBe('Language: ')
+  expect(pic.src).toBe('http://localhost/img/1.png')
+  expect(pomo.perc).toBe(0)
+  expect(bar.style.width).toBe('0%')
+  expect(button.textContent).toBe('START')
 })

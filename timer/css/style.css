@@ -52,6 +52,9 @@ body {
 
 #time {
   font-size: 6vw;
+  margin: auto;
+  text-align: center;
+  font-weight: 100;
 }
 
 .message{
@@ -113,19 +116,10 @@ body {
 }
 
 #about {
-  position:absolute;
+  position: absolute;
   left: 45%;
 }
 
-.progress-ring__circle {
-  transition:0.35s strokeDashoffset;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-}
-
-.backCircle {
-  stroke: #d8d8d8;
-}
 
 .star {
   width: 2vw;
@@ -135,12 +129,24 @@ body {
   display: inline;
 }
 
-svg {
-  width: 40vw;
-  height: 40vw;
+#pic {
+  width: 35%;
 }
 
-#pic {
-  width: 15vw;
-  height: auto;
+#myProgress {
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  width: 80%;
+  background-color: white;
+  vertical-align: bottom;
+}
+
+#currProg {
+  width: 0%;
+  height: 10%;
+  background-color: black;
+  text-align: center;
+  line-height: 3vw;
+  color: red;
 }
