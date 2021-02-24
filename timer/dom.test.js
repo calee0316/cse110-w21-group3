@@ -75,6 +75,7 @@ test('updateDOM2', () => {
   expect(pic.src).toBe('http://localhost/img/1.png')
   expect(pomo.perc).toBe(12)
   expect(bar.style.width).toBe('12%')
+  expect(button.textContent).toBe('STOP')
 })
 
 test('updateDOM3', () => {
@@ -93,6 +94,7 @@ test('updateDOM3', () => {
   expect(pic.src).toBe('http://localhost/img/3.png')
   expect(pomo.perc).toBe(28.6)
   expect(bar.style.width).toBe('28.6%')
+  expect(button.textContent).toBe('STOP')
 })
 
 test('updateDOM5', () => {
