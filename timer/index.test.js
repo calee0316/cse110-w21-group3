@@ -22,6 +22,7 @@ beforeEach(() => {
   pomo.minutes = workMinutes
   pomo.seconds = workSeconds
   pomo.count = 0
+  pomo.perc = 0
   updateDOM.mock.calls.length = 0
 })
 const updateDOM = jest.fn()
