@@ -150,7 +150,7 @@ function update(updateDOM) {
   }, 1000)
 }
 
-//DOM related stuff
+// DOM related stuff
 
 window.onload = () => {
   pomo.init(initDOM, updateDOM)
