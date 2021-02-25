@@ -218,8 +218,6 @@ function initDOM () {
     updateDOM(setProgress)
   })
 
-  document.getElementById('add').addEventListener('click', addTask)
-
   document.getElementById('language-picker-select').onchange = function () {
     const index = statesArray.indexOf(pomo.state)
     if (document.getElementById('language-picker-select').value === 'chinese') {
@@ -250,14 +248,21 @@ function initDOM () {
     pomo.state = statesArray[index]
     updateDOM(setProgress)
   }
-}
 
-const close = document.getElementsByClassName('close')
+  //todo list
+  document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+  const taskList = document.querySelector('ul')
+  taskList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+      e.target.classList.toggle('checked')
+    }
+  }, false)
+}
 
 /**
  * TODO list feature
  */
-function addTask () {
+function addTask (createCloseButtons) {
   const task = document.createElement('li')
   const taskDesc = document.getElementById('textInput').value
   task.appendChild(document.createTextNode(taskDesc))
@@ -272,29 +277,18 @@ function addTask () {
   span.className = 'close'
   span.appendChild(document.createTextNode('X'))
   task.appendChild(span)
+  createCloseButtons()
+}
 
+function createCloseButtons () {
+  const close = document.getElementsByClassName('close')
   for (i = 0; i < close.length; i++) {
-    close[i].addEventListener('click', () => {
+    close[i].addEventListener('click', function () {
       const div = this.parentElement
-      div.parentNode.removeChild(div)
+      div.style.display = 'none'
     })
   }
 }
-
-let i
-for (i = 0; i < close.length; i++) {
-  close[i].addEventListener('click', () => {
-    const div = this.parentElement
-    div.parentNode.removeChild(div)
-  })
-}
-
-const taskList = document.querySelector('ul')
-taskList.addEventListener('click', (e) => {
-  if (e.target.tagName === 'LI') {
-    e.target.classList.toggle('checked')
-  }
-}, false)
 
 /**
  * @param {number} num the number to convert to double digits
