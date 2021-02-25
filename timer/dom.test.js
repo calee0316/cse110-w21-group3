@@ -1,16 +1,10 @@
-const fs = require("fs");
+const fs = require('fs')
 const html = fs.readFileSync('./index.html')
 window.document.body.innerHTML = html
-let {
+const {
   pomo,
-  update,
   workMinutes,
   workSeconds,
-  restMinutes,
-  restSeconds,
-  lRestSeconds,
-  lRestMinutes,
-  doubleDigit,
   statesArray,
   initDOM,
   updateDOM,
@@ -18,18 +12,18 @@ let {
 } = require('./index')
 
 window.HTMLMediaElement.prototype.play = () => {
-  /* do nothing */
-};
 
-let time = window.document.getElementById('time')
-let count = window.document.getElementById('count')
-let pic = window.document.getElementById('pic')
-let about = window.document.getElementById('about')
-let message = window.document.getElementById('message')
-let state = window.document.getElementById('state')
-let lang = window.document.getElementById('lang_label')
-let bar = window.document.getElementById('currProg')
-let button = window.document.getElementById('button')
+}
+
+const time = window.document.getElementById('time')
+const count = window.document.getElementById('count')
+const pic = window.document.getElementById('pic')
+const about = window.document.getElementById('about')
+const message = window.document.getElementById('message')
+const state = window.document.getElementById('state')
+const lang = window.document.getElementById('lang_label')
+const bar = window.document.getElementById('currProg')
+const button = window.document.getElementById('button')
 
 beforeEach(() => {
   pomo.started = true
@@ -56,7 +50,6 @@ test('updateDOM', () => {
   expect(pic.src).toBe('http://localhost/img/2.png')
   expect(pomo.perc).toBe(40)
   expect(bar.style.width).toBe('40%')
-
 })
 
 test('updateDOM2', () => {

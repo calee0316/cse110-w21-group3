@@ -1,5 +1,5 @@
 * {
-  font-family: Frijole;
+  font-family: Frijole, sans-serif;
   font-style: normal;
   margin: 0 0 0 0;
 }
@@ -9,10 +9,10 @@ body {
   padding: 0 0 0 0;
 }
 
-.flex-box{
+.flex-box {
   height: 5vh;
   padding-top: 1vh;
-  display:flex;
+  display: flex;
   position: relative;
   justify-content: space-evenly;
   text-align: center;
@@ -57,12 +57,12 @@ body {
   font-weight: 100;
 }
 
-.message{
+.message {
   text-align: center;
   position: relative;
 }
 
-#state{
+#state {
   font-size: 2vw;
   text-align: left;
   position: relative;
@@ -96,11 +96,12 @@ body {
   width: 5%;
 }
 
-.filler{
+.filler {
   width: 30vw;
 }
 
-.x, #count {
+.x,
+#count {
   display: inline;
 }
 
@@ -111,7 +112,7 @@ body {
   height: 6vh;
 }
 
-#pipe2{
+#pipe2 {
   left: 50%;
 }
 
@@ -120,12 +121,12 @@ body {
   left: 45%;
 }
 
-
 .star {
   width: 2vw;
 }
 
-.star, #x {
+.star,
+#x {
   display: inline;
 }
 

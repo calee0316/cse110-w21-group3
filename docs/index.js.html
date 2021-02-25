@@ -73,7 +73,7 @@ const complete = {
   def: 'SUCCESSFUL POMOS',
   CH: '帕玛多拉 完成',
   KR: '완료된 포모',
-  JP: 'ポモス 完成',
+  JP: 'ポモス 完成'
 }
 
 let statesArray = states.def
@@ -101,7 +101,7 @@ const pomo = {
   pomoCompleted: 'SUCCESSFUL POMOS',
   lang_label: 'Language: ',
   about: 'ABOUT US',
-  init: function(initDOM, updateDOM) {
+  init: function (initDOM, updateDOM) {
     initDOM()
     update(updateDOM)
   }
@@ -112,7 +112,7 @@ const pomo = {
  * Calls every second to update states and attributes
  * of the pomo object, which eventually updates the DOM
  */
-function update(updateDOM) {
+function update (updateDOM) {
   setInterval(() => {
     let minutes = workMinutes
     let seconds = workSeconds
@@ -120,13 +120,13 @@ function update(updateDOM) {
       case statesArray[2]:
         minutes = restMinutes
         seconds = restSeconds
-        break;
+        break
       case statesArray[3]:
         minutes = lRestMinutes
         seconds = lRestSeconds
-        break;
+        break
       default:
-        break;
+        break
     }
     if (pomo.started) {
       if (pomo.seconds === 0) {
@@ -189,37 +189,37 @@ window.onload = () => {
  * update() function made to the pomo object
  * changes will be reflected on the browser page
  */
-function updateDOM(setProgress) {
-    setProgress(pomo.perc)
-    pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
-    pomo.stateDom.textContent = pomo.state
-    pomo.numPomoDom.textContent = pomo.count
-    document.getElementById('about').textContent = pomo.about
-    document.getElementById('lang_label').textContent = pomo.lang_label
-    document.getElementById('message').textContent = pomo.pomoCompleted
-    if(pomo.started){
-      document.getElementById('button').textContent = buttonsArray[1]
-      document.getElementById('button').style.backgroundColor = 'red'
-    } else {
-      document.getElementById('button').textContent = buttonsArray[0]
-      document.getElementById('button').style.backgroundColor = '#f6b432'
-    }
-    if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-      pomo.picDom.src = './img/1.png'
-    } else if (pomo.state === statesArray[2]) {
-      pomo.picDom.src = './img/2.png'
-    } else {
-      pomo.picDom.src = './img/3.png'
-    }
+function updateDOM (setProgress) {
+  setProgress(pomo.perc)
+  pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
+  pomo.stateDom.textContent = pomo.state
+  pomo.numPomoDom.textContent = pomo.count
+  document.getElementById('about').textContent = pomo.about
+  document.getElementById('lang_label').textContent = pomo.lang_label
+  document.getElementById('message').textContent = pomo.pomoCompleted
+  if (pomo.started) {
+    document.getElementById('button').textContent = buttonsArray[1]
+    document.getElementById('button').style.backgroundColor = 'red'
+  } else {
+    document.getElementById('button').textContent = buttonsArray[0]
+    document.getElementById('button').style.backgroundColor = '#f6b432'
+  }
+  if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
+    pomo.picDom.src = './img/1.png'
+  } else if (pomo.state === statesArray[2]) {
+    pomo.picDom.src = './img/2.png'
+  } else {
+    pomo.picDom.src = './img/3.png'
+  }
 }
 
-function setProgress(percent) {
-  let bar = pomo.barDom
-  bar.style.width = percent+'%'
-  bar.textContent = Math.round(percent*10)/10+'%'
+function setProgress (percent) {
+  const bar = pomo.barDom
+  bar.style.width = percent + '%'
+  bar.textContent = Math.round(percent * 10) / 10 + '%'
 }
 
-function initDOM() {
+function initDOM () {
   pomo.timeDom = document.getElementById('time')
   pomo.stateDom = document.getElementById('state')
   pomo.numPomoDom = document.getElementById('count')
@@ -237,32 +237,36 @@ function initDOM() {
       pomo.started = false
       audio = gameOver
       audio.play()
+      pomo.perc = 0
+      pomo.minutes = workMinutes
+      pomo.seconds = workSeconds
+      pomo.state = statesArray[0]
+      pomo.count = 0
     }
     updateDOM(setProgress)
   })
 
-  document.getElementById("language-picker-select").onchange = function() {
+  document.getElementById('language-picker-select').onchange = function () {
     const index = statesArray.indexOf(pomo.state)
-    const btnIndex = buttonsArray.indexOf(document.getElementById('button').textContent)
-    if (document.getElementById("language-picker-select").value === 'chinese') {
+    if (document.getElementById('language-picker-select').value === 'chinese') {
       statesArray = states.CH
       buttonsArray = buttons.CH
       pomo.lang_label = label.CH
       pomo.about = aboutUs.CH
       pomo.pomoCompleted = complete.CH
-    } else if (document.getElementById("language-picker-select").value === 'korean') {
+    } else if (document.getElementById('language-picker-select').value === 'korean') {
       statesArray = states.KR
       buttonsArray = buttons.KR
       pomo.lang_label = label.KR
       pomo.about = aboutUs.KR
       pomo.pomoCompleted = complete.KR
-    } else if (document.getElementById("language-picker-select").value === 'japanese') {
+    } else if (document.getElementById('language-picker-select').value === 'japanese') {
       statesArray = states.JP
       buttonsArray = buttons.JP
       pomo.lang_label = label.JP
       pomo.about = aboutUs.JP
       pomo.pomoCompleted = complete.JP
-    } else if (document.getElementById("language-picker-select").value === 'english') {
+    } else if (document.getElementById('language-picker-select').value === 'english') {
       statesArray = states.def
       buttonsArray = buttons.def
       pomo.lang_label = label.def
@@ -278,7 +282,7 @@ function initDOM() {
  * @param {number} num the number to convert to double digits
  * @returns {string} num converted to double digits
  */
-function doubleDigit(num) {
+function doubleDigit (num) {
   if (num &lt; 10) {
     return '0' + num
   }
@@ -316,7 +320,7 @@ if (typeof module !== 'undefined') {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Feb 24 2021 06:56:53 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Thu Feb 25 2021 03:41:23 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
