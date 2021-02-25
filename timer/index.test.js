@@ -3,10 +3,6 @@ const {
   update,
   workMinutes,
   workSeconds,
-  restMinutes,
-  restSeconds,
-  lRestSeconds,
-  lRestMinutes,
   doubleDigit,
   statesArray
 } = require('./index')
@@ -26,7 +22,6 @@ beforeEach(() => {
   updateDOM.mock.calls.length = 0
 })
 const updateDOM = jest.fn()
-const initDOM = jest.fn()
 jest.useFakeTimers()
 update(updateDOM)
 

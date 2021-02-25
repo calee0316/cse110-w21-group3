@@ -3,14 +3,8 @@ const html = fs.readFileSync('./index.html')
 window.document.body.innerHTML = html
 const {
   pomo,
-  update,
   workMinutes,
   workSeconds,
-  restMinutes,
-  restSeconds,
-  lRestSeconds,
-  lRestMinutes,
-  doubleDigit,
   statesArray,
   initDOM,
   updateDOM,

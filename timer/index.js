@@ -84,7 +84,7 @@ const pomo = {
  * Calls every second to update states and attributes
  * of the pomo object, which eventually updates the DOM
  */
-function update(updateDOM) {
+function update (updateDOM) {
   setInterval(() => {
     let minutes = workMinutes
     let seconds = workSeconds
@@ -161,7 +161,7 @@ window.onload = () => {
  * update() function made to the pomo object
  * changes will be reflected on the browser page
  */
-function updateDOM(setProgress) {
+function updateDOM (setProgress) {
   setProgress(pomo.perc)
   pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.textContent = pomo.state
