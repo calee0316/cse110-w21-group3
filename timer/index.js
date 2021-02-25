@@ -209,6 +209,11 @@ function initDOM() {
       pomo.started = false
       audio = gameOver
       audio.play()
+      pomo.perc= 0
+      pomo.minutes = workMinutes
+      pomo.seconds = workSeconds
+      pomo.state = statesArray[0]
+      pomo.count = 0
     }
     updateDOM(setProgress)
   })
