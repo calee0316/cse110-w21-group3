@@ -249,7 +249,7 @@ function initDOM () {
     updateDOM(setProgress)
   }
 
-  //todo list
+  // todo list
   document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
   const taskList = document.querySelector('ul')
   taskList.addEventListener('click', (e) => {
@@ -282,7 +282,7 @@ function addTask (createCloseButtons) {
 
 function createCloseButtons () {
   const close = document.getElementsByClassName('close')
-  for (i = 0; i < close.length; i++) {
+  for (let i = 0; i < close.length; i++) {
     close[i].addEventListener('click', function () {
       const div = this.parentElement
       div.style.display = 'none'
