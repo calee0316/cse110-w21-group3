@@ -170,7 +170,7 @@ body {
   padding: 0 0 50px 0;
 }
 
-.header:after {
+.header::after {
   content: "";
   display: table;
   clear: both;
@@ -203,13 +203,13 @@ input {
   border-radius: 0;
 }
 
-.addBtn:hover {
-  background-color: #bbb;
-}
-
 .input,
 .addBtn {
   display: inline;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
 }
 
 ul {
