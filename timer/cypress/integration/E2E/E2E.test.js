@@ -1,3 +1,271 @@
+describe('generic functionality tests', () => {
+    beforeEach(() => {
+        cy.clock()
+        cy.visit('../../index.html')
+    })
+
+    it('make sure start is correct', () => {
+        cy.get('#language-picker-select').then($el => {
+            expect($el).to.have.value('english')
+            expect($el.text()).contains('English')
+        })
+        cy.get('#about').then($el => {
+            expect($el.text()).contains('ABOUT US')
+        })
+        cy.get('#message').then($el => {
+            expect($el.text()).contains('SUCCESSFUL POMOS')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('START')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Click Start To Begin')
+        })
+        cy.get('#lang_label').then($el => {
+            expect($el.text()).contains('Language')
+        })
+        cy.get('#count').then($el => {
+            expect($el.text()).contains('0')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
+    it('make sure everything is correct, 5 mins into work', ()=>{
+        cy.get('#button').click()
+        cy.tick(300000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('20%')            
+        })
+        cy.get('#count').then($el => {
+            expect($el.text()).contains('0')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('20:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+    // 15 mins past
+    it('make sure everything is correct, 15 mins into work', ()=>{
+        cy.get('#button').click()
+        cy.tick(900000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('60%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('0')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('10:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+    //17 mins past
+    it('make sure percentage is correct, 17 mins and 1 sec into work', ()=>{
+        cy.get('#button').click()
+        cy.tick(1021000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('68.1%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('0')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('7:59')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
+    it('make sure everything is correct, 1 mins into rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(1561000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('20%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('1')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('4:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Rest')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/2.png')
+        })
+    })
+
+    it('make sure everything is correct, 3 mins 30 s into rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(1711000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('70%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('1')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('1:30')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Rest')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/2.png')
+        })
+    })
+
+
+
+    it('make sure everything is correct, 1min into work after rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(1862000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('4%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('1')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('24:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
+    it('make sure everything is correct, 1min into long rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(6967000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('6.7%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('4')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('14:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Long Rest')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/3.png')
+        })
+    })
+    it('make sure everything is correct, 11min into long rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(7567000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('73.3%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('4')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('4:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Long Rest')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/3.png')
+        })
+    })
+
+    it('make sure everything is correct, 1 min into first work after long rest', ()=>{
+        cy.get('#button').click()
+        cy.tick(7868000)
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('4%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('4')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('24:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
+    it('make sure everything is correct, when stop is clicked', ()=>{
+        cy.get('#button').click()
+        cy.tick(1561000)
+        cy.get('#button').click()
+        cy.get('#currProg').then($el =>{
+            expect($el.text()).contains('0%')            
+        })
+        cy.get('#count').then($el=>{
+            expect($el.text()).contains('0')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('25:00')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Click Start To Begin')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('START')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
+})
+
 describe('language change tests, before start', () => {
     beforeEach(() => {
         cy.visit('../../index.html')
