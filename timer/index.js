@@ -266,7 +266,7 @@ function addTask () {
   } else {
     document.getElementById('taskList').appendChild(task)
   }
-  document.getElementById('textInput').value = ""
+  document.getElementById('textInput').value = ''
 
   const span = document.createElement('SPAN')
   span.className = 'close'
@@ -284,7 +284,7 @@ function addTask () {
 let i
 for (i = 0; i < close.length; i++) {
   close[i].addEventListener('click', () => {
-    let div = this.parentElement
+    const div = this.parentElement
     div.parentNode.removeChild(div)
   })
 }
@@ -322,4 +322,3 @@ if (typeof module !== 'undefined') {
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
 }
-
