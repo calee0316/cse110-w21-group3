@@ -18,4 +18,6 @@ jobs:
         run: npm test
       - name: run cypress tests
         uses: cypress-io/github-action@v2
+        with:
+          working-directory: ./timer
 
