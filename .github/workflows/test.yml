@@ -13,12 +13,9 @@ jobs:
       - name: Install jest
         working-directory: ./timer
         run: npm install --save-dev jest
-      - name: Install cypress
-        working-directory: ./timer
-        run: npm install --save-dev cypress
       - name: Run jest
         working-directory: ./timer
         run: npm test
-      - name: Run cypress
-        working-directory: ./timer
-        run: npx cypress run --spec './cypress/integration/E2E/E2E.test.js'
+      - name: run cypress tests
+        uses: cypress-io/github-action@v2
+
