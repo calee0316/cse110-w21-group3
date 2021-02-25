@@ -3,5 +3,5 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/cypress/'],
   testEnvironment: 'jsdom',
   collectCoverage: true,
-  coverageDirectory: 'jest-coverage',
+  coverageDirectory: 'jest-coverage'
 }
