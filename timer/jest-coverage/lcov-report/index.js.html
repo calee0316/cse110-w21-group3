@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.95% </span>
+                <span class="strong">73.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>118/164</span>
+                <span class='fraction'>121/164</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.95% </span>
+                <span class="strong">73.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>118/164</span>
+                <span class='fraction'>121/164</span>
             </div>
         
             
@@ -411,18 +411,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">18328x</span>
 <span class="cline-any cline-yes">18328x</span>
 <span class="cline-any cline-yes">18328x</span>
@@ -490,7 +490,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -529,12 +529,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -555,7 +555,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -688,9 +688,9 @@ const pomo = {
   pomoCompleted: 'SUCCESSFUL POMOS',
   lang_label: 'Language: ',
   about: 'ABOUT US',
-  init: <span class="fstat-no" title="function not covered" >fu</span>nction (initDOM, updateDOM) {
-<span class="cstat-no" title="statement not covered" >    initDOM()</span>
-<span class="cstat-no" title="statement not covered" >    update(updateDOM)</span>
+  init: function (initDOM, updateDOM) {
+    initDOM()
+    update(updateDOM)
   }
 }
 &nbsp;
@@ -699,7 +699,7 @@ const pomo = {
  * Calls every second to update states and attributes
  * of the pomo object, which eventually updates the DOM
  */
-function update(updateDOM) {
+function update (updateDOM) {
   setInterval(() =&gt; {
     let minutes = workMinutes
     let seconds = workSeconds
@@ -767,8 +767,8 @@ function update(updateDOM) {
 &nbsp;
 // DOM related stuff
 &nbsp;
-window.onload = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >  pomo.init(initDOM, updateDOM)</span>
+window.onload = () =&gt; {
+  pomo.init(initDOM, updateDOM)
 }
 &nbsp;
 /**
@@ -776,7 +776,7 @@ window.onload = <span class="fstat-no" title="function not covered" >()</span> =
  * update() function made to the pomo object
  * changes will be reflected on the browser page
  */
-function updateDOM(setProgress) {
+function updateDOM (setProgress) {
   setProgress(pomo.perc)
   pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.textContent = pomo.state
@@ -898,7 +898,7 @@ function doubleDigit (num) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Feb 25 2021 12:25:09 GMT+0900 (Korean Standard Time)
+                at Thu Feb 25 2021 15:04:00 GMT+0900 (Korean Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
