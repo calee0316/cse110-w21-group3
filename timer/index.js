@@ -252,52 +252,49 @@ function initDOM () {
   }
 }
 
-const close = document.getElementsByClassName("close")
-
+const close = document.getElementsByClassName('close')
 
 /**
  * TODO list feature
  */
-function addTask() {
-  let task = document.createElement("li")
-  let task_name = document.getElementById("textInput").value
-  task.appendChild(document.createTextNode(task_name));
-  if (task_name === '') {
-    alert("Please give this task a name");
+function addTask () {
+  const task = document.createElement('li')
+  const taskDesc = document.getElementById('textInput').value
+  task.appendChild(document.createTextNode(taskDesc))
+  if (taskDesc === '') {
+    alert('Please give this task a name')
   } else {
-    document.getElementById("taskList").appendChild(task)
+    document.getElementById('taskList').appendChild(task)
   }
-  document.getElementById("textInput").value = ""
+  document.getElementById('textInput').value = ""
 
-  let span = document.createElement("SPAN")
-  span.className = "close"
-  span.appendChild(document.createTextNode("X"))
+  const span = document.createElement('SPAN')
+  span.className = 'close'
+  span.appendChild(document.createTextNode('X'))
   task.appendChild(span)
 
   for (i = 0; i < close.length; i++) {
-    close[i].addEventListener('click', function() {
-      let div = this.parentElement
+    close[i].addEventListener('click', () => {
+      const div = this.parentElement
       div.parentNode.removeChild(div)
     })
   }
 }
 
-
-let i;
+let i
 for (i = 0; i < close.length; i++) {
-  close[i].addEventListener('click', function() {
+  close[i].addEventListener('click', () => {
     let div = this.parentElement
     div.parentNode.removeChild(div)
   })
 }
 
-let task_list = document.querySelector('ul')
-task_list.addEventListener('click', function(e) {
+const taskList = document.querySelector('ul')
+taskList.addEventListener('click', (e) => {
   if (e.target.tagName === 'LI') {
     e.target.classList.toggle('checked')
   }
 }, false)
-
 
 /**
  * @param {number} num the number to convert to double digits
@@ -325,3 +322,4 @@ if (typeof module !== 'undefined') {
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
 }
+
