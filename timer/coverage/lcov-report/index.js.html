@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">71.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>120/160</span>
+                <span class='fraction'>118/164</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">71.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>120/160</span>
+                <span class='fraction'>118/164</span>
             </div>
         
             
@@ -331,7 +331,11 @@
 <a name='L272'></a><a href='#L272'>272</a>
 <a name='L273'></a><a href='#L273'>273</a>
 <a name='L274'></a><a href='#L274'>274</a>
-<a name='L275'></a><a href='#L275'>275</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -407,8 +411,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -542,12 +546,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -652,7 +660,7 @@ const complete = {
   def: 'SUCCESSFUL POMOS',
   CH: '帕玛多拉 完成',
   KR: '완료된 포모',
-  JP: 'ポモス 完成',
+  JP: 'ポモス 完成'
 }
 &nbsp;
 let statesArray = states.def
@@ -680,9 +688,9 @@ const pomo = {
   pomoCompleted: 'SUCCESSFUL POMOS',
   lang_label: 'Language: ',
   about: 'ABOUT US',
-  init: function(initDOM, updateDOM) {
-    initDOM()
-    update(updateDOM)
+  init: <span class="fstat-no" title="function not covered" >fu</span>nction (initDOM, updateDOM) {
+<span class="cstat-no" title="statement not covered" >    initDOM()</span>
+<span class="cstat-no" title="statement not covered" >    update(updateDOM)</span>
   }
 }
 &nbsp;
@@ -699,13 +707,13 @@ function update(updateDOM) {
       case statesArray[2]:
         minutes = restMinutes
         seconds = restSeconds
-        break;
+        break
       case statesArray[3]:
         minutes = lRestMinutes
         seconds = lRestSeconds
-        break;
+        break
       default:
-        break;
+        break
     }
     if (pomo.started) {
       if (pomo.seconds === 0) {
@@ -769,36 +777,36 @@ window.onload = <span class="fstat-no" title="function not covered" >()</span> =
  * changes will be reflected on the browser page
  */
 function updateDOM(setProgress) {
-    setProgress(pomo.perc)
-    pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
-    pomo.stateDom.textContent = pomo.state
-    pomo.numPomoDom.textContent = pomo.count
-    document.getElementById('about').textContent = pomo.about
-    document.getElementById('lang_label').textContent = pomo.lang_label
-    document.getElementById('message').textContent = pomo.pomoCompleted
-    if(pomo.started){
-      document.getElementById('button').textContent = buttonsArray[1]
-      document.getElementById('button').style.backgroundColor = 'red'
-    } else {
-      document.getElementById('button').textContent = buttonsArray[0]
-      document.getElementById('button').style.backgroundColor = '#f6b432'
-    }
-    if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
-      pomo.picDom.src = './img/1.png'
-    } else if (pomo.state === statesArray[2]) {
-      pomo.picDom.src = './img/2.png'
-    } else {
-      pomo.picDom.src = './img/3.png'
-    }
+  setProgress(pomo.perc)
+  pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
+  pomo.stateDom.textContent = pomo.state
+  pomo.numPomoDom.textContent = pomo.count
+  document.getElementById('about').textContent = pomo.about
+  document.getElementById('lang_label').textContent = pomo.lang_label
+  document.getElementById('message').textContent = pomo.pomoCompleted
+  if (pomo.started) {
+    document.getElementById('button').textContent = buttonsArray[1]
+    document.getElementById('button').style.backgroundColor = 'red'
+  } else {
+    document.getElementById('button').textContent = buttonsArray[0]
+    document.getElementById('button').style.backgroundColor = '#f6b432'
+  }
+  if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
+    pomo.picDom.src = './img/1.png'
+  } else if (pomo.state === statesArray[2]) {
+    pomo.picDom.src = './img/2.png'
+  } else {
+    pomo.picDom.src = './img/3.png'
+  }
 }
 &nbsp;
-function setProgress(percent) {
-  let bar = pomo.barDom
-  bar.style.width = percent+'%'
-  bar.textContent = Math.round(percent*10)/10+'%'
+function setProgress (percent) {
+  const bar = pomo.barDom
+  bar.style.width = percent + '%'
+  bar.textContent = Math.round(percent * 10) / 10 + '%'
 }
 &nbsp;
-function initDOM() {
+function initDOM () {
   pomo.timeDom = document.getElementById('time')
   pomo.stateDom = document.getElementById('state')
   pomo.numPomoDom = document.getElementById('count')
@@ -816,32 +824,36 @@ function initDOM() {
 <span class="cstat-no" title="statement not covered" >      pomo.started = false</span>
 <span class="cstat-no" title="statement not covered" >      audio = gameOver</span>
 <span class="cstat-no" title="statement not covered" >      audio.play()</span>
+<span class="cstat-no" title="statement not covered" >      pomo.perc = 0</span>
+<span class="cstat-no" title="statement not covered" >      pomo.minutes = workMinutes</span>
+<span class="cstat-no" title="statement not covered" >      pomo.seconds = workSeconds</span>
+<span class="cstat-no" title="statement not covered" >      pomo.state = statesArray[0]</span>
+<span class="cstat-no" title="statement not covered" >      pomo.count = 0</span>
     }
 <span class="cstat-no" title="statement not covered" >    updateDOM(setProgress)</span>
   })
 &nbsp;
-  document.getElementById("language-picker-select").onchange = <span class="fstat-no" title="function not covered" >fu</span>nction() {
+  document.getElementById('language-picker-select').onchange = <span class="fstat-no" title="function not covered" >fu</span>nction () {
     const index = <span class="cstat-no" title="statement not covered" >statesArray.indexOf(pomo.state)</span>
-    const btnIndex = <span class="cstat-no" title="statement not covered" >buttonsArray.indexOf(document.getElementById('button').textContent)</span>
-<span class="cstat-no" title="statement not covered" >    if (document.getElementById("language-picker-select").value === 'chinese') {</span>
+<span class="cstat-no" title="statement not covered" >    if (document.getElementById('language-picker-select').value === 'chinese') {</span>
 <span class="cstat-no" title="statement not covered" >      statesArray = states.CH</span>
 <span class="cstat-no" title="statement not covered" >      buttonsArray = buttons.CH</span>
 <span class="cstat-no" title="statement not covered" >      pomo.lang_label = label.CH</span>
 <span class="cstat-no" title="statement not covered" >      pomo.about = aboutUs.CH</span>
 <span class="cstat-no" title="statement not covered" >      pomo.pomoCompleted = complete.CH</span>
-    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById("language-picker-select").value === 'korean') {</span>
+    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById('language-picker-select').value === 'korean') {</span>
 <span class="cstat-no" title="statement not covered" >      statesArray = states.KR</span>
 <span class="cstat-no" title="statement not covered" >      buttonsArray = buttons.KR</span>
 <span class="cstat-no" title="statement not covered" >      pomo.lang_label = label.KR</span>
 <span class="cstat-no" title="statement not covered" >      pomo.about = aboutUs.KR</span>
 <span class="cstat-no" title="statement not covered" >      pomo.pomoCompleted = complete.KR</span>
-    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById("language-picker-select").value === 'japanese') {</span>
+    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById('language-picker-select').value === 'japanese') {</span>
 <span class="cstat-no" title="statement not covered" >      statesArray = states.JP</span>
 <span class="cstat-no" title="statement not covered" >      buttonsArray = buttons.JP</span>
 <span class="cstat-no" title="statement not covered" >      pomo.lang_label = label.JP</span>
 <span class="cstat-no" title="statement not covered" >      pomo.about = aboutUs.JP</span>
 <span class="cstat-no" title="statement not covered" >      pomo.pomoCompleted = complete.JP</span>
-    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById("language-picker-select").value === 'english') {</span>
+    } else <span class="cstat-no" title="statement not covered" >if (document.getElementById('language-picker-select').value === 'english') {</span>
 <span class="cstat-no" title="statement not covered" >      statesArray = states.def</span>
 <span class="cstat-no" title="statement not covered" >      buttonsArray = buttons.def</span>
 <span class="cstat-no" title="statement not covered" >      pomo.lang_label = label.def</span>
@@ -857,7 +869,7 @@ function initDOM() {
  * @param {number} num the number to convert to double digits
  * @returns {string} num converted to double digits
  */
-function doubleDigit(num) {
+function doubleDigit (num) {
   if (num &lt; 10) {
     return '0' + num
   }
@@ -886,7 +898,7 @@ function doubleDigit(num) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Feb 24 2021 16:32:13 GMT+0900 (Korean Standard Time)
+                at Thu Feb 25 2021 12:25:09 GMT+0900 (Korean Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
