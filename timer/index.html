@@ -2,83 +2,94 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Internet Bowser's Pomodoro Timer</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internet Bowser's Pomodoro Timer</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <img src="img/bg.jpg" alt="" id="bg">
+    <img src="img/bg.jpg" alt="" id="bg">
 
-  <div class='flex-box'>
-    <img src="./img/bullet.png" class="bullet" alt="">
-    <h1 id='state'>Click Start To Begin</h1>
-    <img src="./img/bullet.png" class="bullet" alt="">
-    <div class='filler'></div>
-    <div class='complete'>
-      <h2 id='message'>SUCCESSFUL POMOS</h2>
-      <img class='star' src="./img/star.png" alt="">
-      <h2 id='x'>x</h2>
-      <h2 id='count'>0</h2>
-    </div>
-  </div>
-
-  <div class="grid-container">
-
-    <!-- row 1 -->
-    <!-- column 1 -->
-    <div class="grid-item">
-
-    </div>
-    <!-- column 2 -->
-    <div class="grid-item">
-      <img src="./img/1.png" id='pic' alt="">
-      <h2 id='time'>25:00</h2>
-      <div id="myProgress">
-        <div id="currProg">0%</div>
-      </div>
+    <div class='flex-box'>
+        <img src="./img/bullet.png" class="bullet" alt="">
+        <h1 id='state'>Click Start To Begin</h1>
+        <img src="./img/bullet.png" class="bullet" alt="">
+        <div class='filler'></div>
+        <div class='complete'>
+            <h2 id='message'>SUCCESSFUL POMOS</h2>
+            <img class='star' src="./img/star.png" alt="">
+            <h2 id='x'>x</h2>
+            <h2 id='count'>0</h2>
+        </div>
     </div>
 
-    <!-- column 3 -->
-    <div class="grid-item">
-    </div>
+    <div class="grid-container">
 
-    <!-- row 2 -->
-    <!-- column 1 -->
-    <div class="grid-item">
-      <div class="language-picker js-language-picker">
-        <form action="" class="language-picker__form">
-          <label id='lang_label' for="language-picker-select">Language: </label>
+        <!-- row 1 -->
+        <!-- column 1 -->
+        <div class="grid-item">
+            <div class="wrapper">
+                <div class="header">
+                    <h2>To Do List</h2>
+                    <input type="text" id="textInput" placeholder="Task...">
+                    <span class="addBtn" id="add">Add</span>
+                </div>
 
-          <select name="language-picker-select" id="language-picker-select">
+                <ul id="taskList">
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- column 2 -->
+        <div class="grid-item">
+            <img src="./img/1.png" id='pic' alt="">
+            <h2 id='time'>25:00</h2>
+            <div id="myProgress">
+                <div id="currProg">0%</div>
+            </div>
+        </div>
+
+        <!-- column 3 -->
+        <div class="grid-item">
+        </div>
+
+        <!-- row 2 -->
+        <!-- column 1 -->
+        <div class="grid-item">
+            <div class="language-picker js-language-picker">
+                <form action="" class="language-picker__form">
+                    <label id='lang_label' for="language-picker-select">Language: </label>
+
+                    <select name="language-picker-select" id="language-picker-select">
             <option lang="en" value="english" selected>English</option>
             <option lang="ch" value="chinese">中文</option>
             <option lang="kr" value="korean">한국어</option>
             <option lang="jp" value="japanese">日本語</option>
           </select>
-        </form>
-      </div>
-      <img class='pipe' src="./img/pipe.png" alt="">
-    </div>
-    <!-- column 2 -->
-    <div class="grid-item">
-      <div class="button">
-        <button class="button1" id="button">START</button>
-      </div>
+                </form>
+            </div>
+            <img class='pipe' src="./img/pipe.png" alt="">
+        </div>
+        <!-- column 2 -->
+        <div class="grid-item">
+            <div class="button">
+                <button class="button1" id="button">START</button>
+            </div>
+        </div>
+
+        <!-- column 3 -->
+        <div class="grid-item">
+            <a id='about' target="_blank" href="https://github.com/calee0316/cse110-w21-group3/wiki">ABOUT US</a>
+            <img class='pipe' id='pipe2' src="./img/pipe.png" alt="">
+        </div>
     </div>
 
-    <!-- column 3 -->
-    <div class="grid-item">
-      <a id='about' target="_blank" href="https://github.com/calee0316/cse110-w21-group3/wiki">ABOUT US</a>
-      <img class='pipe' id='pipe2' src="./img/pipe.png" alt="">
-    </div>
-  </div>
-
-  <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

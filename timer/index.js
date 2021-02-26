@@ -248,6 +248,46 @@ function initDOM () {
     pomo.state = statesArray[index]
     updateDOM(setProgress)
   }
+
+  // todo list
+  document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+  const taskList = document.querySelector('ul')
+  taskList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+      e.target.classList.toggle('checked')
+    }
+  }, false)
+}
+
+/**
+ * TODO list feature
+ */
+function addTask (createCloseButtons) {
+  const task = document.createElement('li')
+  const taskDesc = document.getElementById('textInput').value
+  task.appendChild(document.createTextNode(taskDesc))
+  if (taskDesc === '') {
+    
+  } else {
+    document.getElementById('taskList').appendChild(task)
+  }
+  document.getElementById('textInput').value = ''
+
+  const span = document.createElement('SPAN')
+  span.className = 'close'
+  span.appendChild(document.createTextNode('X'))
+  task.appendChild(span)
+  createCloseButtons()
+}
+
+function createCloseButtons () {
+  const close = document.getElementsByClassName('close')
+  for (let i = 0; i < close.length; i++) {
+    close[i].addEventListener('click', function () {
+      const div = this.parentElement
+      div.style.display = 'none'
+    })
+  }
 }
 
 /**
@@ -275,4 +315,5 @@ if (typeof module !== 'undefined') {
   exports.lRestSeconds = lRestSeconds
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
+  exports.addTask = addTask
 }
