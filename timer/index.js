@@ -267,7 +267,7 @@ function addTask (createCloseButtons) {
   const taskDesc = document.getElementById('textInput').value
   task.appendChild(document.createTextNode(taskDesc))
   if (taskDesc === '') {
-    alert('Please give this task a name')
+    
   } else {
     document.getElementById('taskList').appendChild(task)
   }
@@ -315,4 +315,5 @@ if (typeof module !== 'undefined') {
   exports.lRestSeconds = lRestSeconds
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
+  exports.addTask = addTask
 }
