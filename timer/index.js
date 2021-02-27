@@ -1,3 +1,9 @@
+/**
+ * @file Creates all the majority of the functionality of the Pomodoro Timer. 
+ * Will start updating attributes and the DOM on window load. 
+ * @author Calvin Lee, Yijie Ruan, Ruichen Li
+ */
+
 const workMinutes = 25
 const workSeconds = 0
 const restMinutes = 5
@@ -79,10 +85,12 @@ const pomo = {
   }
 }
 
-// call this every second to update states and etc
 /**
+ * @function
  * Calls every second to update states and attributes
- * of the pomo object, which eventually updates the DOM
+ * of the pomo object, which eventually updates the DOM using
+ * the callback updateDOM
+ * @param {function} updateDOM
  */
 function update (updateDOM) {
   setInterval(() => {
@@ -158,8 +166,10 @@ window.onload = () => {
 
 /**
  * updates the DOM based on changes that the
- * update() function made to the pomo object
- * changes will be reflected on the browser page
+ * update() function made to the pomo object.
+ * @param {function} setProgress callback function
+ * which will set the progress bar to have the correct
+ * percentage and black section of progress bar.
  */
 function updateDOM (setProgress) {
   setProgress(pomo.perc)
@@ -259,8 +269,18 @@ function initDOM () {
   }, false)
 }
 
+/** @module ToDo */
+
 /**
- * TODO list feature
+ * @function 
+ * @memberof ToDo
+ * Called when the add button on the task bar is clicked. 
+ * When called, adds a task with the input text. Also adds
+ * a 'X' which will function as a delete button and calls
+ * the createCloseButtons callback
+ * @param {function} createCloseButtons callback function
+ * which will add event listeners to the 'X' generated to
+ * implement the delete task functionality
  */
 function addTask (createCloseButtons) {
   const task = document.createElement('li')
@@ -280,6 +300,12 @@ function addTask (createCloseButtons) {
   createCloseButtons()
 }
 
+/**
+ * @function
+ * @memberof ToDo
+ * Creates the close buttons for each task. It creates
+ * the event listeners necessary to get rid of task items.
+ */
 function createCloseButtons () {
   const close = document.getElementsByClassName('close')
   for (let i = 0; i < close.length; i++) {
@@ -291,6 +317,7 @@ function createCloseButtons () {
 }
 
 /**
+ * @function
  * @param {number} num the number to convert to double digits
  * @returns {string} num converted to double digits
  */
