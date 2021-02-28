@@ -98,6 +98,740 @@
 
         
             
+<h4 class="name" id="lRestMinutes"><span class="type-signature">(constant) </span>lRestMinutes<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Represents the number of minutes in a long rest interval.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="lRestSeconds"><span class="type-signature">(constant) </span>lRestSeconds<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Represents the number of seconds on the clock at start of long rest interval.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="pomo"><span class="type-signature">(constant) </span>pomo<span class="type-signature"> :object</span></h4>
+
+
+
+
+<div class="description">
+    Object that contains attributes that define the current state of the timer.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>started</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Shows whether the timer has been started or not.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DOM element that represent the current time on the countdown.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stateDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DOM element that represents the current state (work, rest, etc) of timer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>picDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DOM element that represents the current picture (red/green/gold mushroom).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>numPomoDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DOM element that represents the number of completed work cycles.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minutes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current number of minutes on the timer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>seconds</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current number of seconds on the timer.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current state of the timer (work, rest, etc).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current count of number of completed work cycles.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>barDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The DOM element that represents the completed (black) part of the progress bar.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>perc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The percentage of the current state that has been completed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pomoCompleted</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of successful pomos message, will change based on current language.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lang_label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label for the language selector, changes based on current language.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>about</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The text that represents the link to the team's documentation page, changes based on current language.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>init</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Function that initializes DOM elements by calling initDOM as well as starts calling update.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="restMinutes"><span class="type-signature">(constant) </span>restMinutes<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Represents the number of minutes in a rest interval.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="restSeconds"><span class="type-signature">(constant) </span>restSeconds<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Represents the number of seconds on the clock at start of rest interval.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
 <h4 class="name" id="workMinutes"><span class="type-signature">(constant) </span>workMinutes<span class="type-signature"> :number</span></h4>
 
 
@@ -153,6 +887,78 @@
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="index.js.html">index.js</a>, <a href="index.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="workSeconds"><span class="type-signature">(constant) </span>workSeconds<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    Represents the number of seconds on the clock at start of work interval.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -286,7 +1092,7 @@ implement the delete task functionality.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line284">line 284</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line329">line 329</a>
     </li></ul></dd>
     
 
@@ -375,7 +1181,7 @@ the event listeners necessary to get rid of task items.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line306">line 306</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line351">line 351</a>
     </li></ul></dd>
     
 
@@ -512,7 +1318,7 @@ the event listeners necessary to get rid of task items.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line321">line 321</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line366">line 366</a>
     </li></ul></dd>
     
 
@@ -673,7 +1479,7 @@ the callback updateDOM
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line98">line 98</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -813,7 +1619,7 @@ percentage and black section of progress bar.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line177">line 177</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line222">line 222</a>
     </li></ul></dd>
     
 
@@ -859,13 +1665,13 @@ percentage and black section of progress bar.</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#createCloseButtons">createCloseButtons</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateDOM">updateDOM</a></li><li><a href="global.html#workMinutes">workMinutes</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#createCloseButtons">createCloseButtons</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#lRestMinutes">lRestMinutes</a></li><li><a href="global.html#lRestSeconds">lRestSeconds</a></li><li><a href="global.html#pomo">pomo</a></li><li><a href="global.html#restMinutes">restMinutes</a></li><li><a href="global.html#restSeconds">restSeconds</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateDOM">updateDOM</a></li><li><a href="global.html#workMinutes">workMinutes</a></li><li><a href="global.html#workSeconds">workSeconds</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 09:56:42 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 10:13:53 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
