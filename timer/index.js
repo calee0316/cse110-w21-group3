@@ -86,7 +86,6 @@ const pomo = {
 }
 
 /**
- * @function
  * Calls every second to update states and attributes
  * of the pomo object, which eventually updates the DOM using
  * the callback updateDOM
@@ -270,14 +269,13 @@ function initDOM () {
 }
 
 /**
- * @function
  * Called when the add button on the task bar is clicked.
  * When called, adds a task with the input text. Also adds
  * a 'X' which will function as a delete button and calls
- * the createCloseButtons callback
+ * the createCloseButtons callback.
  * @param {function} createCloseButtons callback function
  * which will add event listeners to the 'X' generated to
- * implement the delete task functionality
+ * implement the delete task functionality.
  */
 function addTask (createCloseButtons) {
   const task = document.createElement('li')
@@ -298,7 +296,6 @@ function addTask (createCloseButtons) {
 }
 
 /**
- * @function
  * Creates the close buttons for each task. It creates
  * the event listeners necessary to get rid of task items.
  */
@@ -313,7 +310,7 @@ function createCloseButtons () {
 }
 
 /**
- * @function
+ * Converts input numbers into a double digit string.
  * @param {number} num the number to convert to double digits
  * @returns {string} num converted to double digits
  */
