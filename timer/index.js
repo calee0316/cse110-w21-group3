@@ -4,6 +4,10 @@
  * @author Calvin Lee, Yijie Ruan, Ruichen Li
  */
 
+ /**
+  * @type { number } 
+  * Represents the number of minutes in a work interval.
+  */
 const workMinutes = 25
 const workSeconds = 0
 const restMinutes = 5
