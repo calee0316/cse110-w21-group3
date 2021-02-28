@@ -9,11 +9,32 @@
   * Represents the number of minutes in a work interval.
   */
 const workMinutes = 25
+/**
+ * @type { number }
+ * Represents the number of seconds on the clock at start of work interval.
+ */
 const workSeconds = 0
+/**
+  * @type { number } 
+  * Represents the number of minutes in a rest interval.
+  */
 const restMinutes = 5
+/**
+ * @type { number }
+ * Represents the number of seconds on the clock at start of rest interval.
+ */
 const restSeconds = 0
+/**
+  * @type { number } 
+  * Represents the number of minutes in a long rest interval.
+  */
 const lRestMinutes = 15
+/**
+ * @type { number }
+ * Represents the number of seconds on the clock at start of long rest interval.
+ */
 const lRestSeconds = 0
+
 const statesDefault = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest']
 const buttonsDefault = ['START', 'STOP']
 const statesChinese = ['点击开始', '进行中', '短休', '长休']
@@ -68,6 +89,25 @@ const oneUp = new Audio('./audio/1up.wav')
 const oof = new Audio('./audio/oof.wav')
 let audio = coin
 
+/**
+ * @type { object }
+ * Object that contains attributes that define the current state of the timer.
+ * @property { boolean } started - Shows whether the timer has been started or not.
+ * @property { Object } timeDom - The DOM element that represent the current time on the countdown.
+ * @property { Object } stateDom - The DOM element that represents the current state (work, rest, etc) of timer.
+ * @property { Object } picDom - The DOM element that represents the current picture (red/green/gold mushroom).
+ * @property { Object } numPomoDom - The DOM element that represents the number of completed work cycles.
+ * @property { number } minutes - The current number of minutes on the timer.
+ * @property { number } seconds - The current number of seconds on the timer. 
+ * @property { String } state - The current state of the timer (work, rest, etc).
+ * @property { number } count - The current count of number of completed work cycles.
+ * @property { Object } barDom - The DOM element that represents the completed (black) part of the progress bar.
+ * @property { number } perc - The percentage of the current state that has been completed.
+ * @property { String } pomoCompleted - The number of successful pomos message, will change based on current language.
+ * @property { String } lang_label - The label for the language selector, changes based on current language.
+ * @property { String } about - The text that represents the link to the team's documentation page, changes based on current language.
+ * @property { function } init - Function that initializes DOM elements by calling initDOM as well as starts calling update. 
+ */
 const pomo = {
   started: false,
   timeDom: null,
@@ -83,6 +123,11 @@ const pomo = {
   pomoCompleted: 'SUCCESSFUL POMOS',
   lang_label: 'Language: ',
   about: 'ABOUT US',
+  /**
+   * Function that is called on window load, starts updating page after initializing initializes DOM elements.
+   * @param { function } initDOM - Function that initializes DOM elements.
+   * @param { function } updateDOM - Function that updates DOM elements based on attributes of pomo object.
+   */
   init: function (initDOM, updateDOM) {
     initDOM()
     update(updateDOM)
