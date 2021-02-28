@@ -104,15 +104,19 @@
     
 
     
-    <h4 class="name" id="Calledwhentheaddbuttononthetaskbarisclicked.Whencalled,addsataskwiththeinputtext.Alsoaddsa'X'whichwillfunctionasadeletebuttonandcallsthecreateCloseButtonscallback"><span class="type-signature"></span>Called when the add button on the task bar is clicked.
+    <h4 class="name" id="addTask"><span class="type-signature"></span>addTask<span class="signature">(createCloseButtons)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Called when the add button on the task bar is clicked.
 When called, adds a task with the input text. Also adds
 a 'X' which will function as a delete button and calls
-the createCloseButtons callback<span class="signature">(createCloseButtons)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
+the createCloseButtons callback.
+</div>
 
 
 
@@ -165,7 +169,7 @@ the createCloseButtons callback<span class="signature">(createCloseButtons)</spa
 
             <td class="description last">callback function
 which will add event listeners to the 'X' generated to
-implement the delete task functionality</td>
+implement the delete task functionality.</td>
         </tr>
 
     
@@ -206,7 +210,7 @@ implement the delete task functionality</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line272">line 272</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line280">line 280</a>
     </li></ul></dd>
     
 
@@ -242,148 +246,17 @@ implement the delete task functionality</td>
     
 
     
-    <h4 class="name" id="Callseverysecondtoupdatestatesandattributesofthepomoobject,whicheventuallyupdatestheDOMusingthecallbackupdateDOM"><span class="type-signature"></span>Calls every second to update states and attributes
-of the pomo object, which eventually updates the DOM using
-the callback updateDOM<span class="signature">(updateDOM)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createCloseButtons"><span class="type-signature"></span>createCloseButtons<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>updateDOM</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line88">line 88</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="Createstheclosebuttonsforeachtask.Itcreatestheeventlistenersnecessarytogetridoftaskitems."><span class="type-signature"></span>Creates the close buttons for each task. It creates
-the event listeners necessary to get rid of task items.<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
+<div class="description">
+    Creates the close buttons for each task. It creates
+the event listeners necessary to get rid of task items.
+</div>
 
 
 
@@ -426,7 +299,7 @@ the event listeners necessary to get rid of task items.<span class="signature">(
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line300">line 300</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -468,6 +341,10 @@ the event listeners necessary to get rid of task items.<span class="signature">(
     
 
 
+
+<div class="description">
+    Converts input numbers into a double digit string.
+</div>
 
 
 
@@ -559,7 +436,7 @@ the event listeners necessary to get rid of task items.<span class="signature">(
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line320">line 320</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line317">line 317</a>
     </li></ul></dd>
     
 
@@ -606,6 +483,145 @@ the event listeners necessary to get rid of task items.<span class="signature">(
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(updateDOM)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Calls every second to update states and attributes
+of the pomo object, which eventually updates the DOM using
+the callback updateDOM
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>updateDOM</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -721,7 +737,7 @@ percentage and black section of progress bar.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line174">line 174</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line173">line 173</a>
     </li></ul></dd>
     
 
@@ -767,19 +783,13 @@ percentage and black section of progress bar.</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Calledwhentheaddbuttononthetaskbarisclicked.Whencalled,addsataskwiththeinputtext.Alsoaddsa'X'whichwillfunctionasadeletebuttonandcallsthecreateCloseButtonscallback">Called when the add button on the task bar is clicked.
-When called, adds a task with the input text. Also adds
-a 'X' which will function as a delete button and calls
-the createCloseButtons callback</a></li><li><a href="global.html#Callseverysecondtoupdatestatesandattributesofthepomoobject,whicheventuallyupdatestheDOMusingthecallbackupdateDOM">Calls every second to update states and attributes
-of the pomo object, which eventually updates the DOM using
-the callback updateDOM</a></li><li><a href="global.html#Createstheclosebuttonsforeachtask.Itcreatestheeventlistenersnecessarytogetridoftaskitems.">Creates the close buttons for each task. It creates
-the event listeners necessary to get rid of task items.</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#updateDOM">updateDOM</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#createCloseButtons">createCloseButtons</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateDOM">updateDOM</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 09:47:12 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 09:52:24 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
