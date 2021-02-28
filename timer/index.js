@@ -1,6 +1,6 @@
 /**
- * @file Creates all the majority of the functionality of the Pomodoro Timer. 
- * Will start updating attributes and the DOM on window load. 
+ * @file Creates all the majority of the functionality of the Pomodoro Timer.
+ * Will start updating attributes and the DOM on window load.
  * @author Calvin Lee, Yijie Ruan, Ruichen Li
  */
 
@@ -272,9 +272,9 @@ function initDOM () {
 /** @module ToDo */
 
 /**
- * @function 
+ * @function
  * @memberof ToDo
- * Called when the add button on the task bar is clicked. 
+ * Called when the add button on the task bar is clicked.
  * When called, adds a task with the input text. Also adds
  * a 'X' which will function as a delete button and calls
  * the createCloseButtons callback
@@ -287,7 +287,7 @@ function addTask (createCloseButtons) {
   const taskDesc = document.getElementById('textInput').value
   task.appendChild(document.createTextNode(taskDesc))
   if (taskDesc === '') {
-    
+    // do nothing
   } else {
     document.getElementById('taskList').appendChild(task)
   }
