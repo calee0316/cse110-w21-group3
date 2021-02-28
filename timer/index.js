@@ -4,8 +4,8 @@
  * @author Calvin Lee, Yijie Ruan, Ruichen Li
  */
 
- /**
-  * @type { number } 
+/**
+  * @type { number }
   * Represents the number of minutes in a work interval.
   */
 const workMinutes = 25
@@ -15,7 +15,7 @@ const workMinutes = 25
  */
 const workSeconds = 0
 /**
-  * @type { number } 
+  * @type { number }
   * Represents the number of minutes in a rest interval.
   */
 const restMinutes = 5
@@ -25,7 +25,7 @@ const restMinutes = 5
  */
 const restSeconds = 0
 /**
-  * @type { number } 
+  * @type { number }
   * Represents the number of minutes in a long rest interval.
   */
 const lRestMinutes = 15
@@ -98,7 +98,7 @@ let audio = coin
  * @property { Object } picDom - The DOM element that represents the current picture (red/green/gold mushroom).
  * @property { Object } numPomoDom - The DOM element that represents the number of completed work cycles.
  * @property { number } minutes - The current number of minutes on the timer.
- * @property { number } seconds - The current number of seconds on the timer. 
+ * @property { number } seconds - The current number of seconds on the timer.
  * @property { String } state - The current state of the timer (work, rest, etc).
  * @property { number } count - The current count of number of completed work cycles.
  * @property { Object } barDom - The DOM element that represents the completed (black) part of the progress bar.
@@ -106,7 +106,7 @@ let audio = coin
  * @property { String } pomoCompleted - The number of successful pomos message, will change based on current language.
  * @property { String } lang_label - The label for the language selector, changes based on current language.
  * @property { String } about - The text that represents the link to the team's documentation page, changes based on current language.
- * @property { function } init - Function that initializes DOM elements by calling initDOM as well as starts calling update. 
+ * @property { function } init - Function that initializes DOM elements by calling initDOM as well as starts calling update.
  */
 const pomo = {
   started: false,
