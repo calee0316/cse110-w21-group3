@@ -269,11 +269,8 @@ function initDOM () {
   }, false)
 }
 
-/** @module ToDo */
-
 /**
  * @function
- * @memberof ToDo
  * Called when the add button on the task bar is clicked.
  * When called, adds a task with the input text. Also adds
  * a 'X' which will function as a delete button and calls
@@ -302,7 +299,6 @@ function addTask (createCloseButtons) {
 
 /**
  * @function
- * @memberof ToDo
  * Creates the close buttons for each task. It creates
  * the event listeners necessary to get rid of task items.
  */
