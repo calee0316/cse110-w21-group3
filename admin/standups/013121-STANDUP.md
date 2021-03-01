@@ -35,8 +35,8 @@ Richard Hwang
 3. relative image size and position of timer
 
 Shunkai Yu
-1. Nothing
-2. Nothing
+1. Looked through a few pomodoro timer
+2. C4 Diagram, event modeling diagram, UML
 3. Nothing
 
 Ruihan Zhang
