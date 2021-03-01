@@ -1,8 +1,8 @@
 # StandUps
 
-Format: 1) What did you do? 2) What do you plan to do? 3) What issues were encoutnered?
+Format: 1) What did you do? 2) What do you plan to do? 3) What issues were encountered?
 
-## Date: 02/02/2021
+## Date: 02/05/2021
 
 Yijie Ruan 
 1. Start researching for CI/CD pipeline
