@@ -33,3 +33,18 @@ Richard Hwang
 1. Worked on html and css with front-end people
 2. modify positions of different elements in the html file
 3. relative image size and position of timer
+
+Shunkai Yu
+1. Nothing
+2. Nothing
+3. Nothing
+
+Ruihan Zhang
+1. Nothing
+2. Nothing
+3. Nothing
+
+Jimin Cheon 
+1. Nothing
+2. Nothing
+3. Nothing
