@@ -44,7 +44,7 @@ const statesDefault = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest']
  * @type { Object }
  * The array that contains the strings that the button shows.
  * It will show 'START' in the beginning stage and 'STOP' in all other stages
- * The default buttonsArray, contains the English version. 
+ * The default buttonsArray, contains the English version.
  */
 const buttonsDefault = ['START', 'STOP']
 /**
@@ -90,7 +90,7 @@ const states = {
 
 /**
  * @type { Object }
- * The object that stores all the different language
+ * The object that stores all the different language 
  * button arrays.
  */
 const buttons = {
@@ -101,7 +101,7 @@ const buttons = {
 }
 /**
  * @type { Object }
- * The object that stores 'about us' links in all different languages
+ * The object that stores 'about us' links in all different languages.
  */
 const aboutUs = {
   def: 'ABOUT US',
@@ -113,7 +113,7 @@ const aboutUs = {
 /**
  * @type { Object }
  * The object that stores all the different language versions of
- * 'Language: ' for the label of the language select dropdown
+ *  'Language: ' for the label of the language select dropdown
  */
 const label = {
   def: 'Language: ',
@@ -124,8 +124,7 @@ const label = {
 
 /**
  * @type { Object }
- * The object that stores all the different language versions of
- * 'SUCCESSFUL POMOS'
+ * The object that stores all the different language versions of 'SUCCESSFUL POMOS'
  */
 const complete = {
   def: 'SUCCESSFUL POMOS',
@@ -142,8 +141,8 @@ const complete = {
 let statesArray = states.def
 /**
  * @type { Object }
- * This is an array that stores the 2 states of the button, START and STOP
- * The array changes based on the current language setting. 
+ * This is an array that stores the 2 states of the button, START and STOP.
+ * The array changes based on the current language setting.
  */
 let buttonsArray = buttons.def
 /**
@@ -160,18 +159,18 @@ const coin = new Audio('./audio/coin.wav')
 /**
  * @type { Object }
  * The sound that is played when 4 work cycles
- * are completed, and we are transitioning to long rest 
+ * are completed, and we are transitioning to long rest.
  */
 const stageClear = new Audio('./audio/stageclear.wav')
 /**
  * @type { Object }
- * The sound that is played when user clicks the stop button
+ * The sound that is played when user clicks the stop button.
  */
 const gameOver = new Audio('./audio/gameover.wav')
 /**
  * @type { Object }
  * The sound that is played when moving from work state
- * to a rest state
+ * to a rest state.
  */
 const oneUp = new Audio('./audio/1up.wav')
 /**
@@ -183,7 +182,7 @@ const oneUp = new Audio('./audio/1up.wav')
 const oof = new Audio('./audio/oof.wav')
 /**
  * @type { Object }
- * The current audio sound
+ * The current audio sound.
  * This will be updated accordingly so that the correc
  * sound is played during the correct transitoin
  */
@@ -235,19 +234,19 @@ const pomo = {
 }
 
 /**
- * Calls every second to update states and attributes
- * of the pomo object, which eventually updates the DOM using
+ * Calls every second to update states and attributes 
+ * of the pomo object, which eventually updates the DOM using 
  * the callback updateDOM. This is the main functionality of the timer.
  * @param {function} updateDOM
  */
 function update (updateDOM) {
-  //set interval to 1000, so that this function is called every second
+  // set interval to 1000, so that this function is called every second.
   setInterval(() => {
-    // minutes default to workMinutes and workSeconds
-    // these will aid us in figuring out the current progress bar percentage value
+    // minutes default to workMinutes and workSeconds.
+    // these will aid us in figuring out the current progress bar percentage value.
     let minutes = workMinutes
     let seconds = workSeconds
-    // depending on the current state, set minutes and seconds as the total 
+    // depending on the current state, set minutes and seconds as the total
     // minutes and seconds of the current interval
     switch (pomo.state) {
       case statesArray[2]:
@@ -261,8 +260,8 @@ function update (updateDOM) {
       default:
         break
     }
-    // only update the time when timer has started
-    // no need to update time if timer has not begun
+    // only update the time when timer has started.
+    // no need to update time if timer has not begun.
     if (pomo.started) {
       if (pomo.seconds === 0) {
         if (pomo.minutes === 0) {
@@ -304,7 +303,7 @@ function update (updateDOM) {
           pomo.perc = 0
         } else {
           // when only seconds is 0, minutes will go down 1
-          // seconds will go to 59 
+          // seconds will go to 59
           pomo.seconds = 59
           pomo.minutes--
           // percentage of progress depends on current minutes and seconds on the clock, and the total
@@ -316,7 +315,7 @@ function update (updateDOM) {
         // time of the pomo decrease by 1
         pomo.seconds--
         // percentage depends on current minutes and seconds on the clock, and the total
-        //minutes and seconds in the interval
+        // minutes and seconds in the interval
         pomo.perc = ((((minutes * 60 + seconds) - (pomo.minutes * 60 + pomo.seconds)) / (minutes * 60 + seconds)) * 100)
       }
     } else {
@@ -341,10 +340,10 @@ window.onload = () => {
 }
 
 /**
- * updates the DOM based on changes that the
+ * updates the DOM based on changes that the 
  * update() function made to the pomo object.
- * @param {function} setProgress callback function
- * which will set the progress bar to have the correct
+ * @param {function} setProgress callback function 
+ * which will set the progress bar to have the correct 
  * percentage and black section of progress bar.
  */
 function updateDOM (setProgress) {
@@ -354,7 +353,7 @@ function updateDOM (setProgress) {
   pomo.timeDom.textContent = doubleDigit(pomo.minutes) + ':' + doubleDigit(pomo.seconds)
   pomo.stateDom.textContent = pomo.state
   pomo.numPomoDom.textContent = pomo.count
-  // set the About us, Language selector, and successful pomos message based on what the 
+  // set the About us, Language selector, and successful pomos message based on what the
   // current language is
   document.getElementById('about').textContent = pomo.about
   document.getElementById('lang_label').textContent = pomo.lang_label
@@ -364,7 +363,7 @@ function updateDOM (setProgress) {
     document.getElementById('button').textContent = buttonsArray[1]
     document.getElementById('button').style.backgroundColor = 'red'
   } else {
-    // if the timer is not started, button should stay 'START' and color is orange. 
+    // if the timer is not started, button should stay 'START' and color is orange.
     document.getElementById('button').textContent = buttonsArray[0]
     document.getElementById('button').style.backgroundColor = '#f6b432'
   }
@@ -383,8 +382,8 @@ function updateDOM (setProgress) {
 
 /**
  * This function changes the progress bar of our timer. 
- * The progress bar is filled up based on the input value. 
- * @param { number } percent 
+ * The progress bar is filled up based on the input value.
+ * @param { number } percent
  */
 function setProgress (percent) {
   const bar = pomo.barDom
@@ -394,7 +393,7 @@ function setProgress (percent) {
 
 /**
  * This function initializes the DOM related attributes of the pomo object.
- * This function also sets various event listeners for different objects. 
+ * This function also sets various event listeners for different objects.
  */
 function initDOM () {
   // The initialization for the time, state, number of pomo, picture, and the time bar
@@ -416,7 +415,7 @@ function initDOM () {
       audio.play()
     } else {
       // if timer is started already, set accordingly, play the stop
-      // "game over" sound 
+      // "game over" sound
       pomo.started = false
       audio = gameOver
       audio.play()
@@ -426,7 +425,7 @@ function initDOM () {
       pomo.state = statesArray[0]
       pomo.count = 0
     }
-    // call updateDOM function to make keep the time and status updated 
+    // call updateDOM function to make keep the time and status updated
     updateDOM(setProgress)
   })
 
@@ -459,7 +458,7 @@ function initDOM () {
       pomo.about = aboutUs.JP
       pomo.pomoCompleted = complete.JP
     } else if (document.getElementById('language-picker-select').value === 'english') {
-      //When language is changed to English
+      // When language is changed to English
       statesArray = states.def
       buttonsArray = buttons.def
       pomo.lang_label = label.def
@@ -477,9 +476,9 @@ function initDOM () {
    * The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
    */
   document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
-  //initialize the tasklist based on the querySelector of 'ul'
+  // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')
-  //The event listener that checks the certain task. This is called when a certain task is clicked
+  // The event listener that checks the certain task. This is called when a certain task is clicked
   taskList.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
       e.target.classList.toggle('checked')
@@ -548,7 +547,7 @@ function createCloseButtons () {
  */
 function doubleDigit (num) {
   // if the input is single digit, return a double digit version
-  // with a leading 0 
+  // with a leading 0
   if (num < 10) {
     return '0' + num
   }
