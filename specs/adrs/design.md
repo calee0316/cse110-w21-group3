@@ -1,4 +1,4 @@
-# Decision Made: Position On the Team
+# Decision Made: MVP Design
 
 * Status: accepted
 * Deciders: Everyone on the development team
