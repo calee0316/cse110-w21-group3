@@ -13,7 +13,7 @@ const list = document.getElementsByTagName('ul')[0]
 // delete, check-off, on cypress
 beforeEach(() => {
   while (list.firstChild) {
-    list.removeChild(list.firstChild);
+    list.removeChild(list.firstChild)
   }
 })
 test('add an item', () => {
