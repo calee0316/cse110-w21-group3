@@ -1,0 +1,3 @@
+{"total": {"lines":{"total":186,"covered":92,"skipped":0,"pct":49.46},"statements":{"total":188,"covered":94,"skipped":0,"pct":50},"functions":{"total":15,"covered":13,"skipped":0,"pct":86.67},"branches":{"total":39,"covered":12,"skipped":0,"pct":30.77}}
+,"/Users/Calvin/Desktop/Winter 2021/CSE110/cse110-w21-group3/timer/index.js": {"lines":{"total":186,"covered":92,"skipped":0,"pct":49.46},"functions":{"total":15,"covered":13,"skipped":0,"pct":86.67},"statements":{"total":188,"covered":94,"skipped":0,"pct":50},"branches":{"total":39,"covered":12,"skipped":0,"pct":30.77}}
+}
