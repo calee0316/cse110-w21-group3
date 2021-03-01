@@ -37,44 +37,44 @@ const lRestSeconds = 0
 
 /**
  * @type { Object }
- * The default statesArray, contains the English version of the states
+ * The default statesArray, contains the English version of the states.
  */
 const statesDefault = ['Click Start To Begin', 'Work', 'Rest', 'Long Rest']
 /**
  * @type { Object }
  * The array that contains the strings that the button shows.
- * It will show 'START' in the beginning stage and 'STOP' in all other stages
+ * It will show 'START' in the beginning stage and 'STOP' in all other stages.
  * The default buttonsArray, contains the English version.
  */
 const buttonsDefault = ['START', 'STOP']
 /**
  * @type { Object }
- * The Chinese statesArray, contains the Chinese version of the states
+ * The Chinese statesArray, contains the Chinese version of the states.
  */
 const statesChinese = ['点击开始', '进行中', '短休', '长休']
 /**
  * @type { Object }
- * The Korean statesArray, contains the Korean version of the states
+ * The Korean statesArray, contains the Korean version of the states.
  */
 const statesKorean = ['시작을 누르세요', '작업', '휴식', '긴 휴식']
 /**
  * @type { Object }
- * The Japanese statesArray, contains the Japanese version of the states
+ * The Japanese statesArray, contains the Japanese version of the states.
  */
 const statesJapanese = ['クリックして開始', '作業中', '短い休憩', '長い休憩']
 /**
  * @type { Object }
- * The Chinese buttonsArray, contains the Chinese version of START and STOP
+ * The Chinese buttonsArray, contains the Chinese version of START and STOP.
  */
 const buttonsChinese = ['开始', '结束']
 /**
  * @type { Object }
- * The Korean buttonsArray, contains the Korean version of START and STOP
+ * The Korean buttonsArray, contains the Korean version of START and STOP.
  */
 const buttonsKorean = ['시작', '정지']
 /**
  * @type { Object }
- * The Japanese buttonsArray, contains the Japanese version of START and STOP
+ * The Japanese buttonsArray, contains the Japanese version of START and STOP.
  */
 const buttonsJapanese = ['開始', '終止']
 /**
@@ -90,8 +90,7 @@ const states = {
 
 /**
  * @type { Object }
- * The object that stores all the different language 
- * button arrays.
+ * The object that stores all the different language button arrays.
  */
 const buttons = {
   def: buttonsDefault,
@@ -112,8 +111,8 @@ const aboutUs = {
 
 /**
  * @type { Object }
- * The object that stores all the different language versions of
- *  'Language: ' for the label of the language select dropdown
+ * The object that stores all the different language versions of 'Language: '.
+ *  This is for the label of the language select dropdown.
  */
 const label = {
   def: 'Language: ',
@@ -124,7 +123,7 @@ const label = {
 
 /**
  * @type { Object }
- * The object that stores all the different language versions of 'SUCCESSFUL POMOS'
+ * The object that stores all the different language versions of 'SUCCESSFUL POMOS'.
  */
 const complete = {
   def: 'SUCCESSFUL POMOS',
@@ -147,8 +146,7 @@ let statesArray = states.def
 let buttonsArray = buttons.def
 /**
  * @type { Object }
- * The sound of played when moving from a rest state
- * to a work state.
+ * The sound of played when moving from a rest state to a work state.
  */
 const powerDown = new Audio('./audio/powerdown.wav')
 /**
@@ -158,8 +156,7 @@ const powerDown = new Audio('./audio/powerdown.wav')
 const coin = new Audio('./audio/coin.wav')
 /**
  * @type { Object }
- * The sound that is played when 4 work cycles
- * are completed, and we are transitioning to long rest.
+ * The sound that is played when 4 work cycles are completed, and we are transitioning to long rest.
  */
 const stageClear = new Audio('./audio/stageclear.wav')
 /**
@@ -169,22 +166,19 @@ const stageClear = new Audio('./audio/stageclear.wav')
 const gameOver = new Audio('./audio/gameover.wav')
 /**
  * @type { Object }
- * The sound that is played when moving from work state
- * to a rest state.
+ * The sound that is played when moving from work to a rest state.
  */
 const oneUp = new Audio('./audio/1up.wav')
 /**
  * @type { Object }
- * The sound that is played when the start button is clicked
- * and we are transitioning from the beginning state
- * to work state
+ * The sound that is played when the start button is clicked.
+ * During beginning to work state transition.
  */
 const oof = new Audio('./audio/oof.wav')
 /**
  * @type { Object }
  * The current audio sound.
- * This will be updated accordingly so that the correc
- * sound is played during the correct transitoin
+ * This will be updated accordingly so that the correct sound is played during transition.
  */
 let audio = coin
 
@@ -234,9 +228,9 @@ const pomo = {
 }
 
 /**
- * Calls every second to update states and attributes 
- * of the pomo object, which eventually updates the DOM using 
- * the callback updateDOM. This is the main functionality of the timer.
+ * Calls every second to update states and attributes of the pomo object.
+ * Eventually updates the DOM using the callback updateDOM.
+ * This is the main functionality of the timer.
  * @param {function} updateDOM
  */
 function update (updateDOM) {
@@ -340,11 +334,8 @@ window.onload = () => {
 }
 
 /**
- * updates the DOM based on changes that the 
- * update() function made to the pomo object.
- * @param {function} setProgress callback function 
- * which will set the progress bar to have the correct 
- * percentage and black section of progress bar.
+ * updates the DOM based on changes that the update() function made to pomo object.
+ * @param {function} setProgress callback function which will set the progress bar percentage and width
  */
 function updateDOM (setProgress) {
   // update the progress bar
@@ -381,7 +372,7 @@ function updateDOM (setProgress) {
 }
 
 /**
- * This function changes the progress bar of our timer. 
+ * This function changes the progress bar of our timer.
  * The progress bar is filled up based on the input value.
  * @param { number } percent
  */
