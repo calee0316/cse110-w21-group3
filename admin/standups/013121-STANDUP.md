@@ -1,6 +1,6 @@
 # StandUps
 
-Format: 1) What did you do? 2) What do you plan to do? 3) What issues were encoutnered?
+Format: 1) What did you do? 2) What do you plan to do? 3) What issues were encountered?
 
 ## Date: 01/31/2021
 
