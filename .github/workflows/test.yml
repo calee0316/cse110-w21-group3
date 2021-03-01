@@ -21,6 +21,8 @@ jobs:
       - name: run cypress tests
         working-directory: ./timer
         run: npm run cypress
+      - name: pull
+        run: git pull
       - name: add files
         run: git add .
       - name: Commit files
