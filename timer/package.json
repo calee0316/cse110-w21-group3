@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cypress": "npx nyc instrument --compact=false index.js instrumented && npx cypress run spec './cypress/integration/E2E/*.js'"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
     "jest": "^26.6.3",
     "stylelint": "^13.11.0",
     "stylelint-config-standard": "^20.0.0"
+  },
+  "nyc": {
+    "report-dir": "cypress-coverage"
   }
 }
