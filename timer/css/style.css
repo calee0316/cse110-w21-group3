@@ -64,7 +64,7 @@ body {
 
 #state {
   font-size: 2vw;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 
@@ -78,11 +78,12 @@ body {
   margin-top: 0;
   color: white;
   border: 0;
-  font-size: 3vw;
+  font-size: 2.5vw;
   padding: 10px 24px;
   width: 30%;
   border-radius: 8px;
   text-align: center;
+  vertical-align: middle;
   background-color: #f6b432;
 }
 
@@ -148,6 +149,7 @@ body {
   height: 10%;
   background-color: black;
   text-align: center;
+  vertical-align: middle;
   line-height: 3vw;
   color: red;
 }
@@ -270,6 +272,6 @@ ul li.checked::before {
 }
 
 .close:hover {
-  background-color: #f44336;
+  background-color: red;
   color: white;
 }
