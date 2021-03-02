@@ -188,9 +188,7 @@ input {
   font-size: 100%;
   position: absolute;
   left: 10%;
-}
-
-input::placeholder {
+  box-sizing: border-box;
   padding-left: 10px;
 }
 
