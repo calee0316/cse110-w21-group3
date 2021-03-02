@@ -583,9 +583,9 @@ function createCloseButtons () {
          return item.id != id
        })
        myStorage.setItem('tasks', JSON.stringify(tasks))
-     })
-   }
- }
+    })
+  }
+}
 
 /**
  * Converts input numbers into a double digit string.
