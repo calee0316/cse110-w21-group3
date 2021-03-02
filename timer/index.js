@@ -566,19 +566,26 @@ function addTask (createCloseButtons) {
  * the event listeners necessary to get rid of task items.
  */
 function createCloseButtons () {
-  // store an array of all of the close, "x"s in the task list
-  const close = document.getElementsByClassName('close')
-  // make the eventlistener for all of the close "x"s,
-  // these will delete the task when the "x" is clicked.
-  for (let i = 0; i < close.length; i++) {
-    close[i].addEventListener('click', function () {
-      // get the task that the "x" is for
-      const div = this.parentElement
-      // set the task display to none, "deleting" it from the list
-      div.style.display = 'none'
-    })
-  }
-}
+   // store an array of all of the close, "x"s in the task list
+   const close = document.getElementsByClassName('close')
+   // make the eventlistener for all of the close "x"s,
+   // these will delete the task when the "x" is clicked.
+   for (let i = 0; i < close.length; i++) {
+     close[i].addEventListener('click', function () {
+       // get the task that the "x" is for
+       const div = this.parentElement
+       // set the task display to none, "deleting" it from the list
+       div.style.display = 'none'
+       let myStorage = window.localStorage
+       let tasks = JSON.parse(myStorage.getItem('tasks'))
+       const id = div.getAttribute('id')
+       tasks = tasks.filter(function(item) {
+         return item.id != id
+       })
+       myStorage.setItem('tasks', JSON.stringify(tasks))
+     })
+   }
+ }
 
 /**
  * Converts input numbers into a double digit string.
