@@ -489,7 +489,17 @@ function initDOM () {
   }, false)
 
   if(window.localStorage.getItem('tasks')){
-    let tasks = JSON.parse(window.localStorage.getItem('tasks'))
+    addSaved(createCloseButtons)
+  }
+}
+
+/**
+ * Called if there are tasks that were on task list before refreshing or closing the page.
+ * Regenerates the previous todo list.
+ * @param { function } createCloseButtons Call back function that creates close button functionality.
+ */
+function addSaved (createCloseButtons) {
+  let tasks = JSON.parse(window.localStorage.getItem('tasks'))
     tasks.forEach(task => {
         const list = document.getElementById('taskList')
         let savedTask = document.createElement('li')
@@ -509,7 +519,6 @@ function initDOM () {
         // call the function that creates the event listeners for the close buttons
         createCloseButtons()
     })
-  }
 }
 
 /**
@@ -618,4 +627,5 @@ if (typeof module !== 'undefined') {
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
   exports.addTask = addTask
+  exports.addSaved = addSaved
 }
