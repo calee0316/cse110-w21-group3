@@ -463,9 +463,7 @@ function initDOM () {
     updateDOM(setProgress)
   }
 
-  /**
-   * The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-   */
+  // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
   document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
   
   // initialize the tasklist based on the querySelector of 'ul'
@@ -571,8 +569,8 @@ function addTask (createCloseButtons) {
 }
 
 /**
- * Creates the close buttons for each task. It creates
- * the event listeners necessary to get rid of task items.
+ * Creates the close buttons for each task. 
+ * It creates the event listeners necessary to get rid of task items.
  */
 function createCloseButtons () {
    // store an array of all of the close, "x"s in the task list
