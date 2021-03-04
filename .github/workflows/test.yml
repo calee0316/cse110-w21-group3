@@ -16,6 +16,8 @@ jobs:
       - name: Run jest
         working-directory: ./timer
         run: npm test
+      - name: install cypress package
+        run: npm i --save-dev cypress-localstorage-commands
       - name: run cypress tests
         working-directory: ./timer
         run: npm run cypress
