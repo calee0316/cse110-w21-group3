@@ -19,12 +19,12 @@ class LocalStorageMock {
     this.store[key] = String(value)
   }
 
-  removeItem(key) {
+  removeItem (key) {
     delete this.store(key)
   }
 }
 
-global.localStorage = new LocalStorageMock
+global.localStorage = new LocalStorageMock()
 
 const {
   addTask,
@@ -96,10 +96,10 @@ test('add item, check it, remove it from the DOM, and see if it regenerates usin
   addTask(createCloseButtons)
   expect(tasks.length).toBe(1)
   expect(tasks[tasks.length - 1].childNodes[0].nodeValue).toBe('test Task')
-  tasks[tasks.length-1].classList.toggle('checked')
-  expect(tasks[tasks.length-1].classList.contains('checked')).toBe(true)
+  tasks[tasks.length - 1].classList.toggle('checked')
+  expect(tasks[tasks.length - 1].classList.contains('checked')).toBe(true)
   const taskList = JSON.parse(global.localStorage.getItem('tasks'))
-  taskList[0].completed = true;
+  taskList[0].completed = true
   global.localStorage.setItem('tasks', JSON.stringify(taskList))
   expect(JSON.parse(global.localStorage.getItem('tasks')).length).toBe(1)
   expect(JSON.parse(global.localStorage.getItem('tasks'))[0].completed).toBe(true)
@@ -116,9 +116,8 @@ test('add item, check it, remove it from the DOM, and see if it regenerates usin
   expect(JSON.parse(global.localStorage.getItem('tasks')).length).toBe(1)
   expect(JSON.parse(global.localStorage.getItem('tasks'))[0].completed).toBe(true)
   expect(JSON.parse(global.localStorage.getItem('tasks'))[0].desc).toBe('test Task')
-  expect(tasks[tasks.length-1].classList.contains('checked')).toBe(true)
+  expect(tasks[tasks.length - 1].classList.contains('checked')).toBe(true)
 })
-
 
 test('add nothing', () => {
   document.getElementById('textInput').value = ''
