@@ -491,18 +491,60 @@ function initDOM () {
     updateDOM(setProgress)
   }
 
-  /**
-   * The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-   */
+  // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
   document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+  
   // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')
+  
   // The event listener that checks the certain task. This is called when a certain task is clicked
   taskList.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
       e.target.classList.toggle('checked')
+      const id = e.target.getAttribute('id')
+      let myStorage = window.localStorage
+      let tasks = JSON.parse(myStorage.getItem('tasks'))
+      tasks.forEach(task => {
+        if(task.id == id) {
+          task.completed = !task.completed
+          return
+        }
+      })
+      myStorage.setItem('tasks', JSON.stringify(tasks))
     }
   }, false)
+
+  if(window.localStorage.getItem('tasks')){
+    addSaved(createCloseButtons)
+  }
+}
+
+/**
+ * Called if there are tasks that were on task list before refreshing or closing the page.
+ * Regenerates the previous todo list.
+ * @param { function } createCloseButtons Call back function that creates close button functionality.
+ */
+function addSaved (createCloseButtons) {
+  let tasks = JSON.parse(window.localStorage.getItem('tasks'))
+    tasks.forEach(task => {
+        const list = document.getElementById('taskList')
+        let savedTask = document.createElement('li')
+        const taskDesc = task.desc;
+        savedTask.appendChild(document.createTextNode(taskDesc))
+        savedTask.setAttribute('id', task.id)
+        if(task.completed) {
+          savedTask.classList.toggle('checked')
+        }
+        list.appendChild(savedTask)
+        const span = document.createElement('SPAN')
+        // give the element class 'close'
+        span.className = 'close'
+        // set the text to be "X"
+        span.appendChild(document.createTextNode('X'))
+        savedTask.appendChild(span)
+        // call the function that creates the event listeners for the close buttons
+        createCloseButtons()
+    })
 }
 
 /**
@@ -523,11 +565,25 @@ function addTask (createCloseButtons) {
   task.appendChild(document.createTextNode(taskDesc))
   // if the inputted task is not empty text, append the task
   // to the list
+  const id = Date.now()
+  task.setAttribute('id', id)
   if (taskDesc === '') {
     // do nothing
   } else {
     document.getElementById('taskList').appendChild(task)
+    let myStorage = window.localStorage
+    let tasks = []
+    if(myStorage.getItem('tasks')){
+      tasks = JSON.parse(myStorage.getItem('tasks'))
+    }
+    tasks.push({
+      id: id,
+      completed: false,
+      desc: taskDesc
+    })
+    myStorage.setItem('tasks', JSON.stringify(tasks))
   }
+
   document.getElementById('textInput').value = ''
   // create the element for the delete button "x"
   const span = document.createElement('SPAN')
@@ -541,20 +597,27 @@ function addTask (createCloseButtons) {
 }
 
 /**
- * Creates the close buttons for each task. It creates
- * the event listeners necessary to get rid of task items.
+ * Creates the close buttons for each task. 
+ * It creates the event listeners necessary to get rid of task items.
  */
 function createCloseButtons () {
-  // store an array of all of the close, "x"s in the task list
-  const close = document.getElementsByClassName('close')
-  // make the eventlistener for all of the close "x"s,
-  // these will delete the task when the "x" is clicked.
-  for (let i = 0; i &lt; close.length; i++) {
-    close[i].addEventListener('click', function () {
-      // get the task that the "x" is for
-      const div = this.parentElement
-      // set the task display to none, "deleting" it from the list
-      div.style.display = 'none'
+   // store an array of all of the close, "x"s in the task list
+   const close = document.getElementsByClassName('close')
+   // make the eventlistener for all of the close "x"s,
+   // these will delete the task when the "x" is clicked.
+   for (let i = 0; i &lt; close.length; i++) {
+     close[i].addEventListener('click', function () {
+       // get the task that the "x" is for
+       const div = this.parentElement
+       // set the task display to none, "deleting" it from the list
+       div.style.display = 'none'
+       let myStorage = window.localStorage
+       let tasks = JSON.parse(myStorage.getItem('tasks'))
+       const id = div.getAttribute('id')
+       tasks = tasks.filter(function(item) {
+         return item.id != id
+       })
+       myStorage.setItem('tasks', JSON.stringify(tasks))
     })
   }
 }
@@ -590,6 +653,7 @@ if (typeof module !== 'undefined') {
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
   exports.addTask = addTask
+  exports.addSaved = addSaved
 }
 </code></pre>
         </article>
@@ -601,13 +665,13 @@ if (typeof module !== 'undefined') {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aboutUs">aboutUs</a></li><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#audio">audio</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#buttonsArray">buttonsArray</a></li><li><a href="global.html#buttonsChinese">buttonsChinese</a></li><li><a href="global.html#buttonsDefault">buttonsDefault</a></li><li><a href="global.html#buttonsJapanese">buttonsJapanese</a></li><li><a href="global.html#buttonsKorean">buttonsKorean</a></li><li><a href="global.html#coin">coin</a></li><li><a href="global.html#complete">complete</a></li><li><a href="global.html#createCloseButtons">createCloseButtons</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#gameOver">gameOver</a></li><li><a href="global.html#initDOM">initDOM</a></li><li><a href="global.html#label">label</a></li><li><a href="global.html#lRestMinutes">lRestMinutes</a></li><li><a href="global.html#lRestSeconds">lRestSeconds</a></li><li><a href="global.html#oneUp">oneUp</a></li><li><a href="global.html#oof">oof</a></li><li><a href="global.html#pomo">pomo</a></li><li><a href="global.html#powerDown">powerDown</a></li><li><a href="global.html#restMinutes">restMinutes</a></li><li><a href="global.html#restSeconds">restSeconds</a></li><li><a href="global.html#setProgress">setProgress</a></li><li><a href="global.html#stageClear">stageClear</a></li><li><a href="global.html#states">states</a></li><li><a href="global.html#statesArray">statesArray</a></li><li><a href="global.html#statesChinese">statesChinese</a></li><li><a href="global.html#statesDefault">statesDefault</a></li><li><a href="global.html#statesJapanese">statesJapanese</a></li><li><a href="global.html#statesKorean">statesKorean</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateDOM">updateDOM</a></li><li><a href="global.html#workMinutes">workMinutes</a></li><li><a href="global.html#workSeconds">workSeconds</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aboutUs">aboutUs</a></li><li><a href="global.html#addSaved">addSaved</a></li><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#audio">audio</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#buttonsArray">buttonsArray</a></li><li><a href="global.html#buttonsChinese">buttonsChinese</a></li><li><a href="global.html#buttonsDefault">buttonsDefault</a></li><li><a href="global.html#buttonsJapanese">buttonsJapanese</a></li><li><a href="global.html#buttonsKorean">buttonsKorean</a></li><li><a href="global.html#coin">coin</a></li><li><a href="global.html#complete">complete</a></li><li><a href="global.html#createCloseButtons">createCloseButtons</a></li><li><a href="global.html#doubleDigit">doubleDigit</a></li><li><a href="global.html#gameOver">gameOver</a></li><li><a href="global.html#initDOM">initDOM</a></li><li><a href="global.html#label">label</a></li><li><a href="global.html#lRestMinutes">lRestMinutes</a></li><li><a href="global.html#lRestSeconds">lRestSeconds</a></li><li><a href="global.html#oneUp">oneUp</a></li><li><a href="global.html#oof">oof</a></li><li><a href="global.html#pomo">pomo</a></li><li><a href="global.html#powerDown">powerDown</a></li><li><a href="global.html#restMinutes">restMinutes</a></li><li><a href="global.html#restSeconds">restSeconds</a></li><li><a href="global.html#setProgress">setProgress</a></li><li><a href="global.html#stageClear">stageClear</a></li><li><a href="global.html#states">states</a></li><li><a href="global.html#statesArray">statesArray</a></li><li><a href="global.html#statesChinese">statesChinese</a></li><li><a href="global.html#statesDefault">statesDefault</a></li><li><a href="global.html#statesJapanese">statesJapanese</a></li><li><a href="global.html#statesKorean">statesKorean</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateDOM">updateDOM</a></li><li><a href="global.html#workMinutes">workMinutes</a></li><li><a href="global.html#workSeconds">workSeconds</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Mar 01 2021 04:24:08 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Mar 05 2021 03:38:22 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
