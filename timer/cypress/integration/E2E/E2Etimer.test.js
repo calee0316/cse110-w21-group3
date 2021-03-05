@@ -5,6 +5,7 @@ describe('generic functionality tests', () => {
     })
 
     it('make sure start is correct', () => {
+        cy.tick(1000)
         cy.get('#language-picker-select').then($el => {
             expect($el).to.have.value('english')
             expect($el.text()).contains('English')
@@ -31,6 +32,30 @@ describe('generic functionality tests', () => {
             expect($el).to.have.attr('src', './img/1.png')
         })
     })
+
+    it('make sure single digits begin converted to double digit', () => {
+        cy.get('#button').click()
+        cy.tick(1315000)
+        cy.get('#currProg').then($el => {
+            expect($el.text()).contains('87.7%')
+        })
+        cy.get('#count').then($el => {
+            expect($el.text()).contains('0')
+        })
+        cy.get('#time').then($el => {
+            expect($el.text()).contains('03:05')
+        })
+        cy.get('#state').then($el => {
+            expect($el.text()).contains('Work')
+        })
+        cy.get('#button').then($el => {
+            expect($el.text()).contains('STOP')
+        })
+        cy.get('#pic').then($el => {
+            expect($el).to.have.attr('src', './img/1.png')
+        })
+    })
+
     it('make sure everything is correct, 5 mins into work', () => {
         cy.get('#button').click()
         cy.tick(300000)

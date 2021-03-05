@@ -463,18 +463,59 @@ function initDOM () {
     updateDOM(setProgress)
   }
 
-  /**
-   * The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-   */
+  // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
   document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+
   // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')
+
   // The event listener that checks the certain task. This is called when a certain task is clicked
   taskList.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
       e.target.classList.toggle('checked')
+      const id = e.target.getAttribute('id')
+      const myStorage = window.localStorage
+      const tasks = JSON.parse(myStorage.getItem('tasks'))
+      tasks.forEach(task => {
+        if (task.id == id) {
+          task.completed = !task.completed
+        }
+      })
+      myStorage.setItem('tasks', JSON.stringify(tasks))
     }
   }, false)
+
+  if (window.localStorage.getItem('tasks')) {
+    addSaved(createCloseButtons)
+  }
+}
+
+/**
+ * Called if there are tasks that were on task list before refreshing or closing the page.
+ * Regenerates the previous todo list.
+ * @param { function } createCloseButtons Call back function that creates close button functionality.
+ */
+function addSaved (createCloseButtons) {
+  const tasks = JSON.parse(window.localStorage.getItem('tasks'))
+  tasks.forEach(task => {
+    const list = document.getElementById('taskList')
+    const savedTask = document.createElement('li')
+    const taskDesc = task.desc
+    savedTask.appendChild(document.createTextNode(taskDesc))
+    savedTask.setAttribute('id', task.id)
+    if (task.completed) {
+      savedTask.classList.toggle('checked')
+    }
+    list.appendChild(savedTask)
+    const span = document.createElement('SPAN')
+    // give the element class 'close'
+    span.className = 'close'
+    // set the text to be "X"
+    span.appendChild(document.createTextNode('X'))
+    savedTask.appendChild(span)
+    // call the function that creates the event listeners for the close buttons
+    createCloseButtons()
+  })
 }
 
 /**
@@ -495,11 +536,25 @@ function addTask (createCloseButtons) {
   task.appendChild(document.createTextNode(taskDesc))
   // if the inputted task is not empty text, append the task
   // to the list
+  const id = Date.now()
+  task.setAttribute('id', id)
   if (taskDesc === '') {
     // do nothing
   } else {
     document.getElementById('taskList').appendChild(task)
+    const myStorage = window.localStorage
+    let tasks = []
+    if (myStorage.getItem('tasks')) {
+      tasks = JSON.parse(myStorage.getItem('tasks'))
+    }
+    tasks.push({
+      id: id,
+      completed: false,
+      desc: taskDesc
+    })
+    myStorage.setItem('tasks', JSON.stringify(tasks))
   }
+
   document.getElementById('textInput').value = ''
   // create the element for the delete button "x"
   const span = document.createElement('SPAN')
@@ -513,8 +568,8 @@ function addTask (createCloseButtons) {
 }
 
 /**
- * Creates the close buttons for each task. It creates
- * the event listeners necessary to get rid of task items.
+ * Creates the close buttons for each task.
+ * It creates the event listeners necessary to get rid of task items.
  */
 function createCloseButtons () {
   // store an array of all of the close, "x"s in the task list
@@ -527,6 +582,13 @@ function createCloseButtons () {
       const div = this.parentElement
       // set the task display to none, "deleting" it from the list
       div.style.display = 'none'
+      const myStorage = window.localStorage
+      let tasks = JSON.parse(myStorage.getItem('tasks'))
+      const id = div.getAttribute('id')
+      tasks = tasks.filter(function (item) {
+        return item.id != id
+      })
+      myStorage.setItem('tasks', JSON.stringify(tasks))
     })
   }
 }
@@ -562,4 +624,5 @@ if (typeof module !== 'undefined') {
   exports.statesArray = statesArray
   exports.doubleDigit = doubleDigit
   exports.addTask = addTask
+  exports.addSaved = addSaved
 }
