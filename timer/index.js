@@ -477,7 +477,7 @@ function initDOM () {
       const myStorage = window.localStorage
       const tasks = JSON.parse(myStorage.getItem('tasks'))
       tasks.forEach(task => {
-        if (task.id === id) {
+        if (task.id == id) {
           task.completed = !task.completed
         }
       })
@@ -586,7 +586,7 @@ function createCloseButtons () {
       let tasks = JSON.parse(myStorage.getItem('tasks'))
       const id = div.getAttribute('id')
       tasks = tasks.filter(function (item) {
-        return item.id !== id
+        return item.id != id
       })
       myStorage.setItem('tasks', JSON.stringify(tasks))
     })

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.42% </span>
+                <span class="strong">93.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>213/228</span>
+                <span class='fraction'>212/227</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.36% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>211/226</span>
+                <span class='fraction'>210/225</span>
             </div>
         
             
@@ -685,10 +685,7 @@
 <a name='L626'></a><a href='#L626'>626</a>
 <a name='L627'></a><a href='#L627'>627</a>
 <a name='L628'></a><a href='#L628'>628</a>
-<a name='L629'></a><a href='#L629'>629</a>
-<a name='L630'></a><a href='#L630'>630</a>
-<a name='L631'></a><a href='#L631'>631</a>
-<a name='L632'></a><a href='#L632'>632</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L629'></a><a href='#L629'>629</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1154,8 +1151,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">138x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1164,7 +1159,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">138x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -1784,32 +1778,29 @@ function initDOM () {
     updateDOM(setProgress)
   }
 &nbsp;
-  /**
-   * The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-   */
+  // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
   document.getElementById('add').addEventListener('click', () =&gt; { addTask(createCloseButtons) })
-  
+&nbsp;
   // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')
-  
+&nbsp;
   // The event listener that checks the certain task. This is called when a certain task is clicked
   taskList.addEventListener('click', (e) =&gt; {
     if (e.target.tagName === 'LI') {
       e.target.classList.toggle('checked')
       const id = e.target.getAttribute('id')
-      let myStorage = window.localStorage
-      let tasks = JSON.parse(myStorage.getItem('tasks'))
+      const myStorage = window.localStorage
+      const tasks = JSON.parse(myStorage.getItem('tasks'))
       tasks.forEach(task =&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if(task.id == id) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (task.id == id) {
           task.completed = !task.completed
-          return
         }
       })
       myStorage.setItem('tasks', JSON.stringify(tasks))
     }
   }, false)
 &nbsp;
-  if(window.localStorage.getItem('tasks')){
+  if (window.localStorage.getItem('tasks')) {
     addSaved(createCloseButtons)
   }
 }
@@ -1820,26 +1811,26 @@ function initDOM () {
  * @param { function } createCloseButtons Call back function that creates close button functionality.
  */
 function addSaved (createCloseButtons) {
-  let tasks = JSON.parse(window.localStorage.getItem('tasks'))
-    tasks.forEach(task =&gt; {
-        const list = document.getElementById('taskList')
-        let savedTask = document.createElement('li')
-        const taskDesc = task.desc;
-        savedTask.appendChild(document.createTextNode(taskDesc))
-        savedTask.setAttribute('id', task.id)
-        if(task.completed) {
-          savedTask.classList.toggle('checked')
-        }
-        list.appendChild(savedTask)
-        const span = document.createElement('SPAN')
-        // give the element class 'close'
-        span.className = 'close'
-        // set the text to be "X"
-        span.appendChild(document.createTextNode('X'))
-        savedTask.appendChild(span)
-        // call the function that creates the event listeners for the close buttons
-        createCloseButtons()
-    })
+  const tasks = JSON.parse(window.localStorage.getItem('tasks'))
+  tasks.forEach(task =&gt; {
+    const list = document.getElementById('taskList')
+    const savedTask = document.createElement('li')
+    const taskDesc = task.desc
+    savedTask.appendChild(document.createTextNode(taskDesc))
+    savedTask.setAttribute('id', task.id)
+    if (task.completed) {
+      savedTask.classList.toggle('checked')
+    }
+    list.appendChild(savedTask)
+    const span = document.createElement('SPAN')
+    // give the element class 'close'
+    span.className = 'close'
+    // set the text to be "X"
+    span.appendChild(document.createTextNode('X'))
+    savedTask.appendChild(span)
+    // call the function that creates the event listeners for the close buttons
+    createCloseButtons()
+  })
 }
 &nbsp;
 /**
@@ -1866,9 +1857,9 @@ function addTask (createCloseButtons) {
     // do nothing
   } else {
     document.getElementById('taskList').appendChild(task)
-    let myStorage = window.localStorage
+    const myStorage = window.localStorage
     let tasks = []
-    if(myStorage.getItem('tasks')){
+    if (myStorage.getItem('tasks')) {
       tasks = JSON.parse(myStorage.getItem('tasks'))
     }
     tasks.push({
@@ -1892,27 +1883,27 @@ function addTask (createCloseButtons) {
 }
 &nbsp;
 /**
- * Creates the close buttons for each task. It creates
- * the event listeners necessary to get rid of task items.
+ * Creates the close buttons for each task.
+ * It creates the event listeners necessary to get rid of task items.
  */
 function createCloseButtons () {
-   // store an array of all of the close, "x"s in the task list
-   const close = document.getElementsByClassName('close')
-   // make the eventlistener for all of the close "x"s,
-   // these will delete the task when the "x" is clicked.
-   for (let i = 0; i &lt; close.length; i++) {
-     close[i].addEventListener('click', function () {
-       // get the task that the "x" is for
-       const div = this.parentElement
-       // set the task display to none, "deleting" it from the list
-       div.style.display = 'none'
-       let myStorage = window.localStorage
-       let tasks = JSON.parse(myStorage.getItem('tasks'))
-       const id = div.getAttribute('id')
-       tasks = tasks.filter(function(item) {
-         return item.id != id
-       })
-       myStorage.setItem('tasks', JSON.stringify(tasks))
+  // store an array of all of the close, "x"s in the task list
+  const close = document.getElementsByClassName('close')
+  // make the eventlistener for all of the close "x"s,
+  // these will delete the task when the "x" is clicked.
+  for (let i = 0; i &lt; close.length; i++) {
+    close[i].addEventListener('click', function () {
+      // get the task that the "x" is for
+      const div = this.parentElement
+      // set the task display to none, "deleting" it from the list
+      div.style.display = 'none'
+      const myStorage = window.localStorage
+      let tasks = JSON.parse(myStorage.getItem('tasks'))
+      const id = div.getAttribute('id')
+      tasks = tasks.filter(function (item) {
+        return item.id != id
+      })
+      myStorage.setItem('tasks', JSON.stringify(tasks))
     })
   }
 }
@@ -1957,7 +1948,7 @@ function doubleDigit (num) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Mar 03 2021 22:12:04 GMT+0900 (Korean Standard Time)
+                at Fri Mar 05 2021 13:13:07 GMT+0900 (Korean Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
