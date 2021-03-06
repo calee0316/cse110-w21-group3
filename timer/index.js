@@ -369,6 +369,21 @@ function updateDOM (setProgress) {
     // set image when state is 'Long Rest' as the gold mushroom
     pomo.picDom.src = './img/3.png'
   }
+
+  if (pomo.state !== statesArray[0]) {
+    document.getElementsByClassName('header')[0].style.display = 'none'
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = 'none'
+    })
+  } else {
+    document.getElementsByClassName('header')[0].style.display = ''
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = ''
+    })
+  }
+
 }
 
 /**
@@ -464,7 +479,9 @@ function initDOM () {
   }
 
   // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-  document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+  document.getElementById('add').addEventListener('click', () => {
+      addTask(createCloseButtons) 
+  })
 
   // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')

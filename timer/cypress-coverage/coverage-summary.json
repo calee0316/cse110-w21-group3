@@ -1,3 +1,3 @@
-{"total": {"lines":{"total":225,"covered":210,"skipped":0,"pct":93.33},"statements":{"total":227,"covered":212,"skipped":0,"pct":93.39},"functions":{"total":19,"covered":19,"skipped":0,"pct":100},"branches":{"total":47,"covered":44,"skipped":0,"pct":93.62}}
-,"/Users/Calvin/Desktop/Winter 2021/CSE110/cse110-w21-group3/timer/index.js": {"lines":{"total":225,"covered":210,"skipped":0,"pct":93.33},"functions":{"total":19,"covered":19,"skipped":0,"pct":100},"statements":{"total":227,"covered":212,"skipped":0,"pct":93.39},"branches":{"total":47,"covered":44,"skipped":0,"pct":93.62}}
+{"total": {"lines":{"total":235,"covered":219,"skipped":0,"pct":93.19},"statements":{"total":236,"covered":220,"skipped":0,"pct":93.22},"functions":{"total":21,"covered":20,"skipped":0,"pct":95.24},"branches":{"total":49,"covered":46,"skipped":0,"pct":93.88}}
+,"/Users/Calvin/Desktop/Winter 2021/CSE110/cse110-w21-group3/timer/index.js": {"lines":{"total":235,"covered":219,"skipped":0,"pct":93.19},"functions":{"total":21,"covered":20,"skipped":0,"pct":95.24},"statements":{"total":236,"covered":220,"skipped":0,"pct":93.22},"branches":{"total":49,"covered":46,"skipped":0,"pct":93.88}}
 }
