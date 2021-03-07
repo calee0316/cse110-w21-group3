@@ -356,6 +356,12 @@ function updateDOM (setProgress) {
   if (pomo.started) {
     document.getElementById('button').textContent = buttonsArray[1]
     document.getElementById('button').style.backgroundColor = 'red'
+  } else {
+    // if the timer is not started, button should stay 'START' and color is orange.
+    document.getElementById('button').textContent = buttonsArray[0]
+    document.getElementById('button').style.backgroundColor = '#f6b432'
+  }
+  if (pomo.state === statesArray[1]) {
     document.getElementById('about').style.display = 'none'
     document.getElementById('language-select').style.display= 'none'
     document.getElementsByClassName('header')[0].style.display = 'none'
@@ -364,11 +370,8 @@ function updateDOM (setProgress) {
       close.style.display = 'none'
     })
   } else {
-    // if the timer is not started, button should stay 'START' and color is orange.
-    document.getElementById('button').textContent = buttonsArray[0]
-    document.getElementById('button').style.backgroundColor = '#f6b432'
-    document.getElementById('about').style.display = 'block'
-    document.getElementById('language-select').style.display= 'block'
+    document.getElementById('about').style.display = ''
+    document.getElementById('language-select').style.display= ''
     document.getElementsByClassName('header')[0].style.display = ''
     const closeButtons = document.getElementsByClassName('close')
     Array.from(closeButtons).forEach(close => {
