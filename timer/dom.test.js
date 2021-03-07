@@ -50,6 +50,12 @@ test('updateDOM', () => {
   expect(pic.src).toBe('http://localhost/img/2.png')
   expect(pomo.perc).toBe(40)
   expect(bar.style.width).toBe('40%')
+  expect(about.style.display).toBe('')
+  expect(language.style.display).toBe('')
+  expect(todo.style.display).toBe('')
+  Array.from(closeButtons).forEach(close => {
+    expect(close.style.display).toBe('')
+  })  
 })
 
 test('updateDOM2', () => {
@@ -69,6 +75,12 @@ test('updateDOM2', () => {
   expect(pomo.perc).toBe(12)
   expect(bar.style.width).toBe('12%')
   expect(button.textContent).toBe('STOP')
+  expect(about.style.display).toBe('none')
+  expect(language.style.display).toBe('none')
+  expect(todo.style.display).toBe('none')
+  Array.from(closeButtons).forEach(close => {
+    expect(close.style.display).toBe('none')
+  })
 })
 
 test('updateDOM3', () => {
@@ -88,6 +100,12 @@ test('updateDOM3', () => {
   expect(pomo.perc).toBe(28.6)
   expect(bar.style.width).toBe('28.6%')
   expect(button.textContent).toBe('STOP')
+  expect(about.style.display).toBe('')
+  expect(language.style.display).toBe('')
+  expect(todo.style.display).toBe('')
+  Array.from(closeButtons).forEach(close => {
+    expect(close.style.display).toBe('')
+  })
 })
 
 test('updateDOM5', () => {
