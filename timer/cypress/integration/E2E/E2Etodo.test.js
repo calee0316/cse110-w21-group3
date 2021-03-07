@@ -113,3 +113,27 @@ describe('tests for local storage todos', () => {
         })
     })
 })
+
+describe('when click start, the attribute of the everything', ()=>{
+    beforeEach(() => {
+        cy.clock()
+        cy.visit('../../index.html')
+    })
+    it('when clicked start, langauge and about us and todolist should display none, close button should be disabled', ()=>{
+        cy.get('#button').click()
+        cy.tick(300000)
+        cy.get('#about').should('have.css', 'display', 'none')
+        cy.get('#language-select').should('have.css', 'display', 'none')
+        //cy.get('#header')[0]
+    })
+    it('when clicked start, add 2 items, delete 1', () => {
+        cy.get('#textInput').clear().type('test task 1')
+        cy.get('#add').click()
+        cy.get('#textInput').clear().type('test task 2')
+        cy.get('#add').click()
+        cy.get('#button').click()
+        cy.tick(300000)
+        cy.get('ul').children().should('have.length', 2)
+        cy.get('ul li:last').children().should('have.css', 'display', 'none')
+    })
+})
