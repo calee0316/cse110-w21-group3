@@ -24,6 +24,9 @@ const state = window.document.getElementById('state')
 const lang = window.document.getElementById('lang_label')
 const bar = window.document.getElementById('currProg')
 const button = window.document.getElementById('button')
+const language = window.document.getElementById('language-select')
+const todo = window.document.getElementsByClassName('header')[0]
+const closeButtons = window.document.getElementsByClassName('close')
 
 beforeEach(() => {
   pomo.started = true

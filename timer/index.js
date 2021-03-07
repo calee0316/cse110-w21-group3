@@ -350,9 +350,6 @@ function updateDOM (setProgress) {
   document.getElementById('lang_label').textContent = pomo.lang_label
   document.getElementById('message').textContent = pomo.pomoCompleted
   // if the timer started, the button would change to "STOP" and the color of the button will turn red
-  // the language select and about us function are disabled when started working session
-  // when the timer starts the header of todo list is set to none
-  // and close buttons are set to none
   if (pomo.started) {
     document.getElementById('button').textContent = buttonsArray[1]
     document.getElementById('button').style.backgroundColor = 'red'
@@ -361,6 +358,9 @@ function updateDOM (setProgress) {
     document.getElementById('button').textContent = buttonsArray[0]
     document.getElementById('button').style.backgroundColor = '#f6b432'
   }
+  // the language select and about us function are disabled when started working session
+  // when the timer starts the header of todo list is set to none
+  // and close buttons are set to none
   if (pomo.state === statesArray[1]) {
     document.getElementById('about').style.display = 'none'
     document.getElementById('language-select').style.display= 'none'
@@ -370,6 +370,7 @@ function updateDOM (setProgress) {
       close.style.display = 'none'
     })
   } else {
+    // otherwise the language select and about us function are abled to use in rest, long rest, beginning stage.
     document.getElementById('about').style.display = ''
     document.getElementById('language-select').style.display= ''
     document.getElementsByClassName('header')[0].style.display = ''
@@ -468,7 +469,7 @@ function initDOM () {
       pomo.lang_label = label.JP
       pomo.about = aboutUs.JP
       pomo.pomoCompleted = complete.JP
-    } else if (document.getElementById('language-picker-select').value === 'english') {
+    } else {
       // When language is changed to English
       statesArray = states.def
       buttonsArray = buttons.def

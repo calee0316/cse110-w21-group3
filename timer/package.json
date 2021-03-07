@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest --coverage",
     "cypress": "npx nyc instrument --compact=false index.js instrumented && npx cypress run spec './cypress/integration/E2E/*.js'",
-    "report:combined": "npx istanbul-merge --out ./coverage/coverage.json ./jest-coverage/coverage-final.json ./cypress-coverage/coverage-final.json && npx istanbul report --include ./coverage/coverage.json --dir ./coverage html"
+    "instrument": "npx nyc instrument --compact=false . instrumented",
+    "merge": "npx merge-cypress-jest-coverage"
   },
   "keywords": [],
   "author": "",
