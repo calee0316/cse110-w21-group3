@@ -350,13 +350,30 @@ function updateDOM (setProgress) {
   document.getElementById('lang_label').textContent = pomo.lang_label
   document.getElementById('message').textContent = pomo.pomoCompleted
   // if the timer started, the button would change to "STOP" and the color of the button will turn red
+  // the language select and about us function are disabled when started working session
+  // when the timer starts the header of todo list is set to none
+  // and close buttons are set to none
   if (pomo.started) {
     document.getElementById('button').textContent = buttonsArray[1]
     document.getElementById('button').style.backgroundColor = 'red'
+    document.getElementById('about').style.display = 'none'
+    document.getElementById('language-select').style.display= 'none'
+    document.getElementsByClassName('header')[0].style.display = 'none'
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = 'none'
+    })
   } else {
     // if the timer is not started, button should stay 'START' and color is orange.
     document.getElementById('button').textContent = buttonsArray[0]
     document.getElementById('button').style.backgroundColor = '#f6b432'
+    document.getElementById('about').style.display = 'block'
+    document.getElementById('language-select').style.display= 'block'
+    document.getElementsByClassName('header')[0].style.display = ''
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = ''
+    })
   }
   // if the current state is either 'Click Start To Begin" or 'Work' or the same in a different language
   // the image would become the 1.png, which is the red mushroom
@@ -369,21 +386,6 @@ function updateDOM (setProgress) {
     // set image when state is 'Long Rest' as the gold mushroom
     pomo.picDom.src = './img/3.png'
   }
-
-  if (pomo.state !== statesArray[0]) {
-    document.getElementsByClassName('header')[0].style.display = 'none'
-    const closeButtons = document.getElementsByClassName('close')
-    Array.from(closeButtons).forEach(close => {
-      close.style.display = 'none'
-    })
-  } else {
-    document.getElementsByClassName('header')[0].style.display = ''
-    const closeButtons = document.getElementsByClassName('close')
-    Array.from(closeButtons).forEach(close => {
-      close.style.display = ''
-    })
-  }
-
 }
 
 /**
