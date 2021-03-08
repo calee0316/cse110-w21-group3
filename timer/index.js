@@ -358,6 +358,27 @@ function updateDOM (setProgress) {
     document.getElementById('button').textContent = buttonsArray[0]
     document.getElementById('button').style.backgroundColor = '#f6b432'
   }
+  // the language select and about us function are disabled when started working session
+  // when the timer starts the header of todo list is set to none
+  // and close buttons are set to none
+  if (pomo.state === statesArray[1]) {
+    document.getElementById('about').style.display = 'none'
+    document.getElementById('language-select').style.display = 'none'
+    document.getElementsByClassName('header')[0].style.display = 'none'
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = 'none'
+    })
+  } else {
+    // otherwise the language select and about us function are abled to use in rest, long rest, beginning stage.
+    document.getElementById('about').style.display = ''
+    document.getElementById('language-select').style.display = ''
+    document.getElementsByClassName('header')[0].style.display = ''
+    const closeButtons = document.getElementsByClassName('close')
+    Array.from(closeButtons).forEach(close => {
+      close.style.display = ''
+    })
+  }
   // if the current state is either 'Click Start To Begin" or 'Work' or the same in a different language
   // the image would become the 1.png, which is the red mushroom
   if (pomo.state === statesArray[0] || pomo.state === statesArray[1]) {
@@ -448,7 +469,7 @@ function initDOM () {
       pomo.lang_label = label.JP
       pomo.about = aboutUs.JP
       pomo.pomoCompleted = complete.JP
-    } else if (document.getElementById('language-picker-select').value === 'english') {
+    } else {
       // When language is changed to English
       statesArray = states.def
       buttonsArray = buttons.def
@@ -464,7 +485,9 @@ function initDOM () {
   }
 
   // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
-  document.getElementById('add').addEventListener('click', () => { addTask(createCloseButtons) })
+  document.getElementById('add').addEventListener('click', () => {
+    addTask(createCloseButtons)
+  })
 
   // initialize the tasklist based on the querySelector of 'ul'
   const taskList = document.querySelector('ul')
