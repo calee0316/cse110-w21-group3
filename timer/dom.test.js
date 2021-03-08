@@ -58,7 +58,7 @@ test('updateDOM', () => {
   expect(todo.style.display).toBe('')
   Array.from(closeButtons).forEach(close => {
     expect(close.style.display).toBe('')
-  })  
+  })
 })
 
 test('updateDOM2', () => {

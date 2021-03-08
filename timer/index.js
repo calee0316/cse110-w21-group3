@@ -363,7 +363,7 @@ function updateDOM (setProgress) {
   // and close buttons are set to none
   if (pomo.state === statesArray[1]) {
     document.getElementById('about').style.display = 'none'
-    document.getElementById('language-select').style.display= 'none'
+    document.getElementById('language-select').style.display = 'none'
     document.getElementsByClassName('header')[0].style.display = 'none'
     const closeButtons = document.getElementsByClassName('close')
     Array.from(closeButtons).forEach(close => {
@@ -372,7 +372,7 @@ function updateDOM (setProgress) {
   } else {
     // otherwise the language select and about us function are abled to use in rest, long rest, beginning stage.
     document.getElementById('about').style.display = ''
-    document.getElementById('language-select').style.display= ''
+    document.getElementById('language-select').style.display = ''
     document.getElementsByClassName('header')[0].style.display = ''
     const closeButtons = document.getElementsByClassName('close')
     Array.from(closeButtons).forEach(close => {
@@ -486,7 +486,7 @@ function initDOM () {
 
   // The event Listener that add the tasks. This is called when the 'Add' buttton on screen is clicked
   document.getElementById('add').addEventListener('click', () => {
-      addTask(createCloseButtons) 
+    addTask(createCloseButtons)
   })
 
   // initialize the tasklist based on the querySelector of 'ul'
