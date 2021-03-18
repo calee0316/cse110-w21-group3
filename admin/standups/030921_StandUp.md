@@ -40,9 +40,9 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
-3. Nothing
+1. Worked on installer for Windows of our electron app
+2. Continue to work on installer for Windows of our electron app
+3. Stuck multiple time when installing and running electron packager
 
 Jimin Cheon 
 1. Nothing

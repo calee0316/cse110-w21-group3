@@ -40,8 +40,8 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
+1. Worked on converting our web app into an electron app
+2. Try to package our app into MacOS version
 3. Nothing
 
 Jimin Cheon 

@@ -40,8 +40,8 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
+1. Studied PWA
+2. Try to convert our website into a PWA
 3. Nothing
 
 Jimin Cheon 

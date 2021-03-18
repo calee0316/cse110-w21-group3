@@ -42,9 +42,9 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
-3. Nothing
+1. Try to make our website into a PWA
+2. Work on another approach
+3. Found important problem of PWA that will produce poor user experience
 
 Jimin Cheon 
 1. Nothing

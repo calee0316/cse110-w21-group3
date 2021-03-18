@@ -41,7 +41,7 @@ Shunkai Yu
 3. Simplifying design
 
 Ruihan Zhang
-1. Nothing
+1. Work on the todo-list with the team 
 2. Nothing
 3. Nothing
 

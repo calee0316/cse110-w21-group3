@@ -40,9 +40,9 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
-3. Nothing
+1. Made installer for MacOS of our electron app
+2. Make installer for Windows and Linux
+3. Github repo cannot store large binary files
 
 Jimin Cheon 
 1. Nothing

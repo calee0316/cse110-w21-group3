@@ -40,8 +40,8 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
+1. Learnt Javascript
+2. Test out JS and CSS on small websites
 3. Nothing
 
 Jimin Cheon 

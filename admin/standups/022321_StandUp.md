@@ -40,7 +40,7 @@ Shunkai Yu
 3. Might encounter issue when simplifying the todo list
 
 Ruihan Zhang
-1. Nothing
+1. Worked on todo List and team status video with Richard and Arthur
 2. Nothing
 3. Nothing
 

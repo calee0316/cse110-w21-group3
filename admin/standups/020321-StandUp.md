@@ -40,8 +40,8 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
-2. Nothing
+1. Learned and practived JS and CSS on another project
+2. Help out on team members
 3. Nothing
 
 Jimin Cheon 

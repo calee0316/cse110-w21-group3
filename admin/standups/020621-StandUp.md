@@ -40,9 +40,9 @@ Shunkai Yu
 3. Nothing
 
 Ruihan Zhang
-1. Nothing
+1. Worked on linting yyml files for pipeline
 2. Nothing
-3. Nothing
+3. Did not figure out package.json file
 
 Jimin Cheon 
 1. Nothing

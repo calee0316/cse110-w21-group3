@@ -41,7 +41,7 @@ Shunkai Yu
 
 Ruihan Zhang
 1. Nothing
-2. Nothing
+2. Work on CI/CD pipeline
 3. Nothing
 
 Jimin Cheon 
