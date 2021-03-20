@@ -1,18 +1,19 @@
-# For Developers:
+## Video:
+Team intro: https://www.youtube.com/watch?v=7tLP34hLOlE
 
-## Process to make code changes:
-### Manually do the following:
-- Create a branch feat/<feat-name>  (for feature) or fix/<fix-name> (for fix).
-- Do the development locally (on this new branch) as you would.
-- Keep committing and pushing to this branch.
-- Once feature is complete or bug fix is done, create a PR to main branch.
-### The github action (test.yml) will automatically run tests (wait for test to pass) lint.yml will check styling and doc.yml will generate documentation
-### Manually:
-- Click merge in the pull request
-- You might want to have a code review (the reviewer does the merge finally)
+Status video: https://github.com/calee0316/cse110-w21-group3/blob/main/admin/videos/statusvideo1.mp4
 
-#### Repeat this process to make any edits moving forward
+4 minutes final video: https://youtu.be/s01EMx4PXcc
 
-### Documentation supplement:
-diagram:https://github.com/calee0316/cse110-w21-group3/blob/main/admin/pipeline/diagram.png
-wiki:https://github.com/calee0316/cse110-w21-group3/wiki
+10 minutes final video: https://youtu.be/SB48qr9To5w
+
+## Team Wiki page: 
+https://github.com/calee0316/cse110-w21-group3/wiki
+
+## Pipeline:
+Diagram: https://github.com/calee0316/cse110-w21-group3/blob/main/admin/pipeline/diagram.png
+
+Summary: https://github.com/calee0316/cse110-w21-group3/blob/main/admin/pipeline/TwoPageSummary.pdf
+
+## Miro Design:
+https://miro.com/welcomeonboard/IA5ORgxW7n2VkqogNvg4QmuNXrwg5wnEXglhgsmqG1iIP7O6FF55UOpHkrmWAFcQ
