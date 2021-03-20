@@ -12,3 +12,6 @@
 - You might want to have a code review (the reviewer does the merge finally)
 
 #### Repeat this process to make any edits moving forward
+
+###diagram:https://github.com/calee0316/cse110-w21-group3/blob/main/admin/pipeline/diagram.png
+###
