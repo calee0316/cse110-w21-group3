@@ -2,6 +2,8 @@
 
 Our source code for the product can be found in the [./timer](./timer) directory
 
+To download our application as a Desktop Electron app, go to the Releases section on the right side and download the respective installation file. Currently, our application is available for Mac OS and Windows. 
+
 For a demo/tutorial of our product, please watch the this [video](https://youtu.be/s01EMx4PXcc) and for a longer version watch this [video](https://youtu.be/SB48qr9To5w).
 
 To see some of the videos that introduce our team members as well as how our product works, feel free to look through our Video section.
