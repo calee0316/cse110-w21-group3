@@ -12,6 +12,8 @@ To learn more about our pipeline, look through the diagram and our 2 page pipeli
 
 For more diagrams of our thought process and things like wireframes, check out the Miro board website, or check out some of the GitHub repo subdirectories linked in the Diagrams section.
 
+To view our published JSDocs documentation, visit our GitHub pages [here](https://calee0316.github.io/cse110-w21-group3/)
+
 For developers, please go to the [documentation](./documentation) directory, and view the [onboard.md](./documentation/onboard.md) file for information. Information on our pipeline can be found on both our Wiki as well as the Pipeline section. 
 
 ## Video:
