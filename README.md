@@ -1,5 +1,7 @@
 # Welcome to Internet Bowser's Mushroom Pomodoro Timer!
 
+Our source code for the product can be found in the [./timer](./timer) directory
+
 To see some of the videos that introduce our team members as well as how our product works, feel free to look through our Video section.
 
 To learn more about our team, the Pomodoro technique, and some of the tools we used, check out our Wiki page in the Team Wiki section. 
@@ -9,6 +11,7 @@ To learn more about our pipeline, look through the diagram and our 2 page pipeli
 For more diagrams of our thought process and things like wireframes, check out the Miro board website, or check out some of the GitHub repo subdirectories linked in the Diagrams section.
 
 For developers, please go to the documentation directory, and view the onboard.md file for information. 
+
 ## Video:
 Team intro: https://www.youtube.com/watch?v=7tLP34hLOlE
 
