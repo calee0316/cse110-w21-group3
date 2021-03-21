@@ -6,7 +6,7 @@ Watch team video for most of the onboarding process information.
 After first cloning our repo, please change your working directory to the timer directory. Then run the command `npm i` to install all dependencies. 
 
 ## Making changes
-When making changes, first create a new branch on GitHub and make changes on this new branch. After finishing changes, push your changes to the new branch you created. Then create a pull request on GitHub. This will trigger the 3 GiHub actions, running our tests, linting, and generating JSDocs documentation. Once all three of these actions are finished and have passed, wait for the manager to approve and merge this pull request. The generated JSDocs documentation is generated at [docs](../docs) directory and published at our GitHub pages [here](https://calee0316.github.io/cse110-w21-group3/)
+When making changes, first create a new branch on GitHub and make changes on this new branch. After finishing changes, push your changes to the new branch you created. Then create a pull request on GitHub. This will trigger the 3 GiHub actions, running our tests, linting, and generating JSDocs documentation. Once all three of these actions are finished and have passed, wait for the manager to approve and merge this pull request. The generated JSDocs documentation is generated at [docs](../docs) directory and published at our GitHub pages [here](https://calee0316.github.io/cse110-w21-group3/docs/index.html)
 
 ## Writing tests
 For Jest unit and DOM testing, files that are in the format *.test.js in the [timer](../timer) directory should be added or editted. For E2E Cypress tests, edit or add test files in the [cypress](../timer/cypress) directory. 
